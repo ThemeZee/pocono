@@ -8,7 +8,7 @@
  *
  * Author: Thomas Weichselbaumer (themezee.com)
  *
- * @package Gridbox
+ * @package Pocono
  */
 
 (function($) {

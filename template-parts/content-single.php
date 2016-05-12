@@ -2,19 +2,19 @@
 /**
  * The template for displaying single posts
  *
- * @package Gridbox
+ * @package Pocono
  */
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
-		<?php gridbox_post_image_single(); ?>
+		<?php pocono_post_image_single(); ?>
 			
 		<header class="entry-header">
 			
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			
-			<?php gridbox_entry_meta(); ?>
+			<?php pocono_entry_meta(); ?>
 
 		</header><!-- .entry-header -->
 		
@@ -26,8 +26,8 @@
 		
 		<footer class="entry-footer">
 			
-			<?php gridbox_entry_tags(); ?>
-			<?php gridbox_post_navigation(); ?>
+			<?php pocono_entry_tags(); ?>
+			<?php pocono_post_navigation(); ?>
 			
 		</footer><!-- .entry-footer -->
 

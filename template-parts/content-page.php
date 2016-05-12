@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Gridbox
+ * @package Pocono
  */
 ?>
 
@@ -14,7 +14,7 @@
 			
 		</header><!-- .entry-header -->
 		
-		<?php gridbox_post_image_single(); ?>
+		<?php pocono_post_image_single(); ?>
 		
 		<div class="entry-content clearfix">
 			<?php the_content(); ?>

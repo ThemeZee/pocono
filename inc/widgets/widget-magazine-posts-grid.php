@@ -5,10 +5,10 @@
  * Display the latest posts from a selected category in a grid layout. 
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
- * @package Gridbox
+ * @package Pocono
  */
 
-class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
+class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 	
 	/**
 	 * Widget Constructor
@@ -17,11 +17,11 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		
 		// Setup Widget
 		parent::__construct(
-			'gridbox-magazine-posts-grid', // ID
-			sprintf( esc_html__( 'Magazine Posts: Grid (%s)', 'gridbox' ), wp_get_theme()->Name ), // Name
+			'pocono-magazine-posts-grid', // ID
+			sprintf( esc_html__( 'Magazine Posts: Grid (%s)', 'pocono' ), wp_get_theme()->Name ), // Name
 			array( 
-				'classname' => 'gridbox_magazine_posts_grid', 
-				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'gridbox' ),
+				'classname' => 'pocono_magazine_posts_grid', 
+				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono' ),
 				'customize_selective_refresh' => true, 
 			) // Args
 		);
@@ -69,7 +69,7 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 				
 		// Get Widget Object Cache
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_gridbox_magazine_posts_grid', 'widget' );
+			$cache = wp_cache_get( 'widget_pocono_magazine_posts_grid', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -111,7 +111,7 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		// Set Cache
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_gridbox_magazine_posts_grid', $cache, 'widget' );
+			wp_cache_set( 'widget_pocono_magazine_posts_grid', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -172,7 +172,7 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 									
 									<?php the_excerpt(); ?>
 									
-									<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'gridbox' ); ?></a>
+									<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'pocono' ); ?></a>
 								
 								</div><!-- .entry-content -->
 								
@@ -207,19 +207,19 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		
 		if( true == $settings['meta_date'] ) {
 		
-			$postmeta .= gridbox_meta_date();
+			$postmeta .= pocono_meta_date();
 			
 		}
 		
 		if( true == $settings['meta_author'] ) {
 		
-			$postmeta .= gridbox_meta_author();
+			$postmeta .= pocono_meta_author();
 			
 		}
 		
 		if( true == $settings['meta_category'] ) {
 		
-			$postmeta .= gridbox_meta_category();
+			$postmeta .= pocono_meta_category();
 			
 		}
 		
@@ -256,7 +256,7 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 			if( $settings['category'] > 0 ) : 
 			
 				// Set Link URL and Title for Category
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'gridbox' ), get_cat_name( $settings['category'] ) );
+				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'pocono' ), get_cat_name( $settings['category'] ) );
 				$link_url = esc_url( get_category_link( $settings['category'] ) );
 				
 				// Display Widget Title with link to category archive
@@ -314,16 +314,16 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		?>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e( 'Title:', 'gridbox' ); ?>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e( 'Title:', 'pocono' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $settings['title']; ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('category'); ?>"><?php esc_html_e( 'Category:', 'gridbox' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('category'); ?>"><?php esc_html_e( 'Category:', 'pocono' ); ?></label><br/>
 			<?php // Display Category Select
 				$args = array(
-					'show_option_all'    => esc_html__( 'All Categories', 'gridbox' ),
+					'show_option_all'    => esc_html__( 'All Categories', 'pocono' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $settings['category'],
@@ -335,22 +335,22 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php esc_html_e( 'Grid Layout:', 'gridbox' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php esc_html_e( 'Grid Layout:', 'pocono' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id('layout'); ?>" name="<?php echo $this->get_field_name('layout'); ?>">
-				<option <?php selected( $settings['layout'], 'two-columns-grid' ); ?> value="two-columns-grid" ><?php esc_html_e( 'Two Columns', 'gridbox' ); ?></option>
-				<option <?php selected( $settings['layout'], 'three-columns-grid' ); ?> value="three-columns-grid" ><?php esc_html_e( 'Three Columns', 'gridbox' ); ?></option>
-				<option <?php selected( $settings['layout'], 'four-columns-grid' ); ?> value="four-columns-grid" ><?php esc_html_e( 'Four Columns', 'gridbox' ); ?></option>
+				<option <?php selected( $settings['layout'], 'two-columns-grid' ); ?> value="two-columns-grid" ><?php esc_html_e( 'Two Columns', 'pocono' ); ?></option>
+				<option <?php selected( $settings['layout'], 'three-columns-grid' ); ?> value="three-columns-grid" ><?php esc_html_e( 'Three Columns', 'pocono' ); ?></option>
+				<option <?php selected( $settings['layout'], 'four-columns-grid' ); ?> value="four-columns-grid" ><?php esc_html_e( 'Four Columns', 'pocono' ); ?></option>
 			</select>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('number'); ?>"><?php esc_html_e( 'Number of posts:', 'gridbox' ); ?>
+			<label for="<?php echo $this->get_field_id('number'); ?>"><?php esc_html_e( 'Number of posts:', 'pocono' ); ?>
 				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $settings['number']; ?>" size="3" />
 			</label>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('excerpt_length'); ?>"><?php esc_html_e( 'Excerpt Length:', 'gridbox' ); ?>
+			<label for="<?php echo $this->get_field_id('excerpt_length'); ?>"><?php esc_html_e( 'Excerpt Length:', 'pocono' ); ?>
 				<input id="<?php echo $this->get_field_id('excerpt_length'); ?>" name="<?php echo $this->get_field_name('excerpt_length'); ?>" type="text" value="<?php echo $settings['excerpt_length']; ?>" size="6" />
 			</label>
 		</p>
@@ -358,21 +358,21 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
-				<?php esc_html_e( 'Display post date', 'gridbox' ); ?>
+				<?php esc_html_e( 'Display post date', 'pocono' ); ?>
 			</label>
 		</p>
 		
 		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
-				<?php esc_html_e( 'Display post author', 'gridbox' ); ?>
+				<?php esc_html_e( 'Display post author', 'pocono' ); ?>
 			</label>
 		</p>
 		
 		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
-				<?php esc_html_e( 'Display post categories', 'gridbox' ); ?>
+				<?php esc_html_e( 'Display post categories', 'pocono' ); ?>
 			</label>
 		</p>
 		
@@ -386,17 +386,17 @@ class Gridbox_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 */
 	public function delete_widget_cache() {
 		
-		wp_cache_delete( 'widget_gridbox_magazine_posts_grid', 'widget' );
+		wp_cache_delete( 'widget_pocono_magazine_posts_grid', 'widget' );
 		
 	}
 	
 }
 
 // Register Widget
-add_action( 'widgets_init', 'gridbox_register_magazine_posts_grid_widget' );
+add_action( 'widgets_init', 'pocono_register_magazine_posts_grid_widget' );
 
-function gridbox_register_magazine_posts_grid_widget() {
+function pocono_register_magazine_posts_grid_widget() {
 
-	register_widget( 'Gridbox_Magazine_Posts_Grid_Widget' );
+	register_widget( 'Pocono_Magazine_Posts_Grid_Widget' );
 	
 }

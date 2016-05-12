@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Gridbox
+ * @package Pocono
  */
  
 get_header(); ?>
@@ -31,7 +31,7 @@ get_header(); ?>
 				
 				</div>
 			
-				<?php gridbox_pagination(); ?>
+				<?php pocono_pagination(); ?>
 
 			<?php endif; ?>
 			

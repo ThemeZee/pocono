@@ -2,17 +2,17 @@
 /**
  * Add Support for Theme Addons
  *
- * @package Gridbox
+ * @package Pocono
  */
 
 
 // Register support for ThemeZee Addons
-add_action( 'after_setup_theme', 'gridbox_theme_addons_setup' );
+add_action( 'after_setup_theme', 'pocono_theme_addons_setup' );
 
-function gridbox_theme_addons_setup() {
+function pocono_theme_addons_setup() {
 
-	// Add Theme Support for Gridbox Pro Plugin
-	add_theme_support( 'gridbox-pro' );
+	// Add Theme Support for Pocono Pro Plugin
+	add_theme_support( 'pocono-pro' );
 	
 	// Add Theme Support for ThemeZee Plugins
 	add_theme_support( 'themezee-widget-bundle' );
@@ -24,16 +24,16 @@ function gridbox_theme_addons_setup() {
 		'type' 		=> 'click',
 		'container' => 'main',
 		'wrapper' => 'post-wrapper',
-		'render'    => 'gridbox_infinite_scroll_render',
+		'render'    => 'pocono_infinite_scroll_render',
 	) );
 	
 }
 
 
 // Load addon stylesheets and scripts
-add_action( 'wp_enqueue_scripts', 'gridbox_theme_addons_scripts' );
+add_action( 'wp_enqueue_scripts', 'pocono_theme_addons_scripts' );
 
-function gridbox_theme_addons_scripts() {
+function pocono_theme_addons_scripts() {
 
 	// Load widget bundle styles if widgets are active
 	if ( is_active_widget('TZWB_Facebook_Likebox_Widget', false, 'tzwb-facebook-likebox')
@@ -60,9 +60,9 @@ function gridbox_theme_addons_scripts() {
 
 
 // Add custom Image Sizes for addons
-add_action( 'after_setup_theme', 'gridbox_theme_addons_image_sizes' );
+add_action( 'after_setup_theme', 'pocono_theme_addons_image_sizes' );
 
-function gridbox_theme_addons_image_sizes() {
+function pocono_theme_addons_image_sizes() {
 
 	// Add Widget Bundle Thumbnail
 	add_image_size( 'tzwb-thumbnail', 90, 65, true );
@@ -76,11 +76,11 @@ function gridbox_theme_addons_image_sizes() {
 /**
  * Custom render function for Infinite Scroll.
  */
-function gridbox_infinite_scroll_render() {
+function pocono_infinite_scroll_render() {
 
 	while ( have_posts() ) {
 		the_post();
 		get_template_part( 'template-parts/content' );
 	}
 	
-} // gridbox_infinite_scroll_render()
+} // pocono_infinite_scroll_render()

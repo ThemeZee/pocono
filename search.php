@@ -4,14 +4,14 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Gridbox
+ * @package Pocono
  */
  
 get_header(); ?>
 	
 	<header class="page-header clearfix">
 		
-		<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'gridbox' ), '<span>' . get_search_query() . '</span>' ); ?></h1>	
+		<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'pocono' ), '<span>' . get_search_query() . '</span>' ); ?></h1>	
 		<p><?php get_search_form(); ?></p>
 		
 	</header>
@@ -39,7 +39,7 @@ get_header(); ?>
 			
 				</div>
 				
-				<?php gridbox_pagination(); ?>
+				<?php pocono_pagination(); ?>
 			
 			<?php else : ?>
 
@@ -47,13 +47,13 @@ get_header(); ?>
 					
 					<header class="entry-header">
 			
-						<h2 class="page-title"><?php esc_html_e( 'No matches', 'gridbox' ); ?></h2>
+						<h2 class="page-title"><?php esc_html_e( 'No matches', 'pocono' ); ?></h2>
 						
 					</header><!-- .entry-header -->
 					
 					<div class="entry-content">
 						
-						<p><?php esc_html_e( 'Please try again, or use the navigation menus to find what you search for.', 'gridbox' ); ?></p>
+						<p><?php esc_html_e( 'Please try again, or use the navigation menus to find what you search for.', 'pocono' ); ?></p>
 					
 					</div>
 					
