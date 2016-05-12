@@ -204,19 +204,19 @@ td {
 }
 
 a {
-	color: #4477aa;
+	color: #ff5555;
 	text-decoration: none;
 }
 
 a:link,
 a:visited {
-	color: #4477aa;
+	color: #ff5555;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #111133;
+	color: #373737;
 }
 
 a:focus {

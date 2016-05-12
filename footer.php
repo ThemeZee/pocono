@@ -26,6 +26,8 @@
 		</footer><!-- #colophon -->
 		
 	</div>
+	
+	<?php get_sidebar(); ?>
 
 </div><!-- #page -->
 

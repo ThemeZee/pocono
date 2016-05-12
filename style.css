@@ -32,7 +32,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 8.0 - Layout Structure
 9.0 - Header
 10.0 - Navigation
-11.0 - Widgets
+11.0 - Sidebar
 12.0 - Posts and pages
 13.0 - Featured Posts
 14.0 - Comments
@@ -462,19 +462,19 @@ td {
 }
 
 a {
-	color: #4477aa;
+	color: #ff5555;
 	text-decoration: none;
 }
 
 a:link,
 a:visited {
-	color: #4477aa;
+	color: #ff5555;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #111133;
+	color: #373737;
 }
 
 a:focus {
@@ -498,7 +498,7 @@ input[type="submit"] {
 	font-size: 0.875rem;
 	font-weight: bold;
 	color: #fff;
-	background: #111133;
+	background: #ff5555;
 	border: none;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -521,7 +521,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	background: #4477aa;
+	background: #373737;
 }
 
 input[type="text"],
@@ -631,7 +631,7 @@ textarea {
 	max-width: 1280px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 2.5em;
+	padding: 0 1em;
 }
 
 .site-content {
@@ -639,31 +639,58 @@ textarea {
 	background: #fff;
 }
 
-.content-single {
-	float: left;
-	width: 70%;
-	padding-right: 4em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.sidebar {
-	float: right;
-	width: 30%;
-}
-
 /*--------------------------------------------------------------
 # 9.0 - Header
 --------------------------------------------------------------*/
 .site-header {
-	background: #111133;
+	background: #fff;
+	box-shadow: 0 0 3px #ccc;
+	margin: 0 0 3px;
 }
 
-.site-branding {
+.header-main {
+	position: relative;
+	text-align: center;
+}
+
+/* Sidebar Navigation Toggle */
+.sidebar-navigation-toggle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 1.2em;
+	background: none;
+}
+
+.sidebar-navigation-toggle:hover,
+.sidebar-navigation-toggle:focus,
+.sidebar-navigation-toggle:active {
+	cursor: pointer;
+	background: none;
+}
+
+.sidebar-navigation-toggle:after {
 	float: left;
+	display: inline-block;
+	font-size: 32px;
+	line-height: 1;
+	font-family: 'Genericons';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: inherit;
+	vertical-align: middle;
+	content: '\f419';
+	color: #373737;
+}
+
+.sidebar-navigation-toggle:hover:after {
+	color: #ff5555;
+}
+	
+/* Site Branding */
+.site-branding {
 	max-width: 100%;
-	margin: 1em 0;
+	margin: 0.5em 0;
 	padding: 0;
 }
 
@@ -677,10 +704,10 @@ textarea {
 
 .site-title {
 	display: inline-block;
-	margin: 0.25rem 0;
+	margin: 0;
 	padding: 0;
-	color: #fff;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	color: #373737;
+	font-family: 'Montserrat', Georgia, Times New Roman;
 	font-size: 28px;
 	font-size: 1.75rem;
 	font-weight: bold;
@@ -689,16 +716,16 @@ textarea {
 
 .site-title a:link, 
 .site-title a:visited {
-	color: #fff;
+	color: #373737;
 }
 
 .site-title a:hover,
 .site-title a:active {
-	color: rgba(255,255,255,0.75);
+	color: #ff5555;
 }
 
 .site-branding .custom-logo {
-	margin: 0 1em 0 0;
+	margin: 0;
 	padding: 0;
 	border: none;
 	vertical-align: top;
@@ -791,7 +818,7 @@ textarea {
 	padding: 0;
 	list-style-type: none;
 	list-style-position: outside;
-	background: #111133;
+	background: #373737;
 	border-top: 1px solid rgba(255,255,255,0.2);
 }
 
@@ -943,9 +970,63 @@ textarea {
 .social-icons-menu li a[href*="feedburner.google.com"]:before,
 .social-icons-menu li a[href*="feedburner.com"]:before { content: '\f413'; }
 
+/* Header Social Icons */
+.header-social-icons {
+	position: absolute;
+	top: 0.5em;
+	right: 0;
+}
+
+.header-social-icons .social-icons-menu li a:before {
+	color: #373737;
+	display: inline-block;
+	font-size: 28px;
+}
+
+.header-social-icons .social-icons-menu li a:hover:before {
+	color: #ff5555;
+}
+
 /*--------------------------------------------------------------
-# 11.0 - Widgets
+# 11.0 - Sidebar
 --------------------------------------------------------------*/
+
+/* Sliding Sidebar */
+.site {
+	position: relative;
+}
+
+.sidebar {
+	float: none;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: -350px;
+	padding: 1.5em;
+	background: #fff;
+	width: 350px;
+	max-width: 80%;
+	height: 100%;
+	z-index: 950;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+.sidebar-overlay {
+	display: none;
+	position: fixed;
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+	background: rgba(0,0,0,0.65);
+	text-align: center;
+	z-index: 100;
+}
+
+/* Widget Styling */
 .widget {
 	margin: 0 0 2.5em 0;
 	color: #333;
@@ -955,19 +1036,19 @@ textarea {
 
 .widget-header {
 	margin: 0 0 1.25em 0;
-	border-left: 6px solid #111133;
+	border-left: 6px solid #373737;
 }
 
 .widget-title {
 	display: inline-block;
 	margin: 0;
 	padding: 0 0 0 0.8em;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	font-family: 'Montserrat', Georgia, Times New Roman;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: #111133;
+	color: #373737;
 }
 
 .widget ul {
@@ -984,7 +1065,7 @@ textarea {
 
 .widget-title a:link, 
 .widget-title a:visited  {
-	color: #111133;
+	color: #373737;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -994,7 +1075,7 @@ textarea {
 
 .widget-title a:hover, 
 .widget-title a:active  {
-	color: #4477aa;
+	color: #ff5555;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -1163,28 +1244,29 @@ textarea {
 .type-post, 
 .type-page, 
 .type-attachment  {
-	margin: 0 0 2.5em 0;
+	margin: 0 0 2em 0;
 	max-width: 100%;
+	position: relative;
 }
 
 .archive-title,
 .page-title,
 .entry-title {
-	display: inline;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
-	font-size: 40px;
-	font-size: 2.5rem;
+	display: inline-block;
+	font-family: 'Montserrat', Georgia, Times New Roman;
+	font-size: 32px;
+	font-size: 2rem;
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
-	color: #111133;
+	color: #373737;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
 
 .entry-title a:link, 
 .entry-title a:visited {
-	color: #111133;
+	color: #373737;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
@@ -1195,7 +1277,14 @@ textarea {
 
 .entry-title a:hover, 
 .entry-title a:active {
-	color: #4477aa;
+	color: #ff5555;
+}
+
+.has-post-thumbnail .post-content {
+	margin: -90px 1em 0;
+	padding: 1em 2em 0;
+	position: relative;
+	background: #fff;
 }
 
 .entry-content {
@@ -1204,7 +1293,15 @@ textarea {
 }
 
 .wp-post-image {
+	position: relative;
 	margin: 0 0 0.5em;
+}
+
+/* Single Post */
+.single-post .type-post,
+.page .type-page {
+	max-width: 800px;
+	margin: 0 auto;
 }
 
 /* Read more Link */
@@ -1218,7 +1315,7 @@ textarea {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #fff;
-	background: #111133;
+	background: #373737;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -1233,7 +1330,7 @@ textarea {
 
 .more-link:hover, 
 .more-link:active {
-	background: #4477aa;
+	background: #ff5555;
 }
 
 /* Page Links | wp_link_pages() */
@@ -1247,29 +1344,79 @@ textarea {
 ## 12.2 - Entry Meta
 --------------------------------------------------------------*/
 .entry-meta {
-	margin: 0.25em 0 0;
-	color: #888;
-	font-size: 16px;
-	font-size: 1rem;
+	margin: 0.5em 0;
+	color: #aaa;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .entry-meta a:link, 
 .entry-meta a:visited {
-	color: #888;
+	color: #aaa;
 }
 
 .entry-meta a:hover, 
 .entry-meta a:active {
-	color: #444;
+	color: #666;
 }
 
-.entry-meta span:after {
-	content: "\002F";
-	margin-left: 0.2em;
+.entry-meta .meta-date, 
+.entry-meta .meta-author {
+	margin-right: 1.5em;
 }
 
-.entry-meta span:last-child:after {
-	display: none;
+.entry-meta span:before {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 18px 'Genericons';
+	vertical-align: middle;
+	color: #aaa;
+	margin-right: 0.2em;
+}
+
+.entry-meta .meta-date:before{
+	content: '\f303';
+}
+
+.entry-meta .meta-author:before{
+	content: '\f411';
+}
+
+.entry-meta .meta-comments:before{
+	content: '\f108';
+}
+
+/* Entry Categories */
+.has-post-thumbnail .entry-categories {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+}
+
+.entry-categories .meta-category a {
+	float: left;
+	display: inline-block;
+	margin: 0 2px 2px 0;
+	padding: 0.2em 0.6em;
+	text-decoration: none;
+	color: #fff;
+	background: #ff5555;
+	font-size: 14px;
+	font-size: 0.875rem;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	border-radius: 0.3em;
+}
+
+.entry-categories .meta-category a:link, 
+.entry-categories .meta-category a:visited {
+	color: #fff;
+}
+
+.entry-categories .meta-category a:hover, 
+.entry-categories .meta-category a:active {
+	color: #ff5555;
+	background: #fff;
 }
 
 /* Entry Tags & Tagcloud Widget */
@@ -1301,11 +1448,14 @@ textarea {
 	float: left;
 	display: inline-block;
 	margin: 0 2px 2px 0;
-	padding: 0.2em 0.5em 0.3em;
+	padding: 0.2em 0.6em;
 	text-decoration: none;
-	background: #4477aa;
+	background: #ff5555;
 	font-size: 14px !important;
 	font-size: 0.875rem !important;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	border-radius: 0.3em;
 }
 
 .widget_tag_cloud .tagcloud a:link, 
@@ -1325,7 +1475,7 @@ textarea {
 .entry-tags .meta-tags a:hover, 
 .entry-tags .meta-tags a:active {
 	color: #fff;
-	background: #111133;
+	background: #373737;
 }
 
 /* Post Navigation */
@@ -1363,7 +1513,7 @@ textarea {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #fff;
-	background: #111133;
+	background: #373737;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -1378,7 +1528,7 @@ textarea {
 
 .post-navigation .nav-links a:hover, 
 .post-navigation .nav-links a:active {
-	background: #4477aa;
+	background: #ff5555;
 }
 
 /*--------------------------------------------------------------
@@ -1388,12 +1538,17 @@ textarea {
 /* Archive Title */
 .page-header {
 	margin-bottom: 2.5em;
+	text-align: center;
+}
+
+.page-header .archive-title {
+	color: #ff5555;
 }
 
 .page-header .blog-description,
 .page-header .archive-description {
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 }
 
 .page-header .blog-description,
@@ -1402,6 +1557,11 @@ textarea {
 }
 
 /* Archive Posts Styling */
+.post-wrapper .has-post-thumbnail  .post-content {
+	margin: -60px 0.75em 0;
+	padding: 0.5em 1em 0;
+}
+
 .post-wrapper .type-post .entry-content {
 	font-size: 16px;
 	font-size: 1rem;
@@ -1411,23 +1571,27 @@ textarea {
 	margin: 0.5em 0 1em;
 }
 
+.post-wrapper .type-post .entry-categories .meta-category a {
+	font-size: 13px;
+	font-size: 0.8125rem;
+}
+
 .post-wrapper .type-post .entry-meta {
 	font-size: 14px;
 	font-size: 0.875rem;
-	margin-bottom: 0.5em;
 }
 
 /* Archive Posts Columns */
 .post-wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	margin-right: -2.5em;
+	margin-right: -2em;
 }
 
 .post-wrapper .post-column {
 	float: left;
 	display: flex;
-	padding-right: 2.5em;
+	padding-right: 2em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1439,8 +1603,8 @@ textarea {
 }
 
 .post-layout-two-columns .post-wrapper .type-post .entry-title {
-	font-size: 32px;
-	font-size: 2rem;
+	font-size: 24px;
+	font-size: 1.5rem;
 }
 
 /* Three Column Layout */
@@ -1449,8 +1613,8 @@ textarea {
 }
 
 .post-layout-three-columns .post-wrapper .type-post .entry-title {
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 /* Four Column Layout */
@@ -1459,8 +1623,8 @@ textarea {
 }
 
 .post-layout-four-columns .post-wrapper .type-post .entry-title {
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 }
 
 /* Theme Pagination */
@@ -1476,7 +1640,7 @@ textarea {
     text-align: center;
 	text-decoration: none;
 	color: #fff;
-	background: #111133;
+	background: #373737;
 }
 
 .post-pagination a:link, 
@@ -1491,7 +1655,7 @@ textarea {
 
 .post-pagination a:hover,
 .post-pagination .current {
-	background: #4477aa;
+	background: #ff5555;
 }
 
 /* Infinite Scroll Pagination */
@@ -1519,7 +1683,7 @@ textarea {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #fff;
-	background: #111133;
+	background: #373737;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -1528,7 +1692,7 @@ textarea {
 }
 
 .infinite-scroll #infinite-handle span:hover {
-	background-color: #4477aa;
+	background-color: #ff5555;
 }
 
 /* Breadcrumbs */
@@ -1681,7 +1845,7 @@ textarea {
 .comments-header,
 .comment-reply-title {
 	margin: 0 0 1.25em 0;
-	border-left: 6px solid #111133;
+	border-left: 6px solid #373737;
 }
 
 .comments-header .comments-title,
@@ -1689,12 +1853,12 @@ textarea {
 	display: inline-block;
 	margin: 0;
 	padding: 0 0 0 0.8em;
-	font-family: 'Roboto Slab', Georgia, Times New Roman;
+	font-family: 'Montserrat', Georgia, Times New Roman;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: #111133;
+	color: #373737;
 }
 
 /* Comment List */
@@ -1789,7 +1953,7 @@ textarea {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #fff;
-	background: #111133;
+	background: #373737;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -1804,7 +1968,7 @@ textarea {
 
 .reply .comment-reply-link:hover, 
 .reply .comment-reply-link:active {
-	background: #4477aa;
+	background: #ff5555;
 }
 
 /* Comment Form */
@@ -1838,7 +2002,7 @@ textarea {
 # 15.0 - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
-	background: #111133;
+	background: #373737;
 }
 
 .site-footer {

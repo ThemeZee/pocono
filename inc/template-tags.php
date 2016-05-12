@@ -116,7 +116,7 @@ endif;
 
 if ( ! function_exists( 'pocono_entry_meta' ) ):	
 /**
- * Displays the date, author and categories of a post
+ * Displays the date, author and comments of a post
  */
 function pocono_entry_meta() {
 
@@ -139,14 +139,13 @@ function pocono_entry_meta() {
 	
 	}
 	
-	// Display categories unless user has deactivated it via settings
-	if ( true == $theme_options['meta_category'] ) {
+	// Display comments unless user has deactivated it via settings
+	if ( true == $theme_options['meta_comments'] ) {
 	
-		$postmeta .= pocono_meta_category();
+		$postmeta .= pocono_meta_comments();
 	
 	}
 		
-	// Display Post Meta
 	if( $postmeta ) {
 		
 		echo '<div class="entry-meta">' . $postmeta . '</div>';
@@ -194,15 +193,47 @@ function pocono_meta_author() {
 endif;
 
 
-if ( ! function_exists( 'pocono_meta_category' ) ):
+if ( ! function_exists( 'pocono_meta_comments' ) ):
+/**
+ * Displays the post comments
+ */
+function pocono_meta_comments() {  
+	
+	ob_start();
+	comments_popup_link( '0', '1', '%' );
+	$comments_string = ob_get_contents();
+	ob_end_clean();
+	
+	return '<span class="meta-comments"> ' . $comments_string . '</span>';
+
+}  // pocono_meta_comments()
+endif;
+
+
+if ( ! function_exists( 'pocono_entry_categories' ) ):
 /**
  * Displays the category of posts
  */	
-function pocono_meta_category() { 
-
-	return '<span class="meta-category"> ' . get_the_category_list(', ') . '</span>';
+function pocono_entry_categories() { 
 	
-} // pocono_meta_category()
+	// Get Theme Options from Database
+	$theme_options = pocono_theme_options();
+	
+	// Display categories unless user has deactivated it via settings
+	if ( true == $theme_options['meta_category'] ) : ?>
+	
+		<div class="entry-categories clearfix">
+			
+			<span class="meta-category">
+				<?php echo get_the_category_list(' '); ?>
+			</span>
+			
+		</div><!-- .entry-categories -->
+		
+	<?php
+	endif;
+	
+} // pocono_entry_categories()
 endif;
 
 

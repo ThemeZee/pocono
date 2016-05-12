@@ -88,7 +88,7 @@ F) Licenses of bundled resources
 	License: Distributed under the terms of the Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 	Copyright: 2015 Christian Robertson
 	
-	5. Roboto Slab Font - https://www.google.com/fonts/specimen/Roboto+Slab
+	5. Montserrat Font - https://www.google.com/fonts/specimen/Roboto+Slab
 	License: Distributed under the terms of the Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 	Copyright: 2015 Christian Robertson
 	

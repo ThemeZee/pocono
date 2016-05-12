@@ -30,7 +30,9 @@
 		<header id="masthead" class="site-header clearfix" role="banner">
 			
 			<div class="header-main container clearfix">
-						
+				
+				<button id="sidebar-toggle" class="sidebar-navigation-toggle"></button>
+				
 				<div id="logo" class="site-branding clearfix">
 				
 					<?php pocono_site_logo(); ?>
@@ -38,19 +40,24 @@
 				
 				</div><!-- .site-branding -->
 				
-				<nav id="main-navigation" class="primary-navigation navigation clearfix" role="navigation">
+				<div id="header-social-icons" class="header-social-icons social-icons-navigation clearfix">
 					<?php 
-						// Display Main Navigation
 						wp_nav_menu( array(
-							'theme_location' => 'primary', 
-							'container' => false, 
-							'menu_class' => 'main-navigation-menu', 
-							'echo' => true, 
-							'fallback_cb' => 'pocono_default_menu')
-						);
+							'theme_location' => 'social',
+							'container' => false,
+							'menu_class' => 'social-icons-menu',
+							'echo' => true,
+							'fallback_cb' => '',
+							'link_before' => '<span class="screen-reader-text">',
+							'link_after' => '</span>',
+							'depth' => 1
+							)
+						); 
 					?>
-				</nav><!-- #main-navigation -->
-			
+				</div>
+				
+
+
 			</div><!-- .header-main -->
 		
 		</header><!-- #masthead -->

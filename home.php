@@ -31,7 +31,7 @@ if ( isset( $theme_options['blog_title'] ) and $theme_options['blog_title'] <> '
 
 <?php endif; ?>
 
-	<section id="primary" class="content-archive content-area">
+	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			
 			<?php if ( have_posts() ) : ?>

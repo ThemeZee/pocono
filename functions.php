@@ -38,8 +38,11 @@ function pocono_setup() {
 	// Set detfault Post Thumbnail size
 	set_post_thumbnail_size( 800, 500, true );
 
-	// Register Navigation Menu
-	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'pocono' ) );
+	// Register Navigation Menus
+	register_nav_menus( array(
+		'primary' => esc_html__( 'Sidebar Navigation', 'pocono' ),
+		'social' => esc_html__( 'Social Icons', 'pocono' ),
+	) );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 	add_theme_support( 'html5', array(
@@ -139,9 +142,12 @@ function pocono_scripts() {
 	// Register and Enqueue HTML5shiv to support HTML5 elements in older IE versions
 	wp_enqueue_script( 'pocono-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3' );
 	wp_script_add_data( 'pocono-html5shiv', 'conditional', 'lt IE 9' );
-
+	
+	// Register and enqueue sidebar.js
+	wp_enqueue_script( 'pocono-jquery-sidebar', get_template_directory_uri() . '/js/sidebar.js', array( 'jquery' ), '20160512' );
+	
 	// Register and enqueue navigation.js
-	wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160421' );
+	wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160512' );
 	
 	// Register and Enqueue Google Fonts
 	wp_enqueue_style( 'pocono-default-fonts', pocono_google_fonts_url(), array(), null );
@@ -161,7 +167,7 @@ add_action( 'wp_enqueue_scripts', 'pocono_scripts' );
 function pocono_google_fonts_url() {
     
 	// Set default Fonts
-	$font_families = array( 'Roboto:400,400italic,700,700italic', 'Roboto Slab:400,400italic,700,700italic' );
+	$font_families = array( 'Roboto:400,400italic,700,700italic', 'Montserrat:400,400italic,700,700italic' );
 
 	// Build Fonts URL
 	$query_args = array(
