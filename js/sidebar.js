@@ -38,16 +38,17 @@
 			
 		}
 		
-		/* Only do something if sidebar exists */
-		if ( $( '#secondary' ).length > 0 ) {
 		
-			/* Add Overlay */
-			$('body').append('<div id=\"sidebar-overlay\" class=\"sidebar-overlay\"></div>');
+		/* Add Overlay */
+		$('body').append('<div id=\"sidebar-overlay\" class=\"sidebar-overlay\"></div>');
 			
-			/* Setup Selectors */
-			var button = $('#sidebar-toggle'),
-				sidebar = $('#secondary'),
-				overlay = $('#sidebar-overlay');
+		/* Setup Selectors */
+		var button = $('#sidebar-toggle'),
+			sidebar = $('#secondary'),
+			overlay = $('#sidebar-overlay');
+		
+		/* Only do something if sidebar exists */
+		if ( sidebar.length > 0 ) {
 			
 			/* Add sidebar toggle effect */
 			button.on('click', function(){
@@ -68,6 +69,23 @@
 			});
 					
 		}
+				
+		/* Add extra styling for default widgets */
+		sidebar.find('.widget_archive ul li, .widget_categories ul li.cat-item').each( function () {
+			
+			// Get Link and Count
+			var list_item = $(this).children('a');
+			var count = $(this).contents().eq(1).text();
+			
+			// Remove Count
+			$(this).html(list_item);
+			
+			// Add new Count with span
+			count = count.trim().replace(/[()]/g, '');
+			$(this).append("<span class=\"item-count\">" + count + "</span>");
+
+		} );
+		
 
 	} );
 

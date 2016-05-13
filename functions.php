@@ -146,8 +146,8 @@ function pocono_scripts() {
 	// Register and enqueue sidebar.js
 	wp_enqueue_script( 'pocono-jquery-sidebar', get_template_directory_uri() . '/js/sidebar.js', array( 'jquery' ), '20160512' );
 	
-	// Register and enqueue navigation.js
-	wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160512' );
+	// Register and enqueue sticky-header.js
+	wp_enqueue_script( 'pocono-jquery-sticky-header', get_template_directory_uri() . '/js/sticky-header.js', array( 'jquery' ), '20160512' );
 	
 	// Register and Enqueue Google Fonts
 	wp_enqueue_style( 'pocono-default-fonts', pocono_google_fonts_url(), array(), null );

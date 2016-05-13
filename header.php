@@ -64,6 +64,6 @@
 		
 		<?php pocono_header_image(); ?>
 		
-		<?php pocono_breadcrumbs(); ?>
-		
 		<div id="content" class="site-content container clearfix">
+		
+			<?php pocono_breadcrumbs(); ?>
