@@ -31,7 +31,7 @@
 			
 			<div class="header-main container clearfix">
 				
-				<button id="sidebar-toggle" class="sidebar-navigation-toggle"></button>
+				<button id="main-navigation-toggle" class="main-navigation-toggle"></button>
 				
 				<div id="logo" class="site-branding clearfix">
 				
@@ -65,5 +65,3 @@
 		<?php pocono_header_image(); ?>
 		
 		<div id="content" class="site-content container clearfix">
-		
-			<?php pocono_breadcrumbs(); ?>

@@ -23,23 +23,46 @@ function pocono_customize_register_general_settings( $wp_customize ) {
 		)
 	);
 	
-	// Add Settings and Controls for Layout
-	$wp_customize->add_setting( 'pocono_theme_options[layout]', array(
-        'default'           => 'right-sidebar',
+	// Add Post Layout Settings for archive posts
+	$wp_customize->add_setting( 'pocono_theme_options[archive_layout]', array(
+        'default'           => 'three-columns',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'pocono_sanitize_select'
 		)
 	);
-    $wp_customize->add_control( 'pocono_theme_options[layout]', array(
-        'label'    => esc_html__( 'Theme Layout', 'pocono' ),
+    $wp_customize->add_control( 'pocono_theme_options[archive_layout]', array(
+        'label'    => esc_html__( 'Archives Layout', 'pocono' ),
         'section'  => 'pocono_section_general',
-        'settings' => 'pocono_theme_options[layout]',
-        'type'     => 'radio',
+        'settings' => 'pocono_theme_options[archive_layout]',
+        'type'     => 'select',
 		'priority' => 1,
         'choices'  => array(
-            'left-sidebar' => esc_html__( 'Left Sidebar', 'pocono' ),
-            'right-sidebar' => esc_html__( 'Right Sidebar', 'pocono' )
+            'two-columns' => esc_html__( 'Two Columns', 'pocono' ),
+			'three-columns' => esc_html__( 'Three Columns', 'pocono' ),
+			'four-columns' => esc_html__( 'Four Columns', 'pocono' )
+			)
+		)
+	);
+	
+	// Add Post Layout Settings for archive posts
+	$wp_customize->add_setting( 'pocono_theme_options[single_layout]', array(
+        'default'           => 'no-sidebar',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'pocono_sanitize_select'
+		)
+	);
+    $wp_customize->add_control( 'pocono_theme_options[single_layout]', array(
+        'label'    => esc_html__( 'Single Posts Layout', 'pocono' ),
+        'section'  => 'pocono_section_general',
+        'settings' => 'pocono_theme_options[single_layout]',
+        'type'     => 'select',
+		'priority' => 2,
+        'choices'  => array(
+            'no-sidebar' => esc_html__( 'No Sidebar', 'pocono' ),
+			'left-sidebar' => esc_html__( 'Left Sidebar', 'pocono' ),
+			'right-sidebar' => esc_html__( 'Right Sidebar', 'pocono' )
 			)
 		)
 	);
@@ -57,7 +80,7 @@ function pocono_customize_register_general_settings( $wp_customize ) {
             'label' => esc_html__( 'Sticky Header', 'pocono' ),
             'section' => 'pocono_section_general',
             'settings' => 'pocono_theme_options[sticky_header_title]',
-            'priority' => 2
+            'priority' => 3
             )
         )
     );
@@ -73,7 +96,7 @@ function pocono_customize_register_general_settings( $wp_customize ) {
         'section'  => 'pocono_section_general',
         'settings' => 'pocono_theme_options[sticky_header]',
         'type'     => 'checkbox',
-		'priority' => 3
+		'priority' => 4
 		)
 	);
 	
@@ -90,7 +113,7 @@ function pocono_customize_register_general_settings( $wp_customize ) {
         'section'  => 'pocono_section_general',
         'settings' => 'pocono_theme_options[blog_title]',
         'type'     => 'text',
-		'priority' => 4
+		'priority' => 5
 		)
 	);
 	
@@ -107,7 +130,7 @@ function pocono_customize_register_general_settings( $wp_customize ) {
         'section'  => 'pocono_section_general',
         'settings' => 'pocono_theme_options[blog_description]',
         'type'     => 'textarea',
-		'priority' => 5
+		'priority' => 6
 		)
 	);
 

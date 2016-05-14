@@ -16,9 +16,11 @@ get_header(); ?>
 
 	</header>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
 			
+			<?php pocono_breadcrumbs(); ?>
+
 			<?php if ( have_posts() ) : ?>
 			
 				<div id="archive-posts" class="post-wrapper clearfix">

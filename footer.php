@@ -27,7 +27,7 @@
 		
 	</div>
 	
-	<?php get_sidebar(); ?>
+	<?php get_sidebar( 'menu' ); ?>
 
 </div><!-- #page -->
 

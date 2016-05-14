@@ -29,24 +29,26 @@ function pocono_body_classes( $classes ) {
 	
 	// Get Theme Options from Database
 	$theme_options = pocono_theme_options();
-		
-	// Switch Sidebar Layout to left
-	if ( 'left-sidebar' == $theme_options['layout'] ) {
-		$classes[] = 'sidebar-left';
-	}
-	
+
 	// Add Sticky Header class
 	if ( true == $theme_options['sticky_header'] ) {
 		$classes[] = 'sticky-header';
 	}
+
+	// Add Single Layout classes
+	if ( 'left-sidebar' == $theme_options['single_layout'] ) {
+		$classes[] = 'sidebar-left';
+	} elseif ( 'right-sidebar' == $theme_options['single_layout'] ) {
+		$classes[] = 'sidebar-right';
+	}
 	
-	// Add Post Columns classes
-	if ( 'two-columns' == $theme_options['post_layout'] ) {
+	// Add Archive Layout classes
+	if ( 'two-columns' == $theme_options['archive_layout'] ) {
 		$classes[] = 'post-layout-two-columns post-layout-columns';
-	} elseif ( 'three-columns' == $theme_options['post_layout'] ) {
-		$classes[] = 'post-layout-three-columns post-layout-columns no-sidebar';
-	} elseif ( 'four-columns' == $theme_options['post_layout'] ) {
-		$classes[] = 'post-layout-four-columns post-layout-columns no-sidebar';
+	} elseif ( 'three-columns' == $theme_options['archive_layout'] ) {
+		$classes[] = 'post-layout-three-columns post-layout-columns';
+	} elseif ( 'four-columns' == $theme_options['archive_layout'] ) {
+		$classes[] = 'post-layout-four-columns post-layout-columns';
 	}
 
 	return $classes;

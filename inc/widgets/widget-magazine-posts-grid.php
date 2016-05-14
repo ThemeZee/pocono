@@ -47,7 +47,7 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 			'excerpt_length'	=> 0,
 			'meta_date'			=> true,
 			'meta_author'		=> true,
-			'meta_category'		=> true,
+			'meta_comments'		=> true,
 		);
 		
 		return $defaults;
@@ -158,25 +158,31 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 							
 							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
 							
-							<header class="entry-header">
-					
-								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+							<?php $this->entry_categories( $settings ); ?>
 							
-								<?php $this->entry_meta( $settings ); ?>
-						
-							</header><!-- .entry-header -->
+							<div class="post-content clearfix">
+							
+								<header class="entry-header">
 
-							<?php if( $settings['excerpt_length'] > 0 ) : ?>
+									<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 								
-								<div class="entry-content entry-excerpt clearfix">
+									<?php $this->entry_meta( $settings ); ?>
+							
+								</header><!-- .entry-header -->
+
+								<?php if( $settings['excerpt_length'] > 0 ) : ?>
 									
-									<?php the_excerpt(); ?>
+									<div class="entry-content entry-excerpt clearfix">
+										
+										<?php the_excerpt(); ?>
+										
+										<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'pocono' ); ?></a>
 									
-									<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'pocono' ); ?></a>
+									</div><!-- .entry-content -->
+									
+								<?php endif; ?>
 								
-								</div><!-- .entry-content -->
-								
-							<?php endif; ?>
+							</div>
 
 						</article>
 						
@@ -197,7 +203,16 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 	} // render()
 	
+	
+	/**
+	 * Displays Entry Categories
+	 */
+	function entry_categories( $settings ) { 
 
+
+	
+	} // entry_categories()
+	
 	/**
 	 * Displays Entry Meta of Posts
 	 */
@@ -217,9 +232,9 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 			
 		}
 		
-		if( true == $settings['meta_category'] ) {
+		if( true == $settings['meta_comments'] ) {
 		
-			$postmeta .= pocono_meta_category();
+			$postmeta .= pocono_meta_comments();
 			
 		}
 		
@@ -294,7 +309,7 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$instance['excerpt_length'] = (int)$new_instance['excerpt_length'];
 		$instance['meta_date'] = !empty($new_instance['meta_date']);
 		$instance['meta_author'] = !empty($new_instance['meta_author']);
-		$instance['meta_category'] = !empty($new_instance['meta_category']);
+		$instance['meta_comments'] = !empty($new_instance['meta_comments']);
 		
 		$this->delete_widget_cache();
 		
@@ -370,8 +385,8 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
+			<label for="<?php echo $this->get_field_id( 'meta_comments' ); ?>">
+				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_comments'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_comments' ); ?>" name="<?php echo $this->get_field_name( 'meta_comments' ); ?>" />
 				<?php esc_html_e( 'Display post categories', 'pocono' ); ?>
 			</label>
 		</p>

@@ -101,16 +101,36 @@ add_action( 'after_setup_theme', 'pocono_content_width', 0 );
  */
 function pocono_widgets_init() {
 	
+	// Get theme options from database
+	$theme_options = pocono_theme_options();
+
+	// Register Sidebar based on theme options
+	if( $theme_options['single_layout'] <> 'no-sidebar' ) {
+	
+		register_sidebar( array(
+			'name' => esc_html__( 'Sidebar', 'pocono' ),
+			'id' => 'sidebar',
+			'description' => esc_html__( 'Appears on single posts and pages.', 'pocono' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget' => '</aside>',
+			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+			'after_title' => '</h3></div>',
+		));
+		
+	}
+	
+	// Register widget area for navigation menu
 	register_sidebar( array(
-		'name' => esc_html__( 'Sidebar', 'pocono' ),
-		'id' => 'sidebar',
-		'description' => esc_html__( 'Appears on single posts and pages.', 'pocono' ),
+		'name' => esc_html__( 'Navigation Menu', 'pocono' ),
+		'id' => 'navigation-menu',
+		'description' => esc_html__( 'Appears on the slide-in navigation menu.', 'pocono' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
 		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
 		'after_title' => '</h3></div>',
 	));
 	
+	// Register widget area for magazine page template
 	register_sidebar( array(
 		'name' => esc_html__( 'Magazine Homepage', 'pocono' ),
 		'id' => 'magazine-homepage',
@@ -143,8 +163,8 @@ function pocono_scripts() {
 	wp_enqueue_script( 'pocono-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3' );
 	wp_script_add_data( 'pocono-html5shiv', 'conditional', 'lt IE 9' );
 	
-	// Register and enqueue sidebar.js
-	wp_enqueue_script( 'pocono-jquery-sidebar', get_template_directory_uri() . '/js/sidebar.js', array( 'jquery' ), '20160512' );
+	// Register and enqueue navigation.js
+	wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160512' );
 	
 	// Register and enqueue sticky-header.js
 	wp_enqueue_script( 'pocono-jquery-sticky-header', get_template_directory_uri() . '/js/sticky-header.js', array( 'jquery' ), '20160512' );

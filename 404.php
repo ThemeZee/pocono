@@ -7,8 +7,10 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-single content-area">
 		<main id="main" class="site-main" role="main">
+		
+			<?php pocono_breadcrumbs(); ?>
 
 			<div class="error-404 not-found type-page">
 			
@@ -40,4 +42,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
+	<?php get_sidebar(); ?>
+	
 <?php get_footer(); ?>

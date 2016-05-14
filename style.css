@@ -31,11 +31,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 7.0 - Clearings
 8.0 - Layout Structure
 9.0 - Header
-10.0 - Social Icons Menu
-11.0 - Sidebar
-	11.1 - General Widget Styling
-	11.2 - Default Widgets
-	11.3 - Magazine Posts Widgets
+10.0 - Navigation Menus
+11.0 - Widgets
 12.0 - Posts and pages
 13.0 - Featured Posts
 14.0 - Comments
@@ -536,7 +533,7 @@ textarea {
 	max-width: 100%;
 	padding: 0.3em 0.6em;
 	color: #666;
-	border: 2px solid #eee;
+	border: 2px solid #ddd;
 }
 
 input[type="text"]:focus,
@@ -631,10 +628,10 @@ textarea {
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1250px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 1em;
+	padding: 0 2em;
 }
 
 .site-content {
@@ -642,37 +639,45 @@ textarea {
 	background: #fff;
 }
 
+.content-single {
+	margin: 0 auto;
+	width: 68%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 /*--------------------------------------------------------------
 # 9.0 - Header
 --------------------------------------------------------------*/
 .site-header {
+	position: relative;
 	background: #fff;
-	box-shadow: 0 0 3px #ccc;
-	margin: 0 0 3px;
+	border-bottom: 1px solid #ddd;
 }
 
 .header-main {
-	position: relative;
 	text-align: center;
+	position: relative;
 }
 
 /* Sidebar Navigation Toggle */
-.sidebar-navigation-toggle {
+.main-navigation-toggle {
 	position: absolute;
 	top: 0;
-	left: 0;
-	padding: 1.25em;
+	left: 2.5em;
+	padding: 1.1em 0;
 	background: none;
 }
 
-.sidebar-navigation-toggle:hover,
-.sidebar-navigation-toggle:focus,
-.sidebar-navigation-toggle:active {
+.main-navigation-toggle:hover,
+.main-navigation-toggle:focus,
+.main-navigation-toggle:active {
 	cursor: pointer;
 	background: none;
 }
 
-.sidebar-navigation-toggle:after {
+.main-navigation-toggle:after {
 	float: left;
 	display: inline-block;
 	font-size: 30px;
@@ -686,7 +691,7 @@ textarea {
 	color: #373737;
 }
 
-.sidebar-navigation-toggle:hover:after {
+.main-navigation-toggle:hover:after {
 	color: #ff5555;
 }
 	
@@ -750,7 +755,51 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-## 10 - Social Icons Menu
+## 10 - Navigation Menu
+--------------------------------------------------------------*/
+
+/* Sliding Navigation Menu */
+.site {
+	position: relative;
+}
+
+.primary-navigation {
+	float: none;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin-left: -350px;
+	padding: 1.5em;
+	background: #fff;
+	width: 350px;
+	max-width: 80%;
+	height: 100%;
+	z-index: 950;
+	overflow-y: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+.content-overlay {
+	display: none;
+	position: fixed;
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+	background: rgba(0,0,0,0.65);
+	text-align: center;
+	z-index: 100;
+}
+
+.admin-bar .primary-navigation  {
+	top: 32px;
+}
+
+/*--------------------------------------------------------------
+## 10.1 - Social Icons Menu
 --------------------------------------------------------------*/
 .social-icons-menu {
 	margin: 0;
@@ -827,7 +876,7 @@ textarea {
 .header-social-icons {
 	position: absolute;
 	top: 0.5em;
-	right: 0;
+	right: 1.5em;
 }
 
 .header-social-icons .social-icons-menu li a:before {
@@ -841,54 +890,11 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# 11.0 - Sidebar
+# 11.0 - Widgets
 --------------------------------------------------------------*/
 
-/* Sliding Sidebar */
-.site {
-	position: relative;
-}
-
-.sidebar {
-	float: none;
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	margin-left: -350px;
-	padding: 1.5em;
-	background: #fff;
-	width: 350px;
-	max-width: 80%;
-	height: 100%;
-	z-index: 950;
-	overflow-y: auto;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;	
-}
-
-.sidebar-overlay {
-	display: none;
-	position: fixed;
-	top: 0; 
-	left: 0; 
-	width: 100%; 
-	height: 100%; 
-	background: rgba(0,0,0,0.65);
-	text-align: center;
-	z-index: 100;
-}
-
-.admin-bar .sidebar  {
-	top: 32px;
-}
-
-/*--------------------------------------------------------------
-## 11.1 - General Widget Styling
---------------------------------------------------------------*/
 .widget {
-	margin: 0 0 2em 0;
+	margin: 0 0 2.5em 0;
 	color: #333;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -923,7 +929,7 @@ textarea {
 
 .widget-title a:link, 
 .widget-title a:visited  {
-	color: #373737;
+	color: #ff5555;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -933,7 +939,7 @@ textarea {
 
 .widget-title a:hover, 
 .widget-title a:active  {
-	color: #ff5555;
+	color: #373737;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -1046,18 +1052,26 @@ textarea {
 .widget-magazine-posts .widget-header {
 	border: none;
 	margin-bottom: 1.5em;
+	text-align: center;
 }
 
 .widget-magazine-posts .widget-header .widget-title {
-	padding: 0;
-	font-size: 40px;
-	font-size: 2.5rem;
-	text-transform: none;
+	display: inline-block;
+	font-family: 'Montserrat', Georgia, Times New Roman;
+	font-size: 24px;
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding: 0.2em 0.6em;
+	margin: 0;
+	color: #ff5555;
+	border: 3px solid #ff5555;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .widget-magazine-posts .widget-header .category-description {
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 }
 
 .widget-magazine-posts .widget-header .category-description p {
@@ -1084,13 +1098,13 @@ textarea {
 .magazine-grid {
 	display: flex;
 	flex-wrap: wrap;
-	margin-right: -2.5em;
+	margin-right: -2em;
 }
 
 .magazine-grid .magazine-grid-post {
 	float: left;
 	display: flex;
-	padding-right: 2.5em;
+	padding-right: 2em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1136,7 +1150,7 @@ textarea {
 .type-post, 
 .type-page, 
 .type-attachment  {
-	margin: 0 0 2em 0;
+	margin: 0 0 2.5em 0;
 	max-width: 100%;
 	position: relative;
 }
@@ -1185,14 +1199,7 @@ textarea {
 
 .wp-post-image {
 	position: relative;
-	margin: 0 0 0.5em;
-}
-
-/* Single Post */
-.single-post .type-post,
-.page .type-page {
-	max-width: 800px;
-	margin: 0 auto 2em;
+	margin: 0;
 }
 
 /* Read more Link */
@@ -1206,7 +1213,7 @@ textarea {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #fff;
-	background: #373737;
+	background: #ff5555;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -1221,7 +1228,7 @@ textarea {
 
 .more-link:hover, 
 .more-link:active {
-	background: #ff5555;
+	background: #373737;
 }
 
 /* Page Links | wp_link_pages() */
@@ -1241,22 +1248,12 @@ textarea {
 	font-size: 0.875rem;
 }
 
-.entry-meta a:link, 
-.entry-meta a:visited {
-	color: #aaa;
-}
-
-.entry-meta a:hover, 
-.entry-meta a:active {
-	color: #666;
-}
-
 .entry-meta .meta-date, 
 .entry-meta .meta-author {
 	margin-right: 1.5em;
 }
 
-.entry-meta span:before {
+.entry-meta span a:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	font: normal 18px 'Genericons';
@@ -1265,16 +1262,27 @@ textarea {
 	margin-right: 0.2em;
 }
 
-.entry-meta .meta-date:before{
+.entry-meta .meta-date a:before{
 	content: '\f303';
 }
 
-.entry-meta .meta-author:before{
+.entry-meta .meta-author a:before{
 	content: '\f411';
 }
 
-.entry-meta .meta-comments:before{
+.entry-meta .meta-comments a:before {
 	content: '\f108';
+}
+
+.entry-meta a:link, 
+.entry-meta a:visited {
+	color: #aaa;
+}
+
+.entry-meta a:hover, 
+.entry-meta a:active,
+.entry-meta span a:hover:before {
+	color: #666;
 }
 
 /* Entry Categories */
@@ -1294,9 +1302,6 @@ textarea {
 	background: #ff5555;
 	font-size: 14px;
 	font-size: 0.875rem;
-	-webkit-border-radius: 0.3em;
-	-moz-border-radius: 0.3em;
-	border-radius: 0.3em;
 }
 
 .entry-categories .meta-category a:link, 
@@ -1344,9 +1349,6 @@ textarea {
 	background: #ff5555;
 	font-size: 14px !important;
 	font-size: 0.875rem !important;
-	-webkit-border-radius: 0.3em;
-	-moz-border-radius: 0.3em;
-	border-radius: 0.3em;
 }
 
 .widget_tag_cloud .tagcloud a:link, 
@@ -1372,8 +1374,8 @@ textarea {
 /* Post Navigation */
 .post-navigation {
 	margin: 0;
-	padding: 1em 0;
-	border-top: 2px solid #eee;
+	padding: 1em 0 0;
+	border-top: 1px solid #ddd;
 }
 
 .post-navigation .nav-links:before,
@@ -1498,6 +1500,10 @@ textarea {
 	box-sizing: border-box;
 }
 
+.post-wrapper .post-column .type-post {
+	margin: 0 0 2em;
+}
+
 /* Two Column Layout */
 .post-layout-two-columns .post-wrapper .post-column {
 	width: 50%;
@@ -1574,10 +1580,14 @@ textarea {
 	clear: both;
 }
 
+.infinite-scroll #infinite-handle {
+	margin: 2em 0 2.5em;
+	text-align: center;
+}
+
 .infinite-scroll #infinite-handle span {
 	display: inline-block;
-	margin: 0 0 2.5em;
-	padding: 0.3em 0.8em;
+	padding: 0.6em 1.2em;
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: bold;
@@ -1598,8 +1608,7 @@ textarea {
 
 /* Breadcrumbs */
 .breadcrumbs {
-	margin: 0 auto 1.5em;
-	max-width: 800px;
+	margin: 0 0 1em;
 }
 
 .breadcrumbs-container {
@@ -1735,11 +1744,6 @@ textarea {
 # 14.0 - Comments
 --------------------------------------------------------------*/
 
-.comments-area {
-	max-width: 800px;
-	margin: 0 auto 2.5em;
-}
-
 /* Comment Header */
 .comments-header,
 .comment-reply-title {
@@ -1767,13 +1771,13 @@ textarea {
 	margin: 0;
 	padding: 1.5em 0 0;
 	list-style: none;
-	border-top: 2px solid #eee;
+	border-top: 1px solid #ddd;
 }
 
 .comment {
 	margin: 0 0 1.5em;
 	padding: 0 0 1.5em;
-	border-bottom: 2px solid #eee;
+	border-bottom: 1px solid #ddd;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
@@ -1819,7 +1823,7 @@ textarea {
 .comment ol.children .comment {
 	margin: 1.5em 0 0;
 	padding: 1.5em 0 0;
-	border-top: 2px solid #eee;
+	border-top: 1px solid #ddd;
 	border-bottom: none;
 }
 
@@ -1904,7 +1908,7 @@ textarea {
 --------------------------------------------------------------*/
 .footer-wrap {
 	background: #fff;
-	border-top: 2px solid #eee;
+	border-top: 1px solid #ddd;
 }
 
 .site-footer {
@@ -2446,38 +2450,7 @@ object {
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-## 18.1 - Sidebar Left Layout
---------------------------------------------------------------*/
-.sidebar-left .content-single {
-	float: right;
-	padding-right: 0;
-	padding-left: 4em;
-}
-	
-.sidebar-left .sidebar {
-	float: left;
-}
-
-@media only screen and (max-width: 80em) {
-
-	.sidebar-left .content-single {
-		padding-left: 2em;
-	}
-	
-}
-
-@media only screen and (max-width: 55em) {
-	
-	.sidebar-left .content-single {
-		float: none;
-		width: 100%;
-		padding: 0;
-	}
-	
-}
-
-/*--------------------------------------------------------------
-## 18.2 - Sticky Header
+## 18.1 - Sticky Header
 --------------------------------------------------------------*/
 .sticky-header .fixed-header {
 	position: fixed;
@@ -2502,6 +2475,36 @@ object {
 	
 	.sticky-header.admin-bar .fixed-header  {
 		top: 0;
+	}
+	
+}
+
+/*--------------------------------------------------------------
+## 18.2 - Sidebar Layouts
+--------------------------------------------------------------*/
+
+@media only screen and (min-width: 55em) {
+
+	/* Sidebar Left */
+	.sidebar-left .sidebar {
+		float: left;
+		width: 32%;
+	}
+	
+	.sidebar-left .content-single {
+		float: right;
+		padding-left: 2.5em;
+	}
+	
+	/* Sidebar Right */
+	.sidebar-right .sidebar {
+		float: right;
+		width: 32%;
+	}
+	
+	.sidebar-right .content-single {
+		float: left;
+		padding-right: 2.5em;
 	}
 	
 }

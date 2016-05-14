@@ -1,7 +1,7 @@
 /**
- * jQuery Sidebar JS
+ * jQuery Menu JS
  *
- * Adds a toggle icon with slide animation for the sidebar
+ * Adds a toggle icon with slide animation for the menu
  *
  * Copyright 2016 ThemeZee
  * Free to use under the GPLv2 and later license.
@@ -15,24 +15,24 @@
 (function($) {
 	
 	/**--------------------------------------------------------------
-	# Setup Sidebar Menu
+	# Setup Navigation Menu
 	--------------------------------------------------------------*/
 	$( document ).ready( function() {
 		
-		/* Show sidebar and fade content area */
-		function showSidebar() {
+		/* Show menu and fade content area */
+		function showMenu() {
 			
-			sidebar.show();
-			sidebar.animate({ 'margin-left' : '0' }, 300 );
+			menu.show();
+			menu.animate({ 'margin-left' : '0' }, 300 );
 			overlay.show();
 			
 		}
 		
-		/* Hide sidebar and show full content area */
-		function hideSidebar() {
+		/* Hide menu and show full content area */
+		function hideMenu() {
 			
-			sidebar.animate({ 'margin-left': '-350px' },  300, function(){
-				sidebar.hide();
+			menu.animate({ 'margin-left': '-350px' },  300, function(){
+				menu.hide();
 			});
 			overlay.hide();
 			
@@ -40,38 +40,38 @@
 		
 		
 		/* Add Overlay */
-		$('body').append('<div id=\"sidebar-overlay\" class=\"sidebar-overlay\"></div>');
+		$('body').append('<div id=\"content-overlay\" class=\"content-overlay\"></div>');
 			
 		/* Setup Selectors */
-		var button = $('#sidebar-toggle'),
-			sidebar = $('#secondary'),
-			overlay = $('#sidebar-overlay');
+		var button = $('#main-navigation-toggle'),
+			menu = $('#main-navigation'),
+			overlay = $('#content-overlay');
 		
-		/* Only do something if sidebar exists */
-		if ( sidebar.length > 0 ) {
+		/* Only do something if menu exists */
+		if ( menu.length > 0 ) {
 			
-			/* Add sidebar toggle effect */
+			/* Add menu toggle effect */
 			button.on('click', function(){
-				if( sidebar.is(':visible') ) {
-					hideSidebar();
+				if( menu.is(':visible') ) {
+					hideMenu();
 				}
 				else {
-					showSidebar();
+					showMenu();
 				}
 			});
 			
-			/* Hide Sidebar when Content Area is clicked */
+			/* Hide Menu when Content Area is clicked */
 			overlay.on('click', function(e){
-				if( sidebar.is(':visible') ) {
+				if( menu.is(':visible') ) {
 					e.preventDefault();
-					hideSidebar();
+					hideMenu();
 				}
 			});
 					
 		}
 				
 		/* Add extra styling for default widgets */
-		sidebar.find('.widget_archive ul li, .widget_categories ul li.cat-item').each( function () {
+		$('.widget-area').find('.widget_archive ul li, .widget_categories ul li.cat-item').each( function () {
 			
 			// Get Link and Count
 			var list_item = $(this).children('a');

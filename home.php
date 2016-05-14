@@ -24,16 +24,18 @@ if ( isset( $theme_options['blog_title'] ) and $theme_options['blog_title'] <> '
 		
 	<header class="page-header clearfix">
 		
-		<h1 class="blog-title page-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
+		<h1 class="blog-title archive-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
 		<p class="blog-description"><?php echo wp_kses_post( $theme_options['blog_description'] ); ?></p>
 		
 	</header>
 
 <?php endif; ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
 			
+			<?php pocono_breadcrumbs(); ?>
+
 			<?php if ( have_posts() ) : ?>
 			
 				<div id="homepage-posts" class="post-wrapper clearfix">

@@ -12,6 +12,8 @@ get_header(); ?>
 	<section id="primary" class="content-full content-area">
 		<main id="main" class="site-main" role="main">
 					
+			<?php pocono_breadcrumbs(); ?>
+
 			<?php while (have_posts()) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
