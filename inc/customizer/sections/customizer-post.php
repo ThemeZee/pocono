@@ -90,6 +90,22 @@ function pocono_customize_register_post_settings( $wp_customize ) {
 		)
 	);
 	
+	$wp_customize->add_setting( 'pocono_theme_options[meta_comments]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'pocono_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'pocono_theme_options[meta_comments]', array(
+        'label'    => esc_html__( 'Display post comments', 'pocono' ),
+        'section'  => 'pocono_section_post',
+        'settings' => 'pocono_theme_options[meta_comments]',
+        'type'     => 'checkbox',
+		'priority' => 7
+		)
+	);
+	
 	$wp_customize->add_setting( 'pocono_theme_options[meta_category]', array(
         'default'           => true,
 		'type'           	=> 'option',
@@ -102,7 +118,7 @@ function pocono_customize_register_post_settings( $wp_customize ) {
         'section'  => 'pocono_section_post',
         'settings' => 'pocono_theme_options[meta_category]',
         'type'     => 'checkbox',
-		'priority' => 7
+		'priority' => 8
 		)
 	);
 	
@@ -119,27 +135,10 @@ function pocono_customize_register_post_settings( $wp_customize ) {
             'label' => esc_html__( 'Single Posts', 'pocono' ),
             'section' => 'pocono_section_post',
             'settings' => 'pocono_theme_options[single_post_headline]',
-            'priority' => 8
+            'priority' => 9
             )
         )
     );
-	
-	// Featured Image Setting
-	$wp_customize->add_setting( 'pocono_theme_options[featured_image]', array(
-        'default'           => true,
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'pocono_sanitize_checkbox'
-		)
-	);
-    $wp_customize->add_control( 'pocono_theme_options[featured_image]', array(
-        'label'    => esc_html__( 'Display featured image on single posts', 'pocono' ),
-        'section'  => 'pocono_section_post',
-        'settings' => 'pocono_theme_options[featured_image]',
-        'type'     => 'checkbox',
-		'priority' => 9
-		)
-	);
 	
 	$wp_customize->add_setting( 'pocono_theme_options[meta_tags]', array(
         'default'           => true,

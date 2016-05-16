@@ -53,7 +53,6 @@ function pocono_default_options() {
 		'meta_author'						=> true,
 		'meta_comments'						=> true,
 		'meta_category'						=> true,
-		'featured_image'					=> true,
 		'meta_tags'							=> true,
 		'post_navigation'					=> true,
 		'featured_magazine' 				=> false,

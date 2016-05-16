@@ -179,6 +179,15 @@ ul.related-posts-list {
 	
 }
 
+@media only screen and (max-width: 60em) {
+	
+	.related-posts-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+	
+}
+
 @media only screen and (max-width: 50em) {
 	
 	/* Columns */
@@ -226,6 +235,11 @@ ul.related-posts-list {
 }
 
 @media only screen and (max-width: 40em) {
+	
+	.related-posts-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
 	
 	.related-posts-two-columns .related-post-column .entry-title,
 	.related-posts-four-columns .related-post-column .entry-title {

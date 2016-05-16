@@ -8,18 +8,22 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
-		<header class="entry-header">
-			
-			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-			
-		</header><!-- .entry-header -->
+		<?php the_post_thumbnail(); ?>
 		
-		<?php pocono_post_image_single(); ?>
+		<div class="post-content clearfix">
 		
-		<div class="entry-content clearfix">
-			<?php the_content(); ?>
-			<!-- <?php trackback_rdf(); ?> -->
-			<div class="page-links"><?php wp_link_pages(); ?></div>	
-		</div><!-- .entry-content -->
+			<header class="entry-header">
+				
+				<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+				
+			</header><!-- .entry-header -->
+			
+			<div class="entry-content clearfix">
+				<?php the_content(); ?>
+				<!-- <?php trackback_rdf(); ?> -->
+				<div class="page-links"><?php wp_link_pages(); ?></div>	
+			</div><!-- .entry-content -->
+			
+		</div>
 
 	</article>

@@ -313,7 +313,7 @@ function pocono_breadcrumbs() {
 	if ( function_exists( 'themezee_breadcrumbs' ) ) {
 
 		themezee_breadcrumbs( array( 
-			'before' => '<div class="breadcrumbs-container container clearfix">',
+			'before' => '<div class="breadcrumbs-container clearfix">',
 			'after' => '</div>'
 		) );
 		

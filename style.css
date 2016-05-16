@@ -52,8 +52,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	17.9 - Mobile Medium ( < 480px )
 	17.10 - Mobile Small ( < 320px )
 18.0 - Theme Option Styles
-	15.1 - Sidebar Left Layout
-	15.2 - Sticky Header
+	18.1 - Sticky Header
+	18.2 - Sidebar Layouts
 19.0 - Media Query Fixes
 --------------------------------------------------------------*/
 
@@ -625,6 +625,7 @@ textarea {
 .site {
 	width: 100%;
 	margin: 0;
+	position: relative;
 }
 
 .container {
@@ -641,7 +642,8 @@ textarea {
 
 .content-single {
 	margin: 0 auto;
-	width: 68%;
+	width: 100%;
+	max-width: 800px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -661,40 +663,6 @@ textarea {
 	position: relative;
 }
 
-/* Sidebar Navigation Toggle */
-.main-navigation-toggle {
-	position: absolute;
-	top: 0;
-	left: 2.5em;
-	padding: 1.1em 0;
-	background: none;
-}
-
-.main-navigation-toggle:hover,
-.main-navigation-toggle:focus,
-.main-navigation-toggle:active {
-	cursor: pointer;
-	background: none;
-}
-
-.main-navigation-toggle:after {
-	float: left;
-	display: inline-block;
-	font-size: 30px;
-	line-height: 1;
-	font-family: 'Genericons';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-decoration: inherit;
-	vertical-align: middle;
-	content: '\f419';
-	color: #373737;
-}
-
-.main-navigation-toggle:hover:after {
-	color: #ff5555;
-}
-	
 /* Site Branding */
 .site-branding {
 	max-width: 100%;
@@ -758,11 +726,41 @@ textarea {
 ## 10 - Navigation Menu
 --------------------------------------------------------------*/
 
-/* Sliding Navigation Menu */
-.site {
-	position: relative;
+/* Sidebar Navigation Toggle */
+.main-navigation-toggle {
+	position: absolute;
+	top: 0;
+	left: 2.5em;
+	padding: 1.1em 0;
+	background: none;
 }
 
+.main-navigation-toggle:hover,
+.main-navigation-toggle:focus,
+.main-navigation-toggle:active {
+	cursor: pointer;
+	background: none;
+}
+
+.main-navigation-toggle:after {
+	float: left;
+	display: inline-block;
+	font-size: 30px;
+	line-height: 1;
+	font-family: 'Genericons';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: inherit;
+	vertical-align: middle;
+	content: '\f419';
+	color: #373737;
+}
+
+.main-navigation-toggle:hover:after {
+	color: #ff5555;
+}
+
+/* Sliding Navigation Menu */
 .primary-navigation {
 	float: none;
 	display: none;
@@ -892,7 +890,6 @@ textarea {
 /*--------------------------------------------------------------
 # 11.0 - Widgets
 --------------------------------------------------------------*/
-
 .widget {
 	margin: 0 0 2.5em 0;
 	color: #333;
@@ -1051,7 +1048,7 @@ textarea {
 
 .widget-magazine-posts .widget-header {
 	border: none;
-	margin-bottom: 1.5em;
+	margin-bottom: 2.5em;
 	text-align: center;
 }
 
@@ -1079,6 +1076,11 @@ textarea {
 }
 
 /* Magazine Posts Styling */
+.widget-magazine-posts .has-post-thumbnail  .post-content {
+	margin: -60px 0.75em 0;
+	padding: 0.5em 1em 0;
+}
+
 .widget-magazine-posts .type-post .entry-content {
 	font-size: 16px;
 	font-size: 1rem;
@@ -1088,10 +1090,14 @@ textarea {
 	margin: 0.5em 0 1em;
 }
 
+.widget-magazine-posts .type-post .entry-categories .meta-category a {
+	font-size: 13px;
+	font-size: 0.8125rem;
+}
+
 .widget-magazine-posts .type-post .entry-meta {
 	font-size: 14px;
 	font-size: 0.875rem;
-	margin-bottom: 0.5em;
 }
 
 /* Magazine Posts Grid */
@@ -1110,14 +1116,18 @@ textarea {
 	box-sizing: border-box;
 }
 
+.magazine-grid .magazine-grid-post .type-post {
+	margin: 0 0 2em;
+}
+
 /* Two Column Grid Layout */
 .magazine-two-columns-grid .magazine-grid-post {
 	width: 50%;
 }
 
 .magazine-two-columns-grid .type-post .entry-title {
-	font-size: 32px;
-	font-size: 2rem;
+	font-size: 26px;
+	font-size: 1.625rem;
 }
 
 /* Three Column Grid Layout */
@@ -1126,8 +1136,8 @@ textarea {
 }
 
 .magazine-three-columns-grid .type-post .entry-title {
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 /* Four Column Grid Layout */
@@ -1136,8 +1146,8 @@ textarea {
 }
 
 .magazine-four-columns-grid .type-post .entry-title {
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 17px;
+	font-size: 1.0625rem;
 }
 
 /*--------------------------------------------------------------
@@ -1159,8 +1169,8 @@ textarea {
 .entry-title {
 	display: inline-block;
 	font-family: 'Montserrat', Georgia, Times New Roman;
-	font-size: 32px;
-	font-size: 2rem;
+	font-size: 36px;
+	font-size: 2.25rem;
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
@@ -1510,8 +1520,8 @@ textarea {
 }
 
 .post-layout-two-columns .post-wrapper .type-post .entry-title {
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: 26px;
+	font-size: 1.625rem;
 }
 
 /* Three Column Layout */
@@ -1530,13 +1540,14 @@ textarea {
 }
 
 .post-layout-four-columns .post-wrapper .type-post .entry-title {
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 17px;
+	font-size: 1.0625rem;
 }
 
 /* Theme Pagination */
 .post-pagination {
-	margin: 0 0 2.5em;
+	margin: 1em 0 2.5em;
+	text-align: center;
 }
 
 .post-pagination a,
@@ -1581,7 +1592,7 @@ textarea {
 }
 
 .infinite-scroll #infinite-handle {
-	margin: 2em 0 2.5em;
+	margin: 1em 0 2.5em;
 	text-align: center;
 }
 
@@ -2028,35 +2039,24 @@ object {
 		padding-top: 2em;
 	}
 	
-	.content-single {
-		padding-right: 2em;
-	}
-	
 	.widget,
-	.page-header, 
 	.type-post, 
 	.type-page, 
 	.type-attachment,
 	.post-pagination,
-	.comments-area {
+	.comments-area,
+	.page-header, 
+	.comments-header,
+	.comment-reply-title,
+	.widget-magazine-posts .widget-header {
 		margin-bottom: 2em;
 	}
 
 	/* Post Columns */
-	.post-wrapper,
-	.magazine-grid {
-		margin-right: -2em;
-	}
-
-	.post-wrapper .post-column,
-	.magazine-grid .magazine-grid-post {
-		padding-right: 2em;
-	}
-	
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 28px;
-		font-size: 1.75rem;
+		font-size: 24px;
+		font-size: 1.5rem;
 	}
 	
 	/* Featured Posts */
@@ -2082,37 +2082,28 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 70em) {
 	
-	.archive-title,
 	.page-title, 
-	.entry-title,
-	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 36px;
-		font-size: 2.25rem;
-	}
-	
-	.page-header .blog-description,
-	.page-header .archive-description,
-	.widget-magazine-posts .widget-header .category-description {
-		font-size: 18px;
-		font-size: 1.125rem;
+	.entry-title {
+		font-size: 32px;
+		font-size: 2rem;
 	}
 	
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-	
-	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
 		font-size: 22px;
 		font-size: 1.375rem;
 	}
 	
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
 		font-size: 18px;
 		font-size: 1.125rem;
+	}
+	
+	.post-layout-four-columns .post-wrapper .type-post .entry-title,
+	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+		font-size: 16px;
+		font-size: 1rem;
 	}
 	
 	/* Featured Posts */
@@ -2144,12 +2135,22 @@ object {
 		padding: 0 1.25em;
 	}
 	
-	.archive-title,
+	.has-post-thumbnail .post-content {
+		padding: 0.75em 1.5em 0;
+	}
+	
 	.page-title, 
-	.entry-title,
+	.entry-title {
+		font-size: 28px;
+		font-size: 1.75rem;
+	}
+	
+	.page-header .archive-title,
+	.comments-header .comments-title,
+	.comment-reply-title span,
 	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 32px;
-		font-size: 2rem;
+		font-size: 20px;
+		font-size: 1.25rem;
 	}
 	
 	.page-header .blog-description,
@@ -2169,14 +2170,14 @@ object {
 	.post-layout-four-columns .post-wrapper .type-post .entry-title,
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 22px;
-		font-size: 1.375rem;
+		font-size: 20px;
+		font-size: 1.25rem;
 	}
 	
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
 	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
+		font-size: 16px;
+		font-size: 1rem;
 	}
 	
 	/* Featured Posts */
@@ -2207,15 +2208,14 @@ object {
 	.content-single {
 		float: none;
 		width: 100%;
+		margin: 0;
 		padding: 0;
 	}
 	
 	.sidebar {
 		float: none;
-		margin: 0;
-		padding: 2em 0 0;
+		margin: 3em 0 0;
 		width: 100%;
-		border-top: 2px solid #eee;
 	}
 	
 }
@@ -2225,8 +2225,72 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 	
+	.container {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+	}
+	
+	.site-content {
+		padding-top: 1.5em;
+	}
+
+	.widget,
+	.type-post, 
+	.type-page, 
+	.type-attachment,
+	.post-pagination,
+	.comments-area,
+	.page-header, 
+	.comments-header,
+	.comment-reply-title,
+	.widget-magazine-posts .widget-header {
+		margin-bottom: 1.5em;
+	}
+	
+	/* Header Bar */
+	.site-branding {
+		margin: 0.5em 0;
+	}
+
+	.site-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+	
+	.main-navigation-toggle {
+		left: 1.5em;
+	}
+	
+	.main-navigation-toggle:after {
+		font-size: 26px;
+	}
+	
+	.header-social-icons {
+		right: 1em;
+	}
+	
+	.header-social-icons .social-icons-menu li a:before {
+		font-size: 24px;
+	}
+	
 	/* Post Columns */
-	.post-layout-three-columns .post-wrapper .post-column {
+	.post-wrapper,
+	.magazine-grid {
+		margin-right: -1.5em;
+	}
+
+	.post-wrapper .post-column,
+	.magazine-grid .magazine-grid-post {
+		padding-right: 1.5em;
+	}
+
+	.post-wrapper .post-column .type-post,
+	.magazine-grid .magazine-grid-post .type-post {
+		margin: 0 0 1.5em;
+	}
+	
+	.post-layout-three-columns .post-wrapper .post-column,
+	.magazine-three-columns-grid .magazine-grid-post {
 		width: 50%;
 	}
 	
@@ -2236,27 +2300,9 @@ object {
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
-	
-	.magazine-three-columns-grid .magazine-grid-post {
-		width: 100%;
-	}
-	
-	.magazine-three-columns-grid .magazine-grid-post .wp-post-image {
-		float: left; 
-		max-width: 50%;
-		margin: 0 2em 0 0;
-	}
-	
-	/*.post-columns .post-col:nth-child(3n + 1) {
-		clear: none;
-	}
-	
-	.post-columns .post-col:nth-child(2n + 1) {
-		clear: left;
-	} */
 	
 	/* Featured Posts */
 	.featured-posts .grid-post,
@@ -2286,12 +2332,29 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
 	
-	.archive-title,
+	.has-post-thumbnail .post-content {
+		padding: 0.5em 1em;
+	}
+
 	.page-title, 
-	.entry-title,
+	.entry-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+	
+	.page-header .archive-title,
+	.comments-header .comments-title,
+	.comment-reply-title span,
 	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 28px;
-		font-size: 1.75rem;
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+	
+	.page-header .blog-description,
+	.page-header .archive-description,
+	.widget-magazine-posts .widget-header .category-description {
+		font-size: 15px;
+		font-size: 0.9375rem;
 	}
 	
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
@@ -2300,8 +2363,8 @@ object {
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 18px;
-		font-size: 1.125rem;
+		font-size: 16px;
+		font-size: 1rem;
 	}
 	
 	/* Featured Posts */
@@ -2323,31 +2386,27 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 30em) {
 	
-	.container {
-		padding-left: 1.5em;
-		padding-right: 1.5em;
-	}
-	
-	.site-content {
-		padding-top: 1.5em;
+	/* Header Bar */
+	.header-main {
+		text-align: left;
+		position: relative;
 	}
 
-	.widget,
-	.page-header, 
-	.type-post, 
-	.type-page, 
-	.type-attachment,
-	.post-pagination,
-	.comments-area {
-		margin-bottom: 1.5em;
+	.site-branding {
+		float: left;
+		margin-left: 3em;
 	}
 	
-	.archive-title,
+	
+	.has-post-thumbnail .post-content {
+		margin: 0.5em 0 0;
+		padding: 0;
+	}
+	
 	.page-title,
-	.entry-title,
-	.widget-magazine-posts .widget-header .widget-title {
-		font-size: 24px;
-		font-size: 1.5rem;
+	.entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
 	}
 	
 	.alignright, .alignleft {
@@ -2376,12 +2435,6 @@ object {
 	.magazine-four-columns-grid .magazine-grid-post {
 		width: 100%;
 	}
-
-	.magazine-three-columns-grid .magazine-grid-post .wp-post-image {
-		float: none; 
-		max-width: 100%;
-		margin: 0 0 0.5em;
-	}
 	
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
@@ -2389,8 +2442,8 @@ object {
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
 	
 	/* Featured Posts */
@@ -2409,6 +2462,14 @@ object {
 	
 }
 
+@media only screen and (max-width: 25em) {
+	
+	.header-social-icons {
+		display: none;
+	}
+
+}
+
 /*--------------------------------------------------------------
 ## 17.10 - Mobile Small ( < 320px )
 --------------------------------------------------------------*/
@@ -2419,10 +2480,8 @@ object {
 		font-size: 1.5rem;
 	}
 	
-	.archive-title,
 	.page-title,
-	.entry-title,
-	.widget-magazine-posts .widget-header .widget-title {
+	.entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
@@ -2433,8 +2492,8 @@ object {
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
 	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
+		font-size: 16px;
+		font-size: 1rem;
 	}
 	
 	/* Featured Post */
@@ -2483,7 +2542,7 @@ object {
 ## 18.2 - Sidebar Layouts
 --------------------------------------------------------------*/
 
-@media only screen and (min-width: 55em) {
+@media only screen and (min-width: 55.001em) {
 
 	/* Sidebar Left */
 	.sidebar-left .sidebar {
@@ -2494,6 +2553,7 @@ object {
 	.sidebar-left .content-single {
 		float: right;
 		padding-left: 2.5em;
+		width: 68%;
 	}
 	
 	/* Sidebar Right */
@@ -2505,6 +2565,7 @@ object {
 	.sidebar-right .content-single {
 		float: left;
 		padding-right: 2.5em;
+		width: 68%;
 	}
 	
 }

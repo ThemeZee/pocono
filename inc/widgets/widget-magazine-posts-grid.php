@@ -48,6 +48,7 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 			'meta_date'			=> true,
 			'meta_author'		=> true,
 			'meta_comments'		=> true,
+			'meta_category'		=> true,
 		);
 		
 		return $defaults;
@@ -209,7 +210,18 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 */
 	function entry_categories( $settings ) { 
 
-
+		if( true == $settings['meta_category'] ) : ?>
+	
+			<div class="entry-categories clearfix">
+				
+				<span class="meta-category">
+					<?php echo get_the_category_list(' '); ?>
+				</span>
+				
+			</div><!-- .entry-categories -->
+		
+			<?php
+		endif;
 	
 	} // entry_categories()
 	
@@ -310,6 +322,7 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$instance['meta_date'] = !empty($new_instance['meta_date']);
 		$instance['meta_author'] = !empty($new_instance['meta_author']);
 		$instance['meta_comments'] = !empty($new_instance['meta_comments']);
+		$instance['meta_category'] = !empty($new_instance['meta_category']);
 		
 		$this->delete_widget_cache();
 		
@@ -387,6 +400,13 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_comments' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_comments'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_comments' ); ?>" name="<?php echo $this->get_field_name( 'meta_comments' ); ?>" />
+				<?php esc_html_e( 'Display post comments', 'pocono' ); ?>
+			</label>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
+				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
 				<?php esc_html_e( 'Display post categories', 'pocono' ); ?>
 			</label>
 		</p>
