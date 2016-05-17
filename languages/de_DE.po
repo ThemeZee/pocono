@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pocono\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-05-06 15:25+0100\n"
-"PO-Revision-Date: 2016-05-06 15:31+0100\n"
+"POT-Creation-Date: 2016-05-17 13:36+0100\n"
+"PO-Revision-Date: 2016-05-17 13:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -16,11 +16,11 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: 404.php:17
+#: 404.php:19
 msgid "404: Page not found"
 msgstr "404: Seite nicht gefunden"
 
-#: 404.php:22
+#: 404.php:24
 msgid ""
 "It looks like nothing was found at this location. Maybe try a search or one "
 "of the links below?"
@@ -58,22 +58,30 @@ msgid "Leave a Reply"
 msgstr "Kommentar hinterlassen"
 
 #: functions.php:42
-msgid "Main Navigation"
-msgstr "Hauptnavigation"
+msgid "Social Icons"
+msgstr "Social Icons"
 
-#: functions.php:99 sidebar.php:20
+#: functions.php:108 sidebar.php:25
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:101
+#: functions.php:110
 msgid "Appears on single posts and pages."
 msgstr "Erscheint auf einzelnen Beiträgen und statischen Seiten."
 
-#: functions.php:109
+#: functions.php:121
+msgid "Navigation Menu"
+msgstr "Navigationsmenü"
+
+#: functions.php:123
+msgid "Appears on the slide-in navigation menu."
+msgstr "Erscheint im Slide-In Navigationsmenü."
+
+#: functions.php:132
 msgid "Magazine Homepage"
 msgstr "Magazin Startseite"
 
-#: functions.php:111
+#: functions.php:134
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Magazine Posts "
 "widgets here."
@@ -90,11 +98,11 @@ msgstr "Zum Inhalt springen"
 msgid "Search Results for: %s"
 msgstr "Suchergebnisse für: %s"
 
-#: search.php:50
+#: search.php:52
 msgid "No matches"
 msgstr "Keine Treffer"
 
-#: search.php:56
+#: search.php:58
 msgid ""
 "Please try again, or use the navigation menus to find what you search for."
 msgstr ""
@@ -111,7 +119,11 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr "Suchen &hellip;"
 
-#: sidebar.php:22
+#: sidebar-menu.php:20
+msgid "Navigation"
+msgstr "Navigation"
+
+#: sidebar.php:27
 msgid ""
 "Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
 msgstr ""
@@ -136,16 +148,16 @@ msgstr ""
 "%$1s benötigt mindestens WordPress Version %2$s.. Du verwendest Version  "
 "%3$s. Bitte aktualisiere und versuche es erneut."
 
-#: inc/template-tags.php:187
+#: inc/template-tags.php:186
 #, php-format
 msgid "View all posts by %s"
 msgstr "Alle Beiträge von %s ansehen"
 
-#: inc/template-tags.php:248 inc/widgets/widget-magazine-posts-grid.php:174
+#: inc/template-tags.php:279 inc/widgets/widget-magazine-posts-grid.php:180
 msgid "Read more"
 msgstr "Weiterlesen"
 
-#: inc/template-tags.php:353
+#: inc/template-tags.php:384
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr "Erstellt mit %1$s und %2$s."
@@ -159,15 +171,15 @@ msgstr "Willkommen bei %1$s %2$s"
 msgid "Theme Info"
 msgstr "Theme Info"
 
-#: inc/theme-info.php:49 inc/customizer/customizer.php:118
+#: inc/theme-info.php:49 inc/customizer/customizer.php:119
 msgid "Theme Links"
 msgstr "Theme Links"
 
-#: inc/theme-info.php:50 inc/customizer/customizer.php:119
+#: inc/theme-info.php:50 inc/customizer/customizer.php:120
 msgid "https://themezee.com/themes/pocono/"
 msgstr "https://themezee.com/de/themes/pocono/"
 
-#: inc/theme-info.php:50 inc/customizer/customizer.php:120
+#: inc/theme-info.php:50 inc/customizer/customizer.php:121
 msgid "Theme Page"
 msgstr "Theme Seite"
 
@@ -180,16 +192,16 @@ msgid "Theme Demo"
 msgstr "Theme Demo"
 
 #: inc/theme-info.php:53 inc/theme-info.php:74
-#: inc/customizer/customizer.php:121
+#: inc/customizer/customizer.php:122
 msgid "https://themezee.com/docs/pocono-documentation/"
 msgstr "https://themezee.com/de/docs/pocono-dokumentation/"
 
 #: inc/theme-info.php:53 inc/theme-info.php:68
-#: inc/customizer/customizer.php:122
+#: inc/customizer/customizer.php:123
 msgid "Theme Documentation"
 msgstr "Theme Dokumentation"
 
-#: inc/theme-info.php:54 inc/customizer/customizer.php:124
+#: inc/theme-info.php:54 inc/customizer/customizer.php:125
 msgid "Rate this theme"
 msgstr "Theme bewerten"
 
@@ -211,7 +223,7 @@ msgstr ""
 msgid "View %s Documentation"
 msgstr "%s Dokumentation ansehen"
 
-#: inc/theme-info.php:81 inc/customizer/customizer.php:31
+#: inc/theme-info.php:81 inc/customizer/customizer.php:32
 msgid "Theme Options"
 msgstr "Theme Optionen"
 
@@ -292,76 +304,79 @@ msgstr "https://themezee.com/de/"
 msgid "rate it"
 msgstr "bewerte es"
 
-#: inc/customizer/customizer.php:41
+#: inc/customizer/customizer.php:42
 msgid "Background"
 msgstr "Hintergrund"
 
-#: inc/customizer/customizer.php:52
+#: inc/customizer/customizer.php:53
 msgid "Display Site Title"
 msgstr "Zeige Titel der Website"
 
-#: inc/customizer/customizer.php:69
+#: inc/customizer/customizer.php:70
 msgid "Header Image Link"
 msgstr "Header-Bild Link"
 
-#: inc/customizer/customizer.php:86
+#: inc/customizer/customizer.php:87
 msgid "Hide header image on front page"
 msgstr "Verstecke Header-Bild auf der Startseite"
 
 #: inc/customizer/functions/custom-controls.php:61
-#: inc/widgets/widget-magazine-posts-grid.php:325
+#: inc/widgets/widget-magazine-posts-grid.php:354
 msgid "All Categories"
 msgstr "Alle Kategorien"
-
-#: inc/customizer/sections/customizer-featured.php:20
-msgid "Featured Posts"
-msgstr "Featured Content"
-
-#: inc/customizer/sections/customizer-featured.php:36
-msgid "Activate Featured Posts"
-msgstr "Featured Content aktivieren"
-
-#: inc/customizer/sections/customizer-featured.php:51
-msgid "Show featured posts on Magazine Homepage"
-msgstr "Zeige Featured Content auf Magazin Startseite"
-
-#: inc/customizer/sections/customizer-featured.php:66
-msgid "Show featured posts on posts page"
-msgstr "Zeige Featured Content auf Beitragsseite"
-
-#: inc/customizer/sections/customizer-featured.php:84
-msgid "Featured Posts Category"
-msgstr "Featured Content Kategorie"
 
 #: inc/customizer/sections/customizer-general.php:20
 msgid "General Settings"
 msgstr "Allgemeine Einstellungen"
 
 #: inc/customizer/sections/customizer-general.php:35
-msgid "Theme Layout"
-msgstr "Theme Layout"
+msgid "Archives Layout"
+msgstr "Layout der Archive"
 
 #: inc/customizer/sections/customizer-general.php:41
+#: inc/widgets/widget-magazine-posts-grid.php:368
+msgid "Two Columns"
+msgstr "Zwei Spalten"
+
+#: inc/customizer/sections/customizer-general.php:42
+#: inc/widgets/widget-magazine-posts-grid.php:369
+msgid "Three Columns"
+msgstr "Drei Spalten"
+
+#: inc/customizer/sections/customizer-general.php:43
+#: inc/widgets/widget-magazine-posts-grid.php:370
+msgid "Four Columns"
+msgstr "Vier Spalten"
+
+#: inc/customizer/sections/customizer-general.php:57
+msgid "Single Posts Layout"
+msgstr "Layout einzelner Beiträge"
+
+#: inc/customizer/sections/customizer-general.php:63
+msgid "No Sidebar"
+msgstr "Keine Sidebar"
+
+#: inc/customizer/sections/customizer-general.php:64
 msgid "Left Sidebar"
 msgstr "Sidebar links"
 
-#: inc/customizer/sections/customizer-general.php:42
+#: inc/customizer/sections/customizer-general.php:65
 msgid "Right Sidebar"
 msgstr "Sidebar rechts"
 
-#: inc/customizer/sections/customizer-general.php:57
+#: inc/customizer/sections/customizer-general.php:80
 msgid "Sticky Header"
 msgstr "Sticky Header"
 
-#: inc/customizer/sections/customizer-general.php:72
+#: inc/customizer/sections/customizer-general.php:95
 msgid "Enable sticky header feature"
 msgstr "Aktiviere Sticky Header"
 
-#: inc/customizer/sections/customizer-general.php:89
+#: inc/customizer/sections/customizer-general.php:112
 msgid "Blog Title"
 msgstr "Blog Titel"
 
-#: inc/customizer/sections/customizer-general.php:106
+#: inc/customizer/sections/customizer-general.php:129
 msgid "Blog Description"
 msgstr "Blog Beschreibung"
 
@@ -370,62 +385,84 @@ msgid "Post Settings"
 msgstr "Beitrags-Einstellungen"
 
 #: inc/customizer/sections/customizer-post.php:35
-msgid "Post Layout (archive pages)"
-msgstr "Beitragslayout (Archivseiten)"
-
-#: inc/customizer/sections/customizer-post.php:41
-#: inc/widgets/widget-magazine-posts-grid.php:339
-msgid "Two Columns"
-msgstr "Zwei Spalten"
-
-#: inc/customizer/sections/customizer-post.php:42
-#: inc/widgets/widget-magazine-posts-grid.php:340
-msgid "Three Columns"
-msgstr "Drei Spalten"
-
-#: inc/customizer/sections/customizer-post.php:43
-#: inc/widgets/widget-magazine-posts-grid.php:341
-msgid "Four Columns"
-msgstr "Vier Spalten"
-
-#: inc/customizer/sections/customizer-post.php:57
 msgid "Excerpt Length"
 msgstr "Länge des Textauszugs"
 
-#: inc/customizer/sections/customizer-post.php:75
+#: inc/customizer/sections/customizer-post.php:53
 msgid "Post Meta"
 msgstr "Beitrags-Metadaten"
 
-#: inc/customizer/sections/customizer-post.php:91
-#: inc/widgets/widget-magazine-posts-grid.php:360
+#: inc/customizer/sections/customizer-post.php:69
+#: inc/widgets/widget-magazine-posts-grid.php:389
 msgid "Display post date"
 msgstr "Zeige das Datum des Beitrags"
 
-#: inc/customizer/sections/customizer-post.php:107
-#: inc/widgets/widget-magazine-posts-grid.php:367
+#: inc/customizer/sections/customizer-post.php:85
+#: inc/widgets/widget-magazine-posts-grid.php:396
 msgid "Display post author"
 msgstr "Zeige den Author des Beitrags"
 
-#: inc/customizer/sections/customizer-post.php:123
-#: inc/widgets/widget-magazine-posts-grid.php:374
+#: inc/customizer/sections/customizer-post.php:101
+#: inc/widgets/widget-magazine-posts-grid.php:403
+msgid "Display post comments"
+msgstr "Zeige Kommentare"
+
+#: inc/customizer/sections/customizer-post.php:117
+#: inc/widgets/widget-magazine-posts-grid.php:410
 msgid "Display post categories"
 msgstr "Zeige die Kategorien des Beitrags"
 
-#: inc/customizer/sections/customizer-post.php:141
+#: inc/customizer/sections/customizer-post.php:135
 msgid "Single Posts"
 msgstr "Einzelne Beiträge"
 
-#: inc/customizer/sections/customizer-post.php:158
-msgid "Display featured image on single posts"
-msgstr "Zeige Beitragsbilder in einzelnen Beiträgen"
-
-#: inc/customizer/sections/customizer-post.php:174
+#: inc/customizer/sections/customizer-post.php:151
 msgid "Display post tags on single posts"
 msgstr "Zeige die Schlagwörter in einzelnen Beiträgen"
 
-#: inc/customizer/sections/customizer-post.php:190
+#: inc/customizer/sections/customizer-post.php:167
 msgid "Display post navigation on single posts"
 msgstr "Zeige Beitrags-Navigation"
+
+#: inc/customizer/sections/customizer-slider.php:20
+msgid "Post Slider"
+msgstr "Beitrags-Slider"
+
+#: inc/customizer/sections/customizer-slider.php:36
+msgid "Activate Post Slider"
+msgstr "Beitrags-Slider aktivieren"
+
+#: inc/customizer/sections/customizer-slider.php:51
+msgid "Show Slider on Magazine Homepage"
+msgstr "Zeige Slideshow auf Magazin Startseite"
+
+#: inc/customizer/sections/customizer-slider.php:66
+msgid "Show Slider on posts page"
+msgstr "Zeige Slideshow auf Beitragsseite"
+
+#: inc/customizer/sections/customizer-slider.php:84
+msgid "Slider Category"
+msgstr "Slider Kategorie"
+
+#: inc/customizer/sections/customizer-slider.php:102
+msgid "Number of Posts"
+msgstr "Anzahl der Beiträge"
+
+#: inc/customizer/sections/customizer-slider.php:120
+msgid "Slider Animation"
+msgstr "Slider Animation"
+
+#: inc/customizer/sections/customizer-slider.php:127
+msgid "Slide Effect"
+msgstr "Slide Effekt"
+
+#: inc/customizer/sections/customizer-slider.php:128
+msgid "Fade Effect"
+msgstr "Fade Effekt"
+
+#: inc/customizer/sections/customizer-slider.php:142
+msgid "Slider Speed (in ms)"
+msgstr "Slider Geschwindigkeit (in ms)"
 
 #: inc/customizer/sections/customizer-upgrade.php:20
 msgid "More Features"
@@ -444,30 +481,51 @@ msgstr ""
 "Zeigt die Beiträge einer gewählten Kategorie in einem Raster Layout. Bitte "
 "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
-#: inc/widgets/widget-magazine-posts-grid.php:258
+#: inc/widgets/widget-magazine-posts-grid.php:286
 #, php-format
 msgid "View all posts from category %s"
 msgstr "Alle Beiträge in der Kategorie %s ansehen"
 
-#: inc/widgets/widget-magazine-posts-grid.php:316
+#: inc/widgets/widget-magazine-posts-grid.php:345
 msgid "Title:"
 msgstr "Titel:"
 
-#: inc/widgets/widget-magazine-posts-grid.php:322
+#: inc/widgets/widget-magazine-posts-grid.php:351
 msgid "Category:"
 msgstr "Kategorie:"
 
-#: inc/widgets/widget-magazine-posts-grid.php:337
+#: inc/widgets/widget-magazine-posts-grid.php:366
 msgid "Grid Layout:"
 msgstr "Raster Layout:"
 
-#: inc/widgets/widget-magazine-posts-grid.php:346
+#: inc/widgets/widget-magazine-posts-grid.php:375
 msgid "Number of posts:"
 msgstr "Anzahl der Beiträge:"
 
-#: inc/widgets/widget-magazine-posts-grid.php:352
+#: inc/widgets/widget-magazine-posts-grid.php:381
 msgid "Excerpt Length:"
 msgstr "Länge des Textauszugs:"
+
+#~ msgid "Main Navigation"
+#~ msgstr "Hauptnavigation"
+
+#~ msgid "Featured Posts"
+#~ msgstr "Featured Content"
+
+#~ msgid "Activate Featured Posts"
+#~ msgstr "Featured Content aktivieren"
+
+#~ msgid "Featured Posts Category"
+#~ msgstr "Featured Content Kategorie"
+
+#~ msgid "Theme Layout"
+#~ msgstr "Theme Layout"
+
+#~ msgid "Post Layout (archive pages)"
+#~ msgstr "Beitragslayout (Archivseiten)"
+
+#~ msgid "Display featured image on single posts"
+#~ msgstr "Zeige Beitragsbilder in einzelnen Beiträgen"
 
 #~ msgid "Enter password to view comments."
 #~ msgstr "Passwort eingeben, um Kommentare zu sehen."
@@ -493,9 +551,6 @@ msgstr "Länge des Textauszugs:"
 #~ msgid "Footer Navigation"
 #~ msgstr "Footer Navigation"
 
-#~ msgid "Social Icons"
-#~ msgstr "Social Icons"
-
 #~ msgid ""
 #~ "Appears on posts and pages except Magazine Homepage and Fullwidth "
 #~ "template."
@@ -513,9 +568,6 @@ msgstr "Länge des Textauszugs:"
 
 #~ msgid "Display featured posts in latest blog post listing."
 #~ msgstr "Zeige hervorgehobene Beiträge in der Liste der letzten Beiträge."
-
-#~ msgid "Number of Posts"
-#~ msgstr "Anzahl der Beiträge"
 
 #~ msgctxt "post date"
 #~ msgid "Posted on %s"
@@ -618,27 +670,12 @@ msgstr "Länge des Textauszugs:"
 #~ msgid "Post Footer"
 #~ msgstr "Beitrags-Footer"
 
-#~ msgid "Post Slider"
-#~ msgstr "Beitrags-Slider"
-
-#~ msgid "Activate Post Slider"
-#~ msgstr "Beitrags-Slider aktivieren"
-
 #~ msgid ""
 #~ "The slideshow displays all your featured posts. You can easily feature "
 #~ "posts by a tag of your choice."
 #~ msgstr ""
 #~ "Die Slideshow zeigt alle hervorgehobenen Beiträge. Du kannst deine "
 #~ "Beiträge ganz leicht mit einem Schlagwort deiner Wahl hervorheben."
-
-#~ msgid "Slider Animation"
-#~ msgstr "Slider Animation"
-
-#~ msgid "Slide Effect"
-#~ msgstr "Slide Effekt"
-
-#~ msgid "Fade Effect"
-#~ msgstr "Fade Effekt"
 
 #~ msgid ""
 #~ "Displays your posts from a selected category in a boxed layout. Please "
@@ -914,12 +951,6 @@ msgstr "Länge des Textauszugs:"
 #~ msgid "Display post categories and comments on single posts"
 #~ msgstr "Zeige die Kategorien und Kommentare auf einzelnen Beitragsseiten"
 
-#~ msgid "Slider Category"
-#~ msgstr "Slider Kategorie"
-
-#~ msgid "Slider Speed (in ms)"
-#~ msgstr "Slider Geschwindigkeit (in ms)"
-
 #~ msgid "Display post excerpt and read more button"
 #~ msgstr "Textauszug und Weiterlesen Button anzeigen"
 
@@ -1085,10 +1116,6 @@ msgstr "Länge des Textauszugs:"
 #~ msgctxt "color setting"
 #~ msgid "Links & Buttons"
 #~ msgstr "Links & Buttons"
-
-#~ msgctxt "color setting"
-#~ msgid "Navigation"
-#~ msgstr "Navigation"
 
 #~ msgctxt "color setting"
 #~ msgid "Widget Titles"
@@ -1588,9 +1615,6 @@ msgstr "Länge des Textauszugs:"
 #~ msgid "Display post thumbnails"
 #~ msgstr "Zeige Beitragsbilder"
 
-#~ msgid "Display post comments"
-#~ msgstr "Zeige Kommentare"
-
 #~ msgid "Social Icons (ThemeZee)"
 #~ msgstr "Social Icons (ThemeZee)"
 
@@ -1615,9 +1639,6 @@ msgstr "Länge des Textauszugs:"
 
 #~ msgid "Tab %s:"
 #~ msgstr "Tab %s:"
-
-#~ msgid "Archives"
-#~ msgstr "Archive"
 
 #~ msgid "Categories"
 #~ msgstr "Kategorien"

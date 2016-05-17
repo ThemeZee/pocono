@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pocono\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-05-06 15:25+0100\n"
-"PO-Revision-Date: 2016-05-06 15:25+0100\n"
+"POT-Creation-Date: 2016-05-17 13:36+0100\n"
+"PO-Revision-Date: 2016-05-17 13:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:17
+#: 404.php:19
 msgid "404: Page not found"
 msgstr ""
 
-#: 404.php:22
+#: 404.php:24
 msgid ""
 "It looks like nothing was found at this location. Maybe try a search or one "
 "of the links below?"
@@ -60,22 +60,30 @@ msgid "Leave a Reply"
 msgstr ""
 
 #: functions.php:42
-msgid "Main Navigation"
+msgid "Social Icons"
 msgstr ""
 
-#: functions.php:99 sidebar.php:20
+#: functions.php:108 sidebar.php:25
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:110
 msgid "Appears on single posts and pages."
 msgstr ""
 
-#: functions.php:109
+#: functions.php:121
+msgid "Navigation Menu"
+msgstr ""
+
+#: functions.php:123
+msgid "Appears on the slide-in navigation menu."
+msgstr ""
+
+#: functions.php:132
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:134
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Magazine Posts "
 "widgets here."
@@ -90,11 +98,11 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:50
+#: search.php:52
 msgid "No matches"
 msgstr ""
 
-#: search.php:56
+#: search.php:58
 msgid ""
 "Please try again, or use the navigation menus to find what you search for."
 msgstr ""
@@ -109,7 +117,11 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
 
-#: sidebar.php:22
+#: sidebar-menu.php:20
+msgid "Navigation"
+msgstr ""
+
+#: sidebar.php:27
 msgid ""
 "Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
 msgstr ""
@@ -128,16 +140,16 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: inc/template-tags.php:187
+#: inc/template-tags.php:186
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:248 inc/widgets/widget-magazine-posts-grid.php:174
+#: inc/template-tags.php:279 inc/widgets/widget-magazine-posts-grid.php:180
 msgid "Read more"
 msgstr ""
 
-#: inc/template-tags.php:353
+#: inc/template-tags.php:384
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
@@ -151,15 +163,15 @@ msgstr ""
 msgid "Theme Info"
 msgstr ""
 
-#: inc/theme-info.php:49 inc/customizer/customizer.php:118
+#: inc/theme-info.php:49 inc/customizer/customizer.php:119
 msgid "Theme Links"
 msgstr ""
 
-#: inc/theme-info.php:50 inc/customizer/customizer.php:119
+#: inc/theme-info.php:50 inc/customizer/customizer.php:120
 msgid "https://themezee.com/themes/pocono/"
 msgstr ""
 
-#: inc/theme-info.php:50 inc/customizer/customizer.php:120
+#: inc/theme-info.php:50 inc/customizer/customizer.php:121
 msgid "Theme Page"
 msgstr ""
 
@@ -172,16 +184,16 @@ msgid "Theme Demo"
 msgstr ""
 
 #: inc/theme-info.php:53 inc/theme-info.php:74
-#: inc/customizer/customizer.php:121
+#: inc/customizer/customizer.php:122
 msgid "https://themezee.com/docs/pocono-documentation/"
 msgstr ""
 
 #: inc/theme-info.php:53 inc/theme-info.php:68
-#: inc/customizer/customizer.php:122
+#: inc/customizer/customizer.php:123
 msgid "Theme Documentation"
 msgstr ""
 
-#: inc/theme-info.php:54 inc/customizer/customizer.php:124
+#: inc/theme-info.php:54 inc/customizer/customizer.php:125
 msgid "Rate this theme"
 msgstr ""
 
@@ -201,7 +213,7 @@ msgstr ""
 msgid "View %s Documentation"
 msgstr ""
 
-#: inc/theme-info.php:81 inc/customizer/customizer.php:31
+#: inc/theme-info.php:81 inc/customizer/customizer.php:32
 msgid "Theme Options"
 msgstr ""
 
@@ -275,45 +287,25 @@ msgstr ""
 msgid "rate it"
 msgstr ""
 
-#: inc/customizer/customizer.php:41
+#: inc/customizer/customizer.php:42
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/customizer.php:52
+#: inc/customizer/customizer.php:53
 msgid "Display Site Title"
 msgstr ""
 
-#: inc/customizer/customizer.php:69
+#: inc/customizer/customizer.php:70
 msgid "Header Image Link"
 msgstr ""
 
-#: inc/customizer/customizer.php:86
+#: inc/customizer/customizer.php:87
 msgid "Hide header image on front page"
 msgstr ""
 
 #: inc/customizer/functions/custom-controls.php:61
-#: inc/widgets/widget-magazine-posts-grid.php:325
+#: inc/widgets/widget-magazine-posts-grid.php:354
 msgid "All Categories"
-msgstr ""
-
-#: inc/customizer/sections/customizer-featured.php:20
-msgid "Featured Posts"
-msgstr ""
-
-#: inc/customizer/sections/customizer-featured.php:36
-msgid "Activate Featured Posts"
-msgstr ""
-
-#: inc/customizer/sections/customizer-featured.php:51
-msgid "Show featured posts on Magazine Homepage"
-msgstr ""
-
-#: inc/customizer/sections/customizer-featured.php:66
-msgid "Show featured posts on posts page"
-msgstr ""
-
-#: inc/customizer/sections/customizer-featured.php:84
-msgid "Featured Posts Category"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:20
@@ -321,30 +313,53 @@ msgid "General Settings"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:35
-msgid "Theme Layout"
+msgid "Archives Layout"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:41
-msgid "Left Sidebar"
+#: inc/widgets/widget-magazine-posts-grid.php:368
+msgid "Two Columns"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:42
-msgid "Right Sidebar"
+#: inc/widgets/widget-magazine-posts-grid.php:369
+msgid "Three Columns"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:43
+#: inc/widgets/widget-magazine-posts-grid.php:370
+msgid "Four Columns"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:57
+msgid "Single Posts Layout"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:63
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:64
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:65
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:80
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer/sections/customizer-general.php:72
+#: inc/customizer/sections/customizer-general.php:95
 msgid "Enable sticky header feature"
 msgstr ""
 
-#: inc/customizer/sections/customizer-general.php:89
+#: inc/customizer/sections/customizer-general.php:112
 msgid "Blog Title"
 msgstr ""
 
-#: inc/customizer/sections/customizer-general.php:106
+#: inc/customizer/sections/customizer-general.php:129
 msgid "Blog Description"
 msgstr ""
 
@@ -353,61 +368,83 @@ msgid "Post Settings"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:35
-msgid "Post Layout (archive pages)"
-msgstr ""
-
-#: inc/customizer/sections/customizer-post.php:41
-#: inc/widgets/widget-magazine-posts-grid.php:339
-msgid "Two Columns"
-msgstr ""
-
-#: inc/customizer/sections/customizer-post.php:42
-#: inc/widgets/widget-magazine-posts-grid.php:340
-msgid "Three Columns"
-msgstr ""
-
-#: inc/customizer/sections/customizer-post.php:43
-#: inc/widgets/widget-magazine-posts-grid.php:341
-msgid "Four Columns"
-msgstr ""
-
-#: inc/customizer/sections/customizer-post.php:57
 msgid "Excerpt Length"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:75
+#: inc/customizer/sections/customizer-post.php:53
 msgid "Post Meta"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:91
-#: inc/widgets/widget-magazine-posts-grid.php:360
+#: inc/customizer/sections/customizer-post.php:69
+#: inc/widgets/widget-magazine-posts-grid.php:389
 msgid "Display post date"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:107
-#: inc/widgets/widget-magazine-posts-grid.php:367
+#: inc/customizer/sections/customizer-post.php:85
+#: inc/widgets/widget-magazine-posts-grid.php:396
 msgid "Display post author"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:123
-#: inc/widgets/widget-magazine-posts-grid.php:374
+#: inc/customizer/sections/customizer-post.php:101
+#: inc/widgets/widget-magazine-posts-grid.php:403
+msgid "Display post comments"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:117
+#: inc/widgets/widget-magazine-posts-grid.php:410
 msgid "Display post categories"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:141
+#: inc/customizer/sections/customizer-post.php:135
 msgid "Single Posts"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:158
-msgid "Display featured image on single posts"
-msgstr ""
-
-#: inc/customizer/sections/customizer-post.php:174
+#: inc/customizer/sections/customizer-post.php:151
 msgid "Display post tags on single posts"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:190
+#: inc/customizer/sections/customizer-post.php:167
 msgid "Display post navigation on single posts"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:20
+msgid "Post Slider"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:36
+msgid "Activate Post Slider"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:51
+msgid "Show Slider on Magazine Homepage"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:66
+msgid "Show Slider on posts page"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:84
+msgid "Slider Category"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:102
+msgid "Number of Posts"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:120
+msgid "Slider Animation"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:127
+msgid "Slide Effect"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:128
+msgid "Fade Effect"
+msgstr ""
+
+#: inc/customizer/sections/customizer-slider.php:142
+msgid "Slider Speed (in ms)"
 msgstr ""
 
 #: inc/customizer/sections/customizer-upgrade.php:20
@@ -425,27 +462,27 @@ msgid ""
 "this widget ONLY in the Magazine Homepage widget area."
 msgstr ""
 
-#: inc/widgets/widget-magazine-posts-grid.php:258
+#: inc/widgets/widget-magazine-posts-grid.php:286
 #, php-format
 msgid "View all posts from category %s"
 msgstr ""
 
-#: inc/widgets/widget-magazine-posts-grid.php:316
+#: inc/widgets/widget-magazine-posts-grid.php:345
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/widget-magazine-posts-grid.php:322
+#: inc/widgets/widget-magazine-posts-grid.php:351
 msgid "Category:"
 msgstr ""
 
-#: inc/widgets/widget-magazine-posts-grid.php:337
+#: inc/widgets/widget-magazine-posts-grid.php:366
 msgid "Grid Layout:"
 msgstr ""
 
-#: inc/widgets/widget-magazine-posts-grid.php:346
+#: inc/widgets/widget-magazine-posts-grid.php:375
 msgid "Number of posts:"
 msgstr ""
 
-#: inc/widgets/widget-magazine-posts-grid.php:352
+#: inc/widgets/widget-magazine-posts-grid.php:381
 msgid "Excerpt Length:"
 msgstr ""

@@ -38,11 +38,8 @@ function pocono_setup() {
 	// Set detfault Post Thumbnail size
 	set_post_thumbnail_size( 800, 500, true );
 
-	// Register Navigation Menus
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Sidebar Navigation', 'pocono' ),
-		'social' => esc_html__( 'Social Icons', 'pocono' ),
-	) );
+	// Register Navigation Menu
+	register_nav_menu( 'social', esc_html__( 'Social Icons', 'pocono' ) );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 	add_theme_support( 'html5', array(

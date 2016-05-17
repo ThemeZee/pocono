@@ -1,4 +1,4 @@
-Pocono WordPress Theme, Copyright 2015 ThemeZee.com
+Pocono WordPress Theme, Copyright 2016 ThemeZee.com
 Pocono is distributed under the terms of the GNU GPL
 
 ===================================
@@ -84,39 +84,35 @@ F) Licenses of bundled resources
 	License: Distributed under the terms of the MIT License (http://opensource.org/licenses/MIT)
 	Copyright: 2012-2015 Nicolas Gallagher and Jonathan Neal
 	
-	4. Roboto Font - https://www.google.com/fonts/specimen/Roboto
+	4. FlexSlider - https://github.com/woothemes/FlexSlider
+	License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)
+	Copyright: 2015 WooThemes, http://www.woothemes.com
+	
+	5. Roboto Font - https://www.google.com/fonts/specimen/Roboto
 	License: Distributed under the terms of the Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 	Copyright: 2015 Christian Robertson
 	
-	5. Montserrat Font - https://www.google.com/fonts/specimen/Roboto+Slab
-	License: Distributed under the terms of the Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
-	Copyright: 2015 Christian Robertson
+	6. Montserrat Font - https://www.google.com/fonts/specimen/Montserrat
+	License: Distributed under the terms of the SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+	Copyright: 2012 Julieta Ulanovsky
 	
-	6. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
+	7. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
 	
-	Image 1: https://pixabay.com/en/still-life-teddy-white-read-book-1037378/
+	Image 1: https://pixabay.com/en/couple-love-walk-romantic-park-1363959/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2015 Christiane Oldiefan (https://pixabay.com/en/users/Oldiefan-740865/)
+	Copyright: 2016 Adina Voicu (https://pixabay.com/en/users/AdinaVoicu-485024/)
 	
-	Image 2: https://pixabay.com/en/drop-of-water-drip-close-grass-7720/
+	Image 2: https://pixabay.com/en/blue-blueberry-delicious-fruit-1326154/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2011 LoggaWiggler (https://pixabay.com/en/users/LoggaWiggler-15/)
+	Copyright: 2016 Beth Thomas (https://pixabay.com/en/users/elizadean-2384498/)
 	
-	Image 3: https://pixabay.com/en/flower-pink-nature-blossom-petals-1181865/
+	Image 3: https://pixabay.com/en/gokart-action-umpteen-motor-speed-1080492/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2009 Marybeth (https://pixabay.com/en/users/msandersmusic-1972097/)
+	Copyright: 2015 Michal Jarmoluk (https://pixabay.com/en/users/jarmoluk-143740/)
 	
-	Image 4: https://pixabay.com/en/zebra-wildlife-africa-animal-1141302/
+	Image 4: https://pixabay.com/en/ladybug-harmonia-axyridis-1324398/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2015 Ajay Lalu (https://pixabay.com/en/users/AjayLalu-1897335/)
-	
-	Image 5: https://pixabay.com/en/telephone-london-red-england-1055044/
-	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2010 luxstorm (https://pixabay.com/en/users/luxstorm-1216826/)
-	
-	Image 6: https://pixabay.com/en/bananas-fruit-yellow-healthy-1119790/
-	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2016 Pete Linforth (https://pixabay.com/en/users/PeteLinforth-202249/)
+	Copyright: 2015 Luise (https://pixabay.com/en/users/esiuL-2367988/)
 
 ===================================
 Enjoy!
