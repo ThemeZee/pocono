@@ -12,10 +12,10 @@ get_header();
 // Get Theme Options from Database
 $theme_options = pocono_theme_options();
 
-// Display Featured Posts
-if ( true == $theme_options['featured_blog'] ) :
+// Display Post Slider
+if ( true == $theme_options['slider_blog'] ) :
 
-	get_template_part( 'template-parts/featured-content' );
+	get_template_part( 'template-parts/post-slider' );
 	
 endif;
 

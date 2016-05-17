@@ -1,22 +1,22 @@
 <?php
 /**
- * Template Name: Featured Content
+ * Template Name: Post Slider
  *
- * Description: A custom page template which displays the featured content area and page content
+ * Description: A custom page template which displays the post slider and page content
  *
  * @package Pocono
  */
 
 get_header(); 
 
-get_template_part( 'template-parts/featured-content' );
+get_template_part( 'template-parts/post-slider' );
 ?>
 
 	<section id="primary" class="content-single content-area">
 		<main id="main" class="site-main" role="main">
-			
+					
 			<?php pocono_breadcrumbs(); ?>
-
+			
 			<?php while (have_posts()) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );

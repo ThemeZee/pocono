@@ -201,6 +201,18 @@ function pocono_google_fonts_url() {
 
 
 /**
+ * Add custom sizes for featured images
+ */
+function pocono_add_image_sizes() {
+	
+	// Add Custom Header Image Size
+	add_image_size( 'pocono-slider-image', 1200, 550, true );
+	
+}
+add_action( 'after_setup_theme', 'pocono_add_image_sizes' );
+
+
+/**
  * Include Files
  */
  
@@ -219,6 +231,9 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Include support functions for Theme Addons
 require get_template_directory() . '/inc/addons.php';
+
+// Include Post Slider Setup
+require get_template_directory() . '/inc/slider.php';
 
 // include Widget Files
 require get_template_directory() . '/inc/widgets/widget-magazine-posts-grid.php';
