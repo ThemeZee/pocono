@@ -6,12 +6,12 @@
  *
  * @package Pocono
  */
- 
+
 get_header(); ?>
 	
 	<header class="page-header clearfix">
 		
-		<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'pocono' ), '<span>' . get_search_query() . '</span>' ); ?></h1>	
+		<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'pocono' ), '<span>' . get_search_query() . '</span>' ); ?></h1>  
 		<p><?php get_search_form(); ?></p>
 		
 	</header>
@@ -21,22 +21,22 @@ get_header(); ?>
 
 			<?php pocono_breadcrumbs(); ?>
 
-			<?php if (have_posts()) : ?>
+			<?php if ( have_posts() ) : ?>
 			
 				<div id="search-posts" class="post-wrapper clearfix">
 					
-					<?php while (have_posts()) : the_post();
-		
+					<?php while ( have_posts() ) : the_post();
+
 						if ( 'post' == get_post_type() ) :
-		
+
 							get_template_part( 'template-parts/content' );
-				
+
 						else :
-				
+
 							get_template_part( 'template-parts/content', 'search' );
-					
+
 						endif;
-		
+
 					endwhile; ?>
 			
 				</div>

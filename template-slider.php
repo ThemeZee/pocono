@@ -7,7 +7,7 @@
  * @package Pocono
  */
 
-get_header(); 
+get_header();
 
 get_template_part( 'template-parts/post-slider' );
 ?>
@@ -17,10 +17,10 @@ get_template_part( 'template-parts/post-slider' );
 					
 			<?php pocono_breadcrumbs(); ?>
 			
-			<?php while (have_posts()) : the_post();
+			<?php while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
-				
+
 				comments_template();
 
 			endwhile; ?>

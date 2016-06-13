@@ -6,7 +6,7 @@
  *
  * @package Pocono
  */
- 
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -41,7 +41,7 @@
 				</div><!-- .site-branding -->
 				
 				<div id="header-social-icons" class="header-social-icons social-icons-navigation clearfix">
-					<?php 
+					<?php
 						wp_nav_menu( array(
 							'theme_location' => 'social',
 							'container' => false,
@@ -50,9 +50,9 @@
 							'fallback_cb' => '',
 							'link_before' => '<span class="screen-reader-text">',
 							'link_after' => '</span>',
-							'depth' => 1
+							'depth' => 1,
 							)
-						); 
+						);
 					?>
 				</div>
 				

@@ -15,23 +15,22 @@ get_header(); ?>
 
 	<section id="primary" class="content-single content-area">
 		<main id="main" class="site-main" role="main">
-		 			
+
 			<?php pocono_breadcrumbs(); ?>
 
-			<?php if (have_posts()) : while (have_posts()) : the_post();
-		
-				get_template_part( 'template-parts/content', 'page' );
-		
-				endwhile; ?>
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-				<?php // Display Pagination	
+					get_template_part( 'template-parts/content', 'page' );
+
+				endwhile;
+
 				pocono_pagination();
 
 			endif; ?>
-			
+
 		</main><!-- #main -->
 	</section><!-- #primary -->
-	
+
 	<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
