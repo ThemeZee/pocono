@@ -3,7 +3,7 @@ Theme Name: Pocono
 Theme URI: https://themezee.com/themes/pocono/
 Author: ThemeZee
 Author URI: https://themezee.com
-Description: Pocono features a prominent post slideshow, grid post layout, navigation sidebar, and social icons menu. With its clean typography, elegant design, and attention to detail, Pocono helps you to create a stunning magazine-styled website. 
+Description: Pocono features a prominent post slideshow, grid post layout, navigation sidebar, and social icons menu. With its clean typography, elegant design, and attention to detail, Pocono helps you to create a stunning magazine-styled website.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -670,8 +670,8 @@ textarea {
 	padding: 0;
 }
 
-.site-branding a:link, 
-.site-branding a:visited, 
+.site-branding a:link,
+.site-branding a:visited,
 .site-branding a:hover {
 	text-decoration: none;
 	padding: 0;
@@ -690,7 +690,7 @@ textarea {
 	text-decoration: none;
 }
 
-.site-title a:link, 
+.site-title a:link,
 .site-title a:visited {
 	color: #373737;
 }
@@ -776,16 +776,16 @@ textarea {
 	overflow-y: auto;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	box-sizing: border-box;	
+	box-sizing: border-box;
 }
 
 .content-overlay {
 	display: none;
 	position: fixed;
-	top: 0; 
-	left: 0; 
-	width: 100%; 
-	height: 100%; 
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: rgba(0,0,0,0.65);
 	text-align: center;
 	z-index: 100;
@@ -923,7 +923,7 @@ textarea {
 	margin: 0.5em 0 0.5em 1em;
 }
 
-.widget-title a:link, 
+.widget-title a:link,
 .widget-title a:visited  {
 	color: #ff5555;
 	-webkit-transition: all 0.2s ease;
@@ -933,7 +933,7 @@ textarea {
 	transition: all 0.2s ease;
 }
 
-.widget-title a:hover, 
+.widget-title a:hover,
 .widget-title a:active  {
 	color: #373737;
 }
@@ -1003,10 +1003,10 @@ textarea {
 }
 
 /* Default Archive, Categories, Menu and Pages Widgets */
-.widget_archive ul, 
+.widget_archive ul,
 .widget_categories ul,
-.widget_meta ul, 
-.widget_pages ul, 
+.widget_meta ul,
+.widget_pages ul,
 .widget_nav_menu ul {
 	list-style: none;
 	margin: 0;
@@ -1014,17 +1014,17 @@ textarea {
 	border-top: 1px dotted #ddd;
 }
 
-.widget_archive ul li, 
+.widget_archive ul li,
 .widget_categories ul li,
-.widget_meta ul li, 
-.widget_pages ul li, 
+.widget_meta ul li,
+.widget_pages ul li,
 .widget_nav_menu ul li {
 	margin: 0;
 	padding: 0.4em 0.8em;
 	border-bottom: 1px dotted #ddd;
 }
 
-.widget_archive ul li .item-count, 
+.widget_archive ul li .item-count,
 .widget_categories ul li .item-count {
 	float: right;
 	display: inline-block;
@@ -1156,8 +1156,8 @@ textarea {
 /*--------------------------------------------------------------
 ## 12.1 - Posts and Pages
 --------------------------------------------------------------*/
-.type-post, 
-.type-page, 
+.type-post,
+.type-page,
 .type-attachment  {
 	margin: 0 0 2.5em 0;
 	max-width: 100%;
@@ -1178,7 +1178,7 @@ textarea {
 	word-wrap: break-word;
 }
 
-.entry-title a:link, 
+.entry-title a:link,
 .entry-title a:visited {
 	color: #373737;
 	text-decoration: none;
@@ -1189,7 +1189,7 @@ textarea {
 	transition: all 0.2s ease;
 }
 
-.entry-title a:hover, 
+.entry-title a:hover,
 .entry-title a:active {
 	color: #ff5555;
 }
@@ -1230,12 +1230,12 @@ textarea {
 	transition: all 0.2s ease;
 }
 
-.more-link:link, 
+.more-link:link,
 .more-link:visited  {
 	color: #fff;
 }
 
-.more-link:hover, 
+.more-link:hover,
 .more-link:active {
 	background: #373737;
 }
@@ -1257,7 +1257,7 @@ textarea {
 	font-size: 0.875rem;
 }
 
-.entry-meta .meta-date, 
+.entry-meta .meta-date,
 .entry-meta .meta-author {
 	margin-right: 1.5em;
 }
@@ -1283,12 +1283,12 @@ textarea {
 	content: '\f108';
 }
 
-.entry-meta a:link, 
+.entry-meta a:link,
 .entry-meta a:visited {
 	color: #aaa;
 }
 
-.entry-meta a:hover, 
+.entry-meta a:hover,
 .entry-meta a:active,
 .entry-meta span a:hover:before {
 	color: #666;
@@ -1313,12 +1313,12 @@ textarea {
 	font-size: 0.875rem;
 }
 
-.entry-categories .meta-category a:link, 
+.entry-categories .meta-category a:link,
 .entry-categories .meta-category a:visited {
 	color: #fff;
 }
 
-.entry-categories .meta-category a:hover, 
+.entry-categories .meta-category a:hover,
 .entry-categories .meta-category a:active {
 	color: #ff5555;
 	background: #fff;
@@ -1360,9 +1360,9 @@ textarea {
 	font-size: 0.875rem !important;
 }
 
-.widget_tag_cloud .tagcloud a:link, 
+.widget_tag_cloud .tagcloud a:link,
 .widget_tag_cloud .tagcloud a:visited,
-.entry-tags .meta-tags a:link, 
+.entry-tags .meta-tags a:link,
 .entry-tags .meta-tags a:visited {
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
@@ -1372,9 +1372,9 @@ textarea {
 	transition: all 0.2s ease;
 }
 
-.widget_tag_cloud .tagcloud a:hover, 
+.widget_tag_cloud .tagcloud a:hover,
 .widget_tag_cloud .tagcloud a:active,
-.entry-tags .meta-tags a:hover, 
+.entry-tags .meta-tags a:hover,
 .entry-tags .meta-tags a:active {
 	color: #fff;
 	background: #373737;
@@ -1423,12 +1423,12 @@ textarea {
 	transition: all 0.2s ease;
 }
 
-.post-navigation .nav-links a:link, 
+.post-navigation .nav-links a:link,
 .post-navigation .nav-links a:visited  {
 	color: #fff;
 }
 
-.post-navigation .nav-links a:hover, 
+.post-navigation .nav-links a:hover,
 .post-navigation .nav-links a:active {
 	background: #ff5555;
 }
@@ -1554,13 +1554,13 @@ textarea {
 	display: inline-block;
 	margin: 0 2px 2px 0;
 	padding: 0.4em 0.9em;
-    text-align: center;
+	text-align: center;
 	text-decoration: none;
 	color: #fff;
 	background: #373737;
 }
 
-.post-pagination a:link, 
+.post-pagination a:link,
 .post-pagination a:visited {
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
@@ -1789,12 +1789,12 @@ textarea {
 	transition: all 0.2s ease;
 }
 
-.reply .comment-reply-link:link, 
+.reply .comment-reply-link:link,
 .reply .comment-reply-link:visited  {
 	color: #fff;
 }
 
-.reply .comment-reply-link:hover, 
+.reply .comment-reply-link:hover,
 .reply .comment-reply-link:active {
 	background: #ff5555;
 }
@@ -1947,18 +1947,18 @@ object {
 		padding-left: 2em;
 		padding-right: 2em;
 	}
-	
+
 	.site-content {
 		padding-top: 2em;
 	}
-	
+
 	.widget,
-	.type-post, 
-	.type-page, 
+	.type-post,
+	.type-page,
 	.type-attachment,
 	.post-pagination,
 	.comments-area,
-	.page-header, 
+	.page-header,
 	.comments-header,
 	.comment-reply-title,
 	.widget-magazine-posts .widget-header {
@@ -1971,32 +1971,32 @@ object {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
-	
+
 }
 
 /*--------------------------------------------------------------
 ## 17.2 - Desktop Large ( < 1120px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 70em) {
-	
-	.page-title, 
+
+	.page-title,
 	.entry-title {
 		font-size: 32px;
 		font-size: 2rem;
 	}
-	
+
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title {
 		font-size: 22px;
 		font-size: 1.375rem;
 	}
-	
+
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
 	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
-	
+
 	.post-layout-four-columns .post-wrapper .type-post .entry-title,
 	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
 		font-size: 16px;
@@ -2009,21 +2009,21 @@ object {
 ## 17.3 - Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
-	
+
 	.header-bar {
 		padding: 0 1.25em;
 	}
-	
+
 	.has-post-thumbnail .post-content {
 		padding: 0.75em 1.5em 0;
 	}
-	
-	.page-title, 
+
+	.page-title,
 	.entry-title {
 		font-size: 28px;
 		font-size: 1.75rem;
 	}
-	
+
 	.page-header .archive-title,
 	.comments-header .comments-title,
 	.comment-reply-title span,
@@ -2031,20 +2031,20 @@ object {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
-	
+
 	.page-header .blog-description,
 	.page-header .archive-description,
 	.widget-magazine-posts .widget-header .category-description {
 		font-size: 16px;
 		font-size: 1rem;
 	}
-	
+
 	/* Post Columns */
 	.post-layout-four-columns .post-wrapper .post-column,
 	.magazine-four-columns-grid .magazine-grid-post {
 		width: 50%;
 	}
-	
+
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-four-columns .post-wrapper .type-post .entry-title,
 	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
@@ -2052,7 +2052,7 @@ object {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
-	
+
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
 	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
 		font-size: 16px;
@@ -2065,49 +2065,49 @@ object {
 ## 17.4 - Tablet Large ( < 880px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 55em) {
-	
+
 	.content-single {
 		float: none;
 		width: 100%;
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	.sidebar {
 		float: none;
 		margin: 3em 0 0;
 		width: 100%;
 	}
-	
+
 }
 
 /*--------------------------------------------------------------
 ## 17.5 - Tablet Medium ( < 800px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
-	
+
 	.container {
 		padding-left: 1.5em;
 		padding-right: 1.5em;
 	}
-	
+
 	.site-content {
 		padding-top: 1.5em;
 	}
 
 	.widget,
-	.type-post, 
-	.type-page, 
+	.type-post,
+	.type-page,
 	.type-attachment,
 	.post-pagination,
 	.comments-area,
-	.page-header, 
+	.page-header,
 	.comments-header,
 	.comment-reply-title,
 	.widget-magazine-posts .widget-header {
 		margin-bottom: 1.5em;
 	}
-	
+
 	/* Header Bar */
 	.site-branding {
 		margin: 0.5em 0;
@@ -2117,23 +2117,23 @@ object {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
-	
+
 	.main-navigation-toggle {
 		left: 1.5em;
 	}
-	
+
 	.main-navigation-toggle:after {
 		font-size: 26px;
 	}
-	
+
 	.header-social-icons {
 		right: 1em;
 	}
-	
+
 	.header-social-icons .social-icons-menu li a:before {
 		font-size: 24px;
 	}
-	
+
 	/* Post Columns */
 	.post-wrapper,
 	.magazine-grid {
@@ -2149,12 +2149,12 @@ object {
 	.magazine-grid .magazine-grid-post .type-post {
 		margin: 0 0 1.5em;
 	}
-	
+
 	.post-layout-three-columns .post-wrapper .post-column,
 	.magazine-three-columns-grid .magazine-grid-post {
 		width: 50%;
 	}
-	
+
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
 	.post-layout-four-columns .post-wrapper .type-post .entry-title,
@@ -2164,24 +2164,24 @@ object {
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
-	
+
 }
 
 /*--------------------------------------------------------------
 ## 17.7 - Mobile Extra Large ( < 640px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
-	
+
 	.has-post-thumbnail .post-content {
 		padding: 0.5em 1em;
 	}
 
-	.page-title, 
+	.page-title,
 	.entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
-	
+
 	.page-header .archive-title,
 	.comments-header .comments-title,
 	.comment-reply-title span,
@@ -2189,14 +2189,14 @@ object {
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
-	
+
 	.page-header .blog-description,
 	.page-header .archive-description,
 	.widget-magazine-posts .widget-header .category-description {
 		font-size: 15px;
 		font-size: 0.9375rem;
 	}
-	
+
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
 	.post-layout-four-columns .post-wrapper .type-post .entry-title,
@@ -2206,14 +2206,14 @@ object {
 		font-size: 16px;
 		font-size: 1rem;
 	}
-	
+
 }
 
 /*--------------------------------------------------------------
 ## 17.9 - Mobile Medium ( < 480px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 30em) {
-	
+
 	/* Header Bar */
 	.header-main {
 		text-align: left;
@@ -2224,29 +2224,29 @@ object {
 		float: left;
 		margin-left: 3em;
 	}
-	
-	
+
+
 	.has-post-thumbnail .post-content {
 		margin: 0.5em 0 0;
 		padding: 0;
 	}
-	
+
 	.entry-categories .meta-category a {
 		font-size: 13px;
 		font-size: 0.8125rem;
 	}
-	
+
 	.page-title,
 	.entry-title {
 		font-size: 22px;
 		font-size: 1.375rem;
 	}
-	
+
 	.alignright, .alignleft {
 		float: none;
 		margin: 1em 0;
 	}
-	
+
 	/* Post Columns */
 	.post-wrapper,
 	.magazine-grid {
@@ -2259,7 +2259,7 @@ object {
 		display: block;
 		padding-right: 0;
 	}
-	
+
 	.post-layout-two-columns .post-wrapper .post-column,
 	.post-layout-three-columns .post-wrapper .post-column,
 	.post-layout-four-columns .post-wrapper .post-column,
@@ -2268,7 +2268,7 @@ object {
 	.magazine-four-columns-grid .magazine-grid-post {
 		width: 100%;
 	}
-	
+
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
 	.post-layout-four-columns .post-wrapper .type-post .entry-title,
@@ -2278,11 +2278,11 @@ object {
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
-	
+
 }
 
 @media only screen and (max-width: 25em) {
-	
+
 	.header-social-icons {
 		display: none;
 	}
@@ -2293,18 +2293,18 @@ object {
 ## 17.10 - Mobile Small ( < 320px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 20em) {
-	
+
 	.site-branding .site-title {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
-	
+
 	.page-title,
 	.entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
-	
+
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
 	.post-layout-four-columns .post-wrapper .type-post .entry-title,
@@ -2314,7 +2314,7 @@ object {
 		font-size: 16px;
 		font-size: 1rem;
 	}
-	
+
 }
 
 /*--------------------------------------------------------------
@@ -2336,19 +2336,19 @@ object {
 }
 
 @media only screen and (max-width: 782px) {
-	
+
 	.sticky-header.admin-bar .fixed-header  {
 		top: 46px;
 	}
-	
+
 }
 
 @media only screen and (max-width: 600px) {
-	
+
 	.sticky-header.admin-bar .fixed-header  {
 		top: 0;
 	}
-	
+
 }
 
 /*--------------------------------------------------------------
@@ -2362,23 +2362,23 @@ object {
 		float: left;
 		width: 32%;
 	}
-	
+
 	.sidebar-left .content-single {
 		float: right;
 		padding-left: 2.5em;
 		width: 68%;
 	}
-	
+
 	/* Sidebar Right */
 	.sidebar-right .sidebar {
 		float: right;
 		width: 32%;
 	}
-	
+
 	.sidebar-right .content-single {
 		float: left;
 		padding-right: 2.5em;
 		width: 68%;
 	}
-	
+
 }
