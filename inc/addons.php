@@ -20,10 +20,11 @@ function pocono_theme_addons_setup() {
 
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'type' 		=> 'click',
-		'container' => 'main',
-		'wrapper' => 'post-wrapper',
-		'render'    => 'pocono_infinite_scroll_render',
+		'container'      => 'post-wrapper',
+		'footer_widgets' => 'footer',
+		'wrapper'        => false,
+		'render'         => 'pocono_infinite_scroll_render',
+		'posts_per_page' => 6,
 	) );
 
 }
