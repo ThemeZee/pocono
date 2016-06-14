@@ -25,10 +25,10 @@ function pocono_slider_scripts() {
 		wp_enqueue_style( 'pocono-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 
 		// FlexSlider JS.
-		wp_enqueue_script( 'pocono-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array( 'jquery' ), '2.6.0' );
+		wp_enqueue_script( 'flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array( 'jquery' ), '2.6.0' );
 
 		// Register and enqueue slider setup.
-		wp_enqueue_script( 'pocono-post-slider', get_template_directory_uri() .'/js/slider.js', array( 'pocono-flexslider' ) );
+		wp_enqueue_script( 'pocono-post-slider', get_template_directory_uri() .'/js/slider.js', array( 'flexslider' ) );
 
 	endif;
 

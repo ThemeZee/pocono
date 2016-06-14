@@ -158,11 +158,11 @@ function pocono_scripts() {
 	wp_enqueue_style( 'pocono-stylesheet', get_stylesheet_uri(), array(), $theme_version );
 
 	// Register Genericons.
-	wp_enqueue_style( 'pocono-genericons', get_template_directory_uri() . '/css/genericons/genericons.css', array(), '3.4.1' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', array(), '3.4.1' );
 
 	// Register and Enqueue HTML5shiv to support HTML5 elements in older IE versions.
-	wp_enqueue_script( 'pocono-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3' );
-	wp_script_add_data( 'pocono-html5shiv', 'conditional', 'lt IE 9' );
+	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3' );
+	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
 	// Register and enqueue navigation.js.
 	wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160512' );
