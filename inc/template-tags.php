@@ -78,6 +78,28 @@ function pocono_header_image() {
 endif;
 
 
+if ( ! function_exists( 'pocono_post_image' ) ) :
+/**
+ * Displays the featured image on archive posts.
+ *
+ * @param string $size Post thumbnail size.
+ * @param array  $attr Post thumbnail attributes.
+ */
+function pocono_post_image( $size = '', $attr = array() ) {
+
+	// Display Post Thumbnail.
+	if ( has_post_thumbnail() ) : ?>
+
+		<a href="<?php the_permalink(); ?>" rel="bookmark">
+			<?php the_post_thumbnail( $size, $attr ); ?>
+		</a>
+
+	<?php endif;
+
+} // pocono_post_image()
+endif;
+
+
 if ( ! function_exists( 'pocono_post_image_single' ) ) :
 /**
  * Displays the featured image on single posts
