@@ -89,9 +89,6 @@ html[xmlns] .zeeflexslider .zeeslides {
 .zeeflex-viewport {
 	max-height: 2000px;
 	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-ms-transition: all 1s ease;
-	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
 
@@ -114,8 +111,6 @@ html[xmlns] .zeeflexslider .zeeslides {
 	padding: 1em 2em 0;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -162,7 +157,7 @@ html[xmlns] .zeeflexslider .zeeslides {
 	height: 40px;
 	background: #ff5555;
 	text-align: left;
-	color #fff;
+	color: #fff;
 	font-size: 0;
 	cursor: pointer;
 	z-index: 10;
