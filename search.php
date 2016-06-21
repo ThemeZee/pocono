@@ -7,7 +7,9 @@
  * @package Pocono
  */
 
-get_header(); ?>
+get_header();
+
+if ( have_posts() ) : ?>
 
 	<header class="page-header clearfix">
 
@@ -16,12 +18,15 @@ get_header(); ?>
 
 	</header>
 
+<?php endif; ?>
+
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php pocono_breadcrumbs(); ?>
+			<?php
+			if ( have_posts() ) : ?>
 
-			<?php if ( have_posts() ) : ?>
+				<?php pocono_breadcrumbs(); ?>
 
 				<div id="post-wrapper" class="post-wrapper clearfix">
 
@@ -43,25 +48,12 @@ get_header(); ?>
 
 				<?php pocono_pagination(); ?>
 
-			<?php else : ?>
+			<?php
+			else :
 
-				<div class="no-matches type-page">
+				get_template_part( 'template-parts/content', 'none' );
 
-					<header class="entry-header">
-
-						<h2 class="page-title"><?php esc_html_e( 'No matches', 'pocono' ); ?></h2>
-
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-
-						<p><?php esc_html_e( 'Please try again, or use the navigation menus to find what you search for.', 'pocono' ); ?></p>
-
-					</div>
-
-				</div>
-
-			<?php endif; ?>
+			endif; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
