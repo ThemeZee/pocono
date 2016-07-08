@@ -85,7 +85,7 @@ if ( ! function_exists( 'pocono_post_image' ) ) :
  * @param string $size Post thumbnail size.
  * @param array  $attr Post thumbnail attributes.
  */
-function pocono_post_image( $size = '', $attr = array() ) {
+function pocono_post_image( $size = 'post-thumbnail', $attr = array() ) {
 
 	// Display Post Thumbnail.
 	if ( has_post_thumbnail() ) : ?>
