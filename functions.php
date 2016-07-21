@@ -165,7 +165,7 @@ function pocono_scripts() {
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
 	// Register and enqueue navigation.js.
-	wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160512' );
+	wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160719' );
 
 	// Register and enqueue sticky-header.js.
 	wp_enqueue_script( 'pocono-jquery-sticky-header', get_template_directory_uri() . '/js/sticky-header.js', array( 'jquery' ), '20160512' );

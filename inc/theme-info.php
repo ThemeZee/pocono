@@ -45,7 +45,6 @@ function pocono_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'pocono' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/pocono/', 'pocono' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'pocono' ); ?></a>
-				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php esc_html_e( 'Changelog', 'pocono' ); ?></a>
 				<a href="<?php echo esc_url( 'http://preview.themezee.com/pocono/?utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=demo' ); ?>" target="_blank"><?php esc_html_e( 'Theme Demo', 'pocono' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/pocono-documentation/', 'pocono' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'pocono' ); ?></a>
 				<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/pocono?filter=5' ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'pocono' ); ?></a>
