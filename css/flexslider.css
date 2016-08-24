@@ -44,16 +44,16 @@
 	-webkit-backface-visibility: hidden;
 }
 .zeeflexslider .zeeslides img {
-	width: 100%;
 	display: block;
+	width: 100%;
 }
 .zeeflexslider .zeeslides:after {
-	content: "\0020";
 	display: block;
-	clear: both;
 	visibility: hidden;
-	line-height: 0;
+	clear: both;
 	height: 0;
+	content: "\0020";
+	line-height: 0;
 }
 html[xmlns] .zeeflexslider .zeeslides {
 	display: block;
@@ -70,8 +70,8 @@ html[xmlns] .zeeflexslider .zeeslides {
  * ====================================================================================================================*/
 
 .post-slider-container {
-	margin: 0 0 2.5em;
 	overflow: hidden;
+	margin: 0 0 2.5em;
 }
 
 .post-slider-wrap {
@@ -93,25 +93,25 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 .post-slider .zeeslide .slide-image {
+	position: relative;
 	float: left;
-	width: 100%;
-	height: auto;
 	max-width: 1200px;
 	max-height: 550px;
+	width: 100%;
+	height: auto;
 	vertical-align: top;
-	position: relative;
 }
 
 .post-slider .zeeslide .slide-content {
 	position: absolute;
-	background: #fff;
-	left: 15%;
 	right: 15%;
 	bottom: 0;
+	left: 15%;
+	box-sizing: border-box;
 	padding: 1em 2em 0;
+	background: #fff;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
-	box-sizing: border-box;
 }
 
 .post-slider .zeeslide .slide-content .entry-title {
@@ -143,38 +143,38 @@ html[xmlns] .zeeflexslider .zeeslides {
 
 /* Direction Nav */
 .post-slider-controls .zeeflex-direction-nav {
-	*height: 0;
 	position: absolute;
 	top: 1em;
 	right: 1em;
+	*height: 0;
 }
 
 .post-slider-controls .zeeflex-direction-nav a {
-	display: block;
 	position: absolute;
+	z-index: 10;
+	display: block;
 	margin: 0;
 	width: 40px;
 	height: 40px;
 	background: #ff5555;
-	text-align: left;
 	color: #fff;
+	text-align: left;
 	font-size: 0;
 	cursor: pointer;
-	z-index: 10;
 }
 
 .post-slider-controls .zeeflex-direction-nav a:hover {
-	text-decoration: none;
 	background: #fff;
+	text-decoration: none;
 }
 
 .post-slider-controls .zeeflex-direction-nav a:before {
-	-webkit-font-smoothing: antialiased;
 	display: inline-block;
-	font: normal 32px Genericons;
-	text-decoration: inherit;
-	vertical-align: text-bottom;
 	color: #fff;
+	vertical-align: text-bottom;
+	text-decoration: inherit;
+	font: normal 32px Genericons;
+	-webkit-font-smoothing: antialiased;
 }
 
 .post-slider-controls .zeeflex-direction-nav a:hover:before {
@@ -209,25 +209,25 @@ html[xmlns] .zeeflexslider .zeeslides {
 
 /* Control Nav */
 .post-slider-controls .zeeflex-control-nav {
+	z-index: 99;
 	margin: 1em 0 0;
 	text-align: center;
-	z-index: 99;
 }
 
 .post-slider-controls .zeeflex-control-nav li {
-	margin: 0 4px;
 	display: inline-block;
-	zoom: 1;
 	*display: inline;
+	margin: 0 4px;
+	zoom: 1;
 }
 
 .post-slider-controls .zeeflex-control-nav li a {
+	display: inline-block;
 	width: 15px;
 	height: 15px;
-	display: inline-block;
 	background: #ddd;
-	cursor: pointer;
 	text-indent: -9999px;
+	cursor: pointer;
 }
 
 .post-slider-controls .zeeflex-control-nav li a:hover {
@@ -247,10 +247,9 @@ html[xmlns] .zeeflexslider .zeeslides {
 # Media Queries
 --------------------------------------------------------------*/
 @media only screen and (max-width: 80em) {
-
 	.post-slider .zeeslide .slide-content {
-		left: 10%;
 		right: 10%;
+		left: 10%;
 	}
 
 	.post-slider .zeeslide .slide-content .entry-title {
@@ -261,14 +260,13 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 @media only screen and (max-width: 70em) {
-
 	.post-slider-container {
 		margin: 0 0 2em;
 	}
 
 	.post-slider .zeeslide .slide-content {
-		left: 5%;
 		right: 5%;
+		left: 5%;
 	}
 
 	.post-slider .zeeslide .slide-content .entry-title {
@@ -279,10 +277,9 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 @media only screen and (max-width: 60em) {
-
 	.post-slider .zeeslide .slide-content {
-		left: 1em;
 		right: 1em;
+		left: 1em;
 	}
 
 	.post-slider .zeeslide .slide-content .entry-title {
@@ -318,7 +315,6 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 @media only screen and (max-width: 50em) {
-
 	.post-slider-container {
 		margin: 0 0 1.5em;
 	}
@@ -331,7 +327,6 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 @media only screen and (max-width: 40em) {
-
 	.post-slider .zeeslide .slide-content .entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
@@ -340,7 +335,6 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 @media only screen and (max-width: 30em) {
-
 	.post-slider .zeeslide .slide-image {
 		margin: 0 0 0.5em;
 	}
@@ -368,7 +362,6 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 @media only screen and (max-width: 20em) {
-
 	.post-slider .zeeslide .slide-content .entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
