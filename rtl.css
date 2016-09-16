@@ -189,8 +189,8 @@ li > ol {
 	}
 }
 
-.post-pagination a,
-.post-pagination .current {
+.pagination a,
+.pagination .current {
 	margin: 0 0 2px 2px;
 }
 
