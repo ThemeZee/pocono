@@ -26,6 +26,9 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 
 == Changelog ==
 
+= 1.0.3 =
+* updated tags in style.css
+
 = 1.0.2 =
 * moved Theme Links to Theme Options panel dropdown
 * updated pagination template function
