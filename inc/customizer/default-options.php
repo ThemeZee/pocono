@@ -33,7 +33,7 @@ function pocono_default_options() {
 	$default_options = array(
 		'site_title'						=> true,
 		'archive_layout' 					=> 'three-columns',
-		'single_layout' 					=> 'no-sidebar',
+		'single_layout' 					=> 'right-sidebar',
 		'sticky_header'						=> false,
 		'blog_title'						=> '',
 		'blog_description'					=> '',

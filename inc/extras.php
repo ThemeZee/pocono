@@ -6,14 +6,14 @@
  */
 
 if ( ! function_exists( 'pocono_default_menu' ) ) :
-/**
- * Display default page as navigation if no custom menu was set
- */
-function pocono_default_menu() {
+	/**
+	 * Display default page as navigation if no custom menu was set
+	 */
+	function pocono_default_menu() {
 
-	echo '<ul id="menu-main-navigation" class="main-navigation-menu menu">'. wp_list_pages( 'title_li=&echo=0' ) .'</ul>';
+		echo '<ul id="menu-main-navigation" class="main-navigation-menu menu">' . wp_list_pages( 'title_li=&echo=0' ) . '</ul>';
 
-}
+	}
 endif;
 
 
@@ -34,9 +34,9 @@ function pocono_body_classes( $classes ) {
 	}
 
 	// Add single layout classes.
-	if ( 'left-sidebar' == $theme_options['single_layout'] ) {
+	if ( is_active_sidebar( 'sidebar-1' ) && 'left-sidebar' === $theme_options['single_layout'] ) {
 		$classes[] = 'sidebar-left';
-	} elseif ( 'right-sidebar' == $theme_options['single_layout'] ) {
+	} elseif ( is_active_sidebar( 'sidebar-1' ) && 'right-sidebar' === $theme_options['single_layout'] ) {
 		$classes[] = 'sidebar-right';
 	}
 

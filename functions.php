@@ -104,23 +104,16 @@ add_action( 'after_setup_theme', 'pocono_content_width', 0 );
  */
 function pocono_widgets_init() {
 
-	// Get theme options from database.
-	$theme_options = pocono_theme_options();
-
-	// Register Sidebar based on theme options.
-	if ( 'no-sidebar' !== $theme_options['single_layout'] ) {
-
-		register_sidebar( array(
-			'name' => esc_html__( 'Sidebar', 'pocono' ),
-			'id' => 'sidebar',
-			'description' => esc_html__( 'Appears on single posts and pages.', 'pocono' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-			'after_widget' => '</aside>',
-			'before_title' => '<div class="widget-header"><h3 class="widget-title">',
-			'after_title' => '</h3></div>',
-		));
-
-	}
+	// Register Sidebar widget area for single posts.
+	register_sidebar( array(
+		'name' => esc_html__( 'Sidebar', 'pocono' ),
+		'id' => 'sidebar-1',
+		'description' => esc_html__( 'Appears only on single posts and pages.', 'pocono' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+		'after_title' => '</h3></div>',
+	));
 
 	// Register widget area for navigation menu.
 	register_sidebar( array(

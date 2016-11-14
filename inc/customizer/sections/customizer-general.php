@@ -46,20 +46,19 @@ function pocono_customize_register_general_settings( $wp_customize ) {
 
 	// Add Post Layout Settings for archive posts.
 	$wp_customize->add_setting( 'pocono_theme_options[single_layout]', array(
-		'default'           => 'no-sidebar',
+		'default'           => 'right-sidebar',
 		'type'           	=> 'option',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'pocono_sanitize_select',
 		)
 	);
 	$wp_customize->add_control( 'pocono_theme_options[single_layout]', array(
-		'label'    => esc_html__( 'Single Posts Layout', 'pocono' ),
+		'label'    => esc_html__( 'Sidebar Position (Single Posts)', 'pocono' ),
 		'section'  => 'pocono_section_general',
 		'settings' => 'pocono_theme_options[single_layout]',
 		'type'     => 'select',
 		'priority' => 2,
 		'choices'  => array(
-			'no-sidebar' => esc_html__( 'No Sidebar', 'pocono' ),
 			'left-sidebar' => esc_html__( 'Left Sidebar', 'pocono' ),
 			'right-sidebar' => esc_html__( 'Right Sidebar', 'pocono' ),
 			),

@@ -29,6 +29,7 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 = 1.0.5 =
 * added missing default slider image
 * added Magazine Homepage widget area to blog index
+* removed no sidebar setting and check if sidebar widget area is empty instead
 
 = 1.0.4 =
 * fixed minor escaping issues for wp.org theme review
