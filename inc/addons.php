@@ -45,7 +45,7 @@ function pocono_theme_addons_scripts() {
 	) {
 
 		// Enqueue Widget Bundle stylesheet.
-		wp_enqueue_style( 'themezee-widget-bundle', get_template_directory_uri() . '/css/themezee-widget-bundle.css', array(), '20160421' );
+		wp_enqueue_style( 'pocono-themezee-widget-bundle', get_template_directory_uri() . '/css/themezee-widget-bundle.css', array(), '20160421' );
 
 	}
 
@@ -53,27 +53,12 @@ function pocono_theme_addons_scripts() {
 	if ( is_singular( 'post' ) ) {
 
 		// Enqueue Related Post stylesheet.
-		wp_enqueue_style( 'themezee-related-posts', get_template_directory_uri() . '/css/themezee-related-posts.css', array(), '20160421' );
+		wp_enqueue_style( 'pocono-themezee-related-posts', get_template_directory_uri() . '/css/themezee-related-posts.css', array(), '20160421' );
 
 	}
 
 }
 add_action( 'wp_enqueue_scripts', 'pocono_theme_addons_scripts' );
-
-
-/**
- * Add custom image sizes for theme addons
- */
-function pocono_theme_addons_image_sizes() {
-
-	// Add Widget Bundle thumbnail.
-	add_image_size( 'tzwb-thumbnail', 90, 65, true );
-
-	// Add Related Posts thumbnail.
-	add_image_size( 'themezee-related-posts', 480, 320, true );
-
-}
-add_action( 'after_setup_theme', 'pocono_theme_addons_image_sizes' );
 
 
 /**

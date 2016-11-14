@@ -26,6 +26,9 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 
 == Changelog ==
 
+= 1.0.4 =
+* fixed minor escaping issues for wp.org theme review
+
 = 1.0.3 =
 * updated tags in style.css
 
