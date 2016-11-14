@@ -12,7 +12,7 @@
 	<?php // Display Post Thumbnail or default thumbnail.
 	if ( has_post_thumbnail() ) :
 
-		the_post_thumbnail( 'pocono-slider-image', array( 'class' => 'slide-image' ) );
+		the_post_thumbnail( 'pocono-single-posts', array( 'class' => 'slide-image' ) );
 
 	else : ?>
 

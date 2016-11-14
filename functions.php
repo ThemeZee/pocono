@@ -14,70 +14,73 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 
 
 if ( ! function_exists( 'pocono_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function pocono_setup() {
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
+	function pocono_setup() {
 
-	// Make theme available for translation. Translations can be filed in the /languages/ directory.
-	load_theme_textdomain( 'pocono', get_template_directory() . '/languages' );
+		// Make theme available for translation. Translations can be filed in the /languages/ directory.
+		load_theme_textdomain( 'pocono', get_template_directory() . '/languages' );
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	// Let WordPress manage the document title.
-	add_theme_support( 'title-tag' );
+		// Let WordPress manage the document title.
+		add_theme_support( 'title-tag' );
 
-	// Enable support for Post Thumbnails on posts and pages.
-	add_theme_support( 'post-thumbnails' );
+		// Enable support for Post Thumbnails on posts and pages.
+		add_theme_support( 'post-thumbnails' );
 
-	// Set detfault Post Thumbnail size.
-	set_post_thumbnail_size( 800, 500, true );
+		// Set detfault Post Thumbnail size.
+		set_post_thumbnail_size( 800, 500, true );
 
-	// Register Navigation Menu.
-	register_nav_menu( 'social', esc_html__( 'Social Icons', 'pocono' ) );
+		// Add Single Posts Image Size.
+		add_image_size( 'pocono-single-posts', 1200, 550, true );
 
-	// Switch default core markup for search form, comment form, and comments to output valid HTML5.
-	add_theme_support( 'html5', array(
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+		// Register Navigation Menu.
+		register_nav_menu( 'social', esc_html__( 'Social Icons', 'pocono' ) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'pocono_custom_background_args', array( 'default-color' => 'ffffff' ) ) );
+		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
+		add_theme_support( 'html5', array(
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
 
-	// Set up the WordPress core custom logo feature.
-	add_theme_support( 'custom-logo', apply_filters( 'pocono_custom_logo_args', array(
-		'height' => 40,
-		'width' => 200,
-		'flex-height' => true,
-		'flex-width' => true,
-	) ) );
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'pocono_custom_background_args', array( 'default-color' => 'ffffff' ) ) );
 
-	// Set up the WordPress core custom header feature.
-	add_theme_support('custom-header', apply_filters( 'pocono_custom_header_args', array(
-		'header-text' => false,
-		'width'	=> 1920,
-		'height' => 480,
-		'flex-height' => true,
-	) ) );
+		// Set up the WordPress core custom logo feature.
+		add_theme_support( 'custom-logo', apply_filters( 'pocono_custom_logo_args', array(
+			'height' => 40,
+			'width' => 200,
+			'flex-height' => true,
+			'flex-width' => true,
+		) ) );
 
-	// Add Theme Support for wooCommerce.
-	add_theme_support( 'woocommerce' );
+		// Set up the WordPress core custom header feature.
+		add_theme_support('custom-header', apply_filters( 'pocono_custom_header_args', array(
+			'header-text' => false,
+			'width'	=> 1920,
+			'height' => 480,
+			'flex-height' => true,
+		) ) );
 
-	// Add extra theme styling to the visual editor.
-	add_editor_style( array( 'css/editor-style.css', pocono_google_fonts_url() ) );
+		// Add Theme Support for wooCommerce.
+		add_theme_support( 'woocommerce' );
 
-	// Add Theme Support for Selective Refresh in Customizer.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+		// Add extra theme styling to the visual editor.
+		add_editor_style( array( 'css/editor-style.css', pocono_google_fonts_url() ) );
 
-}
+		// Add Theme Support for Selective Refresh in Customizer.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+	}
 endif;
 add_action( 'after_setup_theme', 'pocono_setup' );
 
@@ -134,7 +137,7 @@ function pocono_widgets_init() {
 	register_sidebar( array(
 		'name' => esc_html__( 'Magazine Homepage', 'pocono' ),
 		'id' => 'magazine-homepage',
-		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Magazine Posts widgets here.', 'pocono' ),
+		'description' => esc_html__( 'Appears on blog index and Magazine Homepage template. You can use the Magazine Posts widgets here.', 'pocono' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
@@ -198,18 +201,6 @@ function pocono_google_fonts_url() {
 
 	return apply_filters( 'pocono_google_fonts_url', $fonts_url );
 }
-
-
-/**
- * Add custom sizes for featured images
- */
-function pocono_add_image_sizes() {
-
-	// Add Custom Header Image Size.
-	add_image_size( 'pocono-slider-image', 1200, 550, true );
-
-}
-add_action( 'after_setup_theme', 'pocono_add_image_sizes' );
 
 
 /**
