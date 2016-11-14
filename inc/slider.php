@@ -19,7 +19,7 @@ function pocono_slider_scripts() {
 	$theme_options = pocono_theme_options();
 
 	// Register and enqueue FlexSlider JS and CSS if necessary.
-	if ( true === $theme_options['slider_blog'] or true === $theme_options['slider_magazine'] or is_page_template( 'template-slider.php' ) ) :
+	if ( true === $theme_options['slider_blog'] or is_page_template( 'template-slider.php' ) ) :
 
 		// FlexSlider JS.
 		wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array( 'jquery' ), '2.6.0' );

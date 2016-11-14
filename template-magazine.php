@@ -13,7 +13,7 @@ get_header();
 $theme_options = pocono_theme_options();
 
 // Display Post Slider.
-if ( true == $theme_options['slider_magazine'] ) :
+if ( true == $theme_options['slider_blog'] ) :
 
 	get_template_part( 'template-parts/post-slider' );
 

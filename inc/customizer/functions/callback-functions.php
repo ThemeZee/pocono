@@ -19,8 +19,6 @@ function pocono_slider_activated_callback( $control ) {
 	// Check if Slider is turned on.
 	if ( true === $control->manager->get_setting( 'pocono_theme_options[slider_blog]' )->value() ) :
 		return true;
-	elseif ( true === $control->manager->get_setting( 'pocono_theme_options[slider_magazine]' )->value() ) :
-		return true;
 	else :
 		return false;
 	endif;

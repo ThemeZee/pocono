@@ -35,24 +35,9 @@ function pocono_customize_register_slider_settings( $wp_customize ) {
 		'label' => esc_html__( 'Activate Post Slider', 'pocono' ),
 		'section' => 'pocono_section_slider',
 		'settings' => 'pocono_theme_options[slider_activate]',
-		'priority' => 1,
+		'priority' => 10,
 		)
 	) );
-	$wp_customize->add_setting( 'pocono_theme_options[slider_magazine]', array(
-		'default'           => false,
-		'type'           	=> 'option',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'pocono_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control( 'pocono_theme_options[slider_magazine]', array(
-		'label'    => esc_html__( 'Show Slider on Magazine Homepage', 'pocono' ),
-		'section'  => 'pocono_section_slider',
-		'settings' => 'pocono_theme_options[slider_magazine]',
-		'type'     => 'checkbox',
-		'priority' => 2,
-		)
-	);
 	$wp_customize->add_setting( 'pocono_theme_options[slider_blog]', array(
 		'default'           => false,
 		'type'           	=> 'option',
@@ -61,11 +46,11 @@ function pocono_customize_register_slider_settings( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 'pocono_theme_options[slider_blog]', array(
-		'label'    => esc_html__( 'Show Slider on posts page', 'pocono' ),
+		'label'    => esc_html__( 'Show Slider on blog index', 'pocono' ),
 		'section'  => 'pocono_section_slider',
 		'settings' => 'pocono_theme_options[slider_blog]',
 		'type'     => 'checkbox',
-		'priority' => 3,
+		'priority' => 20,
 		)
 	);
 
@@ -83,7 +68,7 @@ function pocono_customize_register_slider_settings( $wp_customize ) {
 		'section' => 'pocono_section_slider',
 		'settings' => 'pocono_theme_options[slider_category]',
 		'active_callback' => 'pocono_slider_activated_callback',
-		'priority' => 4,
+		'priority' => 30,
 		)
 	) );
 
@@ -101,7 +86,7 @@ function pocono_customize_register_slider_settings( $wp_customize ) {
 		'settings' => 'pocono_theme_options[slider_limit]',
 		'type'     => 'text',
 		'active_callback' => 'pocono_slider_activated_callback',
-		'priority' => 5,
+		'priority' => 40,
 		)
 	);
 
@@ -118,7 +103,7 @@ function pocono_customize_register_slider_settings( $wp_customize ) {
 		'section'  => 'pocono_section_slider',
 		'settings' => 'pocono_theme_options[slider_animation]',
 		'type'     => 'radio',
-		'priority' => 6,
+		'priority' => 50,
 		'active_callback' => 'pocono_slider_activated_callback',
 		'choices'  => array(
 			'slide' => esc_html__( 'Slide Effect', 'pocono' ),
@@ -141,7 +126,7 @@ function pocono_customize_register_slider_settings( $wp_customize ) {
 		'settings' => 'pocono_theme_options[slider_speed]',
 		'type'     => 'number',
 		'active_callback' => 'pocono_slider_activated_callback',
-		'priority' => 7,
+		'priority' => 60,
 		'input_attrs' => array(
 			'min'   => 1000,
 			'step'  => 100,

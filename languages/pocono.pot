@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pocono\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-09-16 10:41+0100\n"
-"PO-Revision-Date: 2016-09-16 10:41+0100\n"
+"POT-Creation-Date: 2016-11-14 21:14+0100\n"
+"PO-Revision-Date: 2016-11-14 21:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -47,34 +47,34 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: functions.php:42
+#: functions.php:45
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:112 sidebar.php:25
+#: functions.php:109
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:114
-msgid "Appears on single posts and pages."
+#: functions.php:111
+msgid "Appears only on single posts and pages."
 msgstr ""
 
-#: functions.php:125
+#: functions.php:120
 msgid "Navigation Menu"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:122
 msgid "Appears on the slide-in navigation menu."
 msgstr ""
 
-#: functions.php:136
+#: functions.php:131
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:133
 msgid ""
-"Appears on Magazine Homepage template only. You can use the Magazine Posts "
-"widgets here."
+"Appears on blog index and Magazine Homepage template. You can use the "
+"Magazine Posts widgets here."
 msgstr ""
 
 #: header.php:26
@@ -103,11 +103,6 @@ msgstr ""
 
 #: sidebar-menu.php:20
 msgid "Navigation"
-msgstr ""
-
-#: sidebar.php:27
-msgid ""
-"Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
 msgstr ""
 
 #: template-magazine.php:43
@@ -143,17 +138,17 @@ msgctxt "post navigation"
 msgid "Next Post:"
 msgstr ""
 
-#: inc/template-tags.php:369
-msgctxt "pagination"
-msgid "Next Posts"
-msgstr ""
-
-#: inc/template-tags.php:370
+#: inc/template-tags.php:362
 msgctxt "pagination"
 msgid "Previous Posts"
 msgstr ""
 
-#: inc/template-tags.php:395
+#: inc/template-tags.php:363
+msgctxt "pagination"
+msgid "Next Posts"
+msgstr ""
+
+#: inc/template-tags.php:377
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
@@ -325,34 +320,30 @@ msgid "Four Columns"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:56
-msgid "Single Posts Layout"
+msgid "Sidebar Position (Single Posts)"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:62
-msgid "No Sidebar"
-msgstr ""
-
-#: inc/customizer/sections/customizer-general.php:63
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/customizer/sections/customizer-general.php:64
+#: inc/customizer/sections/customizer-general.php:63
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/customizer/sections/customizer-general.php:79
+#: inc/customizer/sections/customizer-general.php:78
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer/sections/customizer-general.php:93
+#: inc/customizer/sections/customizer-general.php:92
 msgid "Enable sticky header feature"
 msgstr ""
 
-#: inc/customizer/sections/customizer-general.php:110
+#: inc/customizer/sections/customizer-general.php:109
 msgid "Blog Title"
 msgstr ""
 
-#: inc/customizer/sections/customizer-general.php:127
+#: inc/customizer/sections/customizer-general.php:126
 msgid "Blog Description"
 msgstr ""
 
@@ -409,34 +400,30 @@ msgid "Activate Post Slider"
 msgstr ""
 
 #: inc/customizer/sections/customizer-slider.php:49
-msgid "Show Slider on Magazine Homepage"
+msgid "Show Slider on blog index"
 msgstr ""
 
-#: inc/customizer/sections/customizer-slider.php:64
-msgid "Show Slider on posts page"
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:82
+#: inc/customizer/sections/customizer-slider.php:67
 msgid "Slider Category"
 msgstr ""
 
-#: inc/customizer/sections/customizer-slider.php:99
+#: inc/customizer/sections/customizer-slider.php:84
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/customizer/sections/customizer-slider.php:117
+#: inc/customizer/sections/customizer-slider.php:102
 msgid "Slider Animation"
 msgstr ""
 
-#: inc/customizer/sections/customizer-slider.php:124
+#: inc/customizer/sections/customizer-slider.php:109
 msgid "Slide Effect"
 msgstr ""
 
-#: inc/customizer/sections/customizer-slider.php:125
+#: inc/customizer/sections/customizer-slider.php:110
 msgid "Fade Effect"
 msgstr ""
 
-#: inc/customizer/sections/customizer-slider.php:139
+#: inc/customizer/sections/customizer-slider.php:124
 msgid "Slider Speed (in ms)"
 msgstr ""
 

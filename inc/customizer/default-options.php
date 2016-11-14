@@ -44,7 +44,6 @@ function pocono_default_options() {
 		'meta_category'						=> true,
 		'meta_tags'							=> true,
 		'post_navigation'					=> true,
-		'slider_magazine' 					=> false,
 		'slider_blog' 						=> false,
 		'slider_category' 					=> 0,
 		'slider_limit' 						=> 8,
