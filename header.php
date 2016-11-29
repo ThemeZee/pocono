@@ -31,7 +31,7 @@
 
 			<div class="header-main container clearfix">
 
-				<button id="main-navigation-toggle" class="main-navigation-toggle"></button>
+				<button id="sidebar-navigation-toggle" class="sidebar-navigation-toggle"></button>
 
 				<div id="logo" class="site-branding clearfix">
 
@@ -59,6 +59,29 @@
 			</div><!-- .header-main -->
 
 		</header><!-- #masthead -->
+
+		<?php
+		if ( has_nav_menu( 'primary' ) ) : ?>
+
+			<div id="main-navigation-wrap" class="primary-navigation-wrap">
+
+				<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+					<?php
+						// Display Header Navigation.
+						wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'container' => false,
+							'menu_class' => 'main-navigation-menu',
+							'echo' => true,
+							'fallback_cb' => '',
+							)
+						);
+					?>
+				</nav><!-- #main-navigation -->
+
+			</div>
+
+		<?php endif; ?>
 
 		<?php pocono_header_image(); ?>
 

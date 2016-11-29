@@ -41,8 +41,12 @@ if ( ! function_exists( 'pocono_setup' ) ) :
 		// Add Single Posts Image Size.
 		add_image_size( 'pocono-single-posts', 1200, 550, true );
 
-		// Register Navigation Menu.
-		register_nav_menu( 'social', esc_html__( 'Social Icons', 'pocono' ) );
+		// Register Navigation Menus.
+		register_nav_menus( array(
+			'primary'   => esc_html__( 'Main Navigation', 'pocono' ),
+			'secondary' => esc_html__( 'Sidebar Navigation', 'pocono' ),
+			'social'    => esc_html__( 'Social Icons', 'pocono' ),
+		) );
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 		add_theme_support( 'html5', array(
@@ -155,12 +159,13 @@ function pocono_scripts() {
 	// Register Genericons.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', array(), '3.4.1' );
 
-	// Register and Enqueue HTML5shiv to support HTML5 elements in older IE versions.
-	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3' );
-	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
-
 	// Register and enqueue navigation.js.
-	wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160719' );
+	if ( has_nav_menu( 'primary' ) ) {
+		wp_enqueue_script( 'pocono-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20161129' );
+	}
+
+	// Register and enqueue sidebar.js.
+	wp_enqueue_script( 'pocono-jquery-sidebar', get_template_directory_uri() . '/js/sidebar.js', array( 'jquery' ), '20161129' );
 
 	// Register and enqueue sticky-header.js.
 	wp_enqueue_script( 'pocono-jquery-sticky-header', get_template_directory_uri() . '/js/sticky-header.js', array( 'jquery' ), '20160512' );

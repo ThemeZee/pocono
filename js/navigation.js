@@ -1,7 +1,5 @@
 /**
- * Navigation Plugin
- *
- * Adds a toggle icon with slide animation for the menu
+ * Navigation Menu Plugin
  *
  * Copyright 2016 ThemeZee
  * Free to use under the GPLv2 and later license.
@@ -15,74 +13,121 @@
 (function($) {
 
 	/**--------------------------------------------------------------
-	# Setup Navigation Menu
+	# Add Desktop Dropdown Animation
+	--------------------------------------------------------------*/
+	$.fn.addDropdownAnimation = function() {
+
+		/* Add dropdown animation for desktop navigation menu */
+		$( this ).find( 'ul.sub-menu' ).css( { display: 'none' } );
+		$( this ).find( 'li.menu-item-has-children' ).hover( function() {
+			$( this ).find( 'ul:first' ).css( { visibility: 'visible', display: 'none' } ).slideDown( 300 );
+		}, function() {
+			$( this ).find( 'ul:first' ).css( { visibility: 'hidden' } );
+		} );
+
+		/* Make sure menu does not fly off the right of the screen */
+		$( this ).find( 'li ul.sub-menu li.menu-item-has-children' ).mouseenter( function() {
+			if ( $( this ).children( 'ul.sub-menu' ).offset().left + 250 > $( window ).width() ) {
+				$( this ).children( 'ul.sub-menu' ).css( { right: '100%', left: 'auto' } );
+			}
+		});
+
+		// Add menu items with submenus to aria-haspopup="true".
+		$( this ).find( 'li.menu-item-has-children' ).attr( 'aria-haspopup', 'true' ).attr( 'aria-expanded', 'false' );
+
+		/* Properly update the ARIA states on focus (keyboard) and mouse over events */
+		$( this ).find( 'li.menu-item-has-children > a' ).on( 'focus.aria mouseenter.aria', function() {
+			$( this ).parents( '.menu-item' ).attr( 'aria-expanded', true ).find( 'ul:first' ).css( { visibility: 'visible', display: 'block' } );
+		} );
+
+		/* Properly update the ARIA states on blur (keyboard) and mouse out events */
+		$( this ).find( 'li.menu-item-has-children > a' ).on( 'blur.aria  mouseleave.aria', function() {
+
+			if( ! $( this ).parent().next( 'li' ).length > 0 && ! $( this ).next('ul').length > 0 ) {
+
+				$( this ).closest( 'li.menu-item-has-children' ).attr( 'aria-expanded', false ).find( '.sub-menu' ).css( { display: 'none' } );
+
+			}
+
+		} );
+
+	};
+
+	/**--------------------------------------------------------------
+	# Reset Desktop Dropdown Animation
+	--------------------------------------------------------------*/
+	$.fn.resetDropdownAnimation = function() {
+
+		/* Reset desktop navigation menu dropdown animation on smaller screens */
+		$( this ).find( 'ul.sub-menu' ).css( { display: 'block' } );
+		$( this ).find( 'li ul.sub-menu' ).css( { visibility: 'visible', display: 'block' } );
+		$( this ).find( 'li.menu-item-has-children' ).unbind( 'mouseenter mouseleave' );
+
+		$( this ).find( 'li.menu-item-has-children ul.sub-menu' ).each( function() {
+			$( this ).hide();
+			$( this ).parent().find( '.submenu-dropdown-toggle' ).removeClass( 'active' );
+		} );
+
+		/* Remove ARIA states on mobile devices */
+		$( this ).find( 'li.menu-item-has-children > a' ).unbind( 'focus.aria mouseenter.aria blur.aria  mouseleave.aria' );
+
+	};
+
+	/**--------------------------------------------------------------
+	# Add submenus dropdowns for mobile menu
+	--------------------------------------------------------------*/
+	$.fn.addMobileSubmenu = function() {
+
+		/* Add dropdown toggle for submenus on mobile navigation */
+		$( this ).find('li.menu-item-has-children').prepend('<span class=\"submenu-dropdown-toggle\"></span>');
+		$( this ).find('li.page_item_has_children').prepend('<span class=\"submenu-dropdown-toggle\"></span>');
+
+		/* Add dropdown animation for submenus on mobile navigation */
+		$( this ).find('.submenu-dropdown-toggle').on('click', function(){
+			$( this ).parent().find('ul:first').slideToggle();
+			$( this ).toggleClass('active');
+		});
+
+	};
+
+	/**--------------------------------------------------------------
+	# Setup Navigation Menus
 	--------------------------------------------------------------*/
 	$( document ).ready( function() {
 
-		/* Show menu and fade content area */
-		function showMenu() {
+		/* Variables */
+		var main_menu = $('.main-navigation-menu');
 
-			menu.show();
-			menu.animate( { 'margin-left' : '0' }, 300 );
-			overlay.show();
+		/* Add Listener for screen size */
+		if(typeof matchMedia == 'function') {
+			var mq = window.matchMedia('(max-width: 60em)');
+			mq.addListener(widthChange);
+			widthChange(mq);
+		}
+		function widthChange(mq) {
+
+			if (mq.matches) {
+
+				/* Reset desktop navigation menu dropdown animation on smaller screens */
+				main_menu.resetDropdownAnimation();
+
+				/* Copy header navigation items to main navigation on mobile screens */
+				$('#main-navigation-wrap').prependTo( $('#sidebar-navigation') ).addClass('mobile-main-navigation');
+
+			} else {
+
+				/* Add dropdown animation for desktop navigation menu */
+				main_menu.addDropdownAnimation();
+
+				/* Copy Header Navigation back to original spot */
+				$('.mobile-main-navigation').removeClass('mobile-main-navigation-menu').insertAfter( $('#masthead') );
+
+			}
 
 		}
 
-		/* Hide menu and show full content area */
-		function hideMenu() {
-
-			menu.animate({ 'margin-left': '-350px' },  300, function(){
-				menu.hide();
-			});
-			overlay.hide();
-
-		}
-
-		/* Add Overlay */
-		$( 'body' ).append( '<div id=\"content-overlay\" class=\"content-overlay\"></div>' );
-
-		/* Setup Selectors */
-		var button = $( '#main-navigation-toggle' ),
-			menu = $( '#main-navigation' ),
-			overlay = $( '#content-overlay' );
-
-		/* Only do something if menu exists */
-		if ( menu.length > 0 ) {
-
-			/* Add menu toggle effect */
-			button.on('click', function(){
-				if ( menu.is( ':visible' ) ) {
-					hideMenu();
-				} else {
-					showMenu();
-				}
-			});
-
-			/* Hide Menu when Content Area is clicked */
-			overlay.on('click', function(e){
-				if ( menu.is( ':visible' ) ) {
-					e.preventDefault();
-					hideMenu();
-				}
-			});
-
-		}
-
-		/* Add extra styling for default widgets */
-		$( '.widget-area' ).find( '.widget_archive ul li, .widget_categories ul li.cat-item' ).each( function () {
-
-			// Get Link and Count.
-			var list_item = $( this ).children( 'a' );
-			var count = $( this ).contents().eq( 1 ).text();
-
-			// Remove Count.
-			$( this ).html( list_item );
-
-			// Add new Count with span.
-			count = count.trim().replace( /[()]/g, '' );
-			$( this ).append( "<span class=\"item-count\">" + count + "</span>" );
-
-		} );
+		/* Add submenus for mobile navigation menu */
+		main_menu.addMobileSubmenu();
 
 	} );
 
