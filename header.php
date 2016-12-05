@@ -25,8 +25,6 @@
 
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pocono' ); ?></a>
 
-		<div id="header-top" class="header-bar-wrap"><?php do_action( 'pocono_header_bar' ); ?></div>
-
 		<header id="masthead" class="site-header clearfix" role="banner">
 
 			<div class="header-main container clearfix">

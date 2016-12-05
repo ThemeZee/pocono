@@ -834,7 +834,7 @@ textarea {
 .main-navigation-menu > .menu-item-has-children > a:after {
 	display: inline-block;
 	margin: 0.3em 0 0 0.3em;
-	color: #303030;
+	color: #373737;
 	content: '\f431';
 	vertical-align: top;
 	text-decoration: inherit;
@@ -847,7 +847,7 @@ textarea {
 
 .main-navigation-menu a:link,
 .main-navigation-menu a:visited {
-	color: #303030;
+	color: #373737;
 	text-decoration: none;
 }
 
@@ -923,7 +923,7 @@ textarea {
 }
 
 .main-navigation-menu li.current-menu-item > a {
-	border-color: #303030;
+	text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
@@ -1022,7 +1022,7 @@ textarea {
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 2.5em 0;
-	color: #333;
+	color: #373737;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
@@ -1971,6 +1971,7 @@ textarea {
 }
 
 .site-footer .site-info {
+	float: left;
 	padding: 2em 0;
 }
 
@@ -2186,6 +2187,11 @@ object {
 		font-size: 1rem;
 	}
 
+	.site-footer .site-info {
+		float: none;
+		text-align: center;
+	}
+
 	/*** Mobile Main Navigation ***/
 
 	/* Reset */
@@ -2289,7 +2295,7 @@ object {
 	}
 
 	.main-navigation-menu .submenu-dropdown-toggle:before {
-		color: #333;
+		color: #373737;
 		content: '\f431';
 		vertical-align: middle;
 		text-decoration: inherit;
