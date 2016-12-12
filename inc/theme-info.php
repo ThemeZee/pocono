@@ -45,7 +45,7 @@ function pocono_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'pocono' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/pocono/', 'pocono' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'pocono' ); ?></a>
-				<a href="http://preview.themezee.com/pocono/?utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'pocono' ); ?></a>
+				<a href="http://preview.themezee.com/?demo=pocono&utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'pocono' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/pocono-documentation/', 'pocono' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'pocono' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/pocono/reviews/?filter=5', 'pocono' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'pocono' ); ?></a>
 			</p>
@@ -130,7 +130,7 @@ function pocono_theme_info_page() {
 							<?php esc_html_e( 'Extend the functionality of your WordPress website with our free and easy to use plugins.', 'pocono' ); ?>
 						</p>
 						<p>
-							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ); ?>" class="button button-secondary">
+							<a href="<?php echo esc_url( admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ) ); ?>" class="button button-secondary">
 								<?php esc_html_e( 'Install Plugins', 'pocono' ); ?>
 							</a>
 						</p>
