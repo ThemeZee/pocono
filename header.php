@@ -35,6 +35,7 @@
 
 					<?php pocono_site_logo(); ?>
 					<?php pocono_site_title(); ?>
+					<?php pocono_site_description(); ?>
 
 				</div><!-- .site-branding -->
 

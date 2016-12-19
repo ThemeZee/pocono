@@ -710,6 +710,12 @@ textarea {
 	vertical-align: top;
 }
 
+.site-description {
+	margin: 0 0 0.5em;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
 /* Custom Header Image */
 .header-image {
 	text-align: center;
@@ -2582,6 +2588,10 @@ object {
 	top: 0;
 	z-index: 100;
 	width: 100%;
+}
+
+.sticky-header .fixed-header .site-description {
+	display: none;
 }
 
 .sticky-header.admin-bar .fixed-header  {

@@ -30,14 +30,6 @@ if ( ! function_exists( 'pocono_site_title' ) ) :
 	 */
 	function pocono_site_title() {
 
-		// Get theme options from database.
-		$theme_options = pocono_theme_options();
-
-		// Return early if site title is deactivated.
-		if ( false == $theme_options['site_title'] ) {
-			return;
-		}
-
 		if ( is_home() or is_page_template( 'template-magazine.php' )  ) : ?>
 
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -48,6 +40,24 @@ if ( ! function_exists( 'pocono_site_title' ) ) :
 
 		<?php endif;
 
+	}
+endif;
+
+
+if ( ! function_exists( 'pocono_site_description' ) ) :
+	/**
+	 * Displays the site description in the header area
+	 */
+	function pocono_site_description() {
+
+		$description = get_bloginfo( 'description', 'display' ); /* WPCS: xss ok. */
+
+		if ( $description || is_customize_preview() ) : ?>
+
+			<p class="site-description"><?php echo $description; ?></p>
+
+		<?php
+		endif;
 	}
 endif;
 
@@ -194,11 +204,11 @@ if ( ! function_exists( 'pocono_meta_author' ) ) :
 
 		return '<span class="meta-author"> ' . $author_string . '</span>';
 
-	}  // pocono_meta_author()
-	endif;
+	}
+endif;
 
 
-	if ( ! function_exists( 'pocono_meta_comments' ) ) :
+if ( ! function_exists( 'pocono_meta_comments' ) ) :
 	/**
 	 * Displays the post comments
 	 */
@@ -237,7 +247,6 @@ if ( ! function_exists( 'pocono_entry_categories' ) ) :
 
 		<?php
 		endif;
-
 	}
 endif;
 
@@ -265,7 +274,6 @@ if ( ! function_exists( 'pocono_entry_tags' ) ) :
 
 		<?php
 		endif;
-
 	}
 endif;
 
@@ -304,7 +312,6 @@ if ( ! function_exists( 'pocono_magazine_widgets_entry_meta' ) ) :
 			echo '<div class="entry-meta">' . $postmeta . '</div>';
 
 		}
-
 	}
 endif;
 
@@ -325,7 +332,6 @@ if ( ! function_exists( 'pocono_more_link' ) ) :
 
 		<?php
 		endif;
-
 	}
 endif;
 
@@ -347,7 +353,6 @@ if ( ! function_exists( 'pocono_post_navigation' ) ) :
 			) );
 
 		}
-
 	}
 endif;
 

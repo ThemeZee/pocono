@@ -32,6 +32,7 @@ function pocono_default_options() {
 
 	$default_options = array(
 		'site_title'						=> true,
+		'site_description'					=> false,
 		'archive_layout' 					=> 'three-columns',
 		'single_layout' 					=> 'right-sidebar',
 		'sticky_header'						=> false,
