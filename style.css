@@ -1204,32 +1204,90 @@ textarea {
 }
 
 /* Magazine Posts Styling */
-.widget-magazine-posts .has-post-thumbnail  .post-content {
+.widget-magazine-posts .has-post-thumbnail .post-content {
 	margin: -60px 0.75em 0;
 	padding: 0.5em 1em 0;
 }
 
-.widget-magazine-posts .type-post .entry-content {
+.widget-magazine-posts .large-post .entry-excerpt p,
+.widget-magazine-posts .medium-post .entry-excerpt p {
+	margin: 0.5em 0 1em;
+}
+
+/* Magazine Large Post Styling */
+.widget-magazine-posts .large-post .entry-title {
+	font-size: 26px;
+	font-size: 1.625rem;
+}
+
+.widget-magazine-posts .large-post .entry-content {
+	font-size: 17px;
+	font-size: 1.0625rem;
+}
+
+.widget-magazine-posts .large-post .entry-meta {
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+.widget-magazine-posts .large-post .entry-categories .meta-category a {
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+/* Medium Post Styling */
+.widget-magazine-posts .medium-post .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
+.widget-magazine-posts .medium-post .entry-content {
 	font-size: 16px;
 	font-size: 1rem;
 }
 
-.widget-magazine-posts .type-post .entry-excerpt p {
-	margin: 0.5em 0 1em;
+.widget-magazine-posts .medium-post .entry-meta {
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
-.widget-magazine-posts .type-post .entry-categories .meta-category a {
+.widget-magazine-posts .medium-post .entry-categories .meta-category a {
 	font-size: 13px;
 	font-size: 0.8125rem;
 }
 
-.widget-magazine-posts .type-post .entry-meta {
+/* Small Post Styling */
+.widget-magazine-posts .small-post {
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 0 2em;
+}
+
+.widget-magazine-posts .small-post .wp-post-image {
+	float: left;
+	padding-right: 1.5em;
+	max-width: 37%;
+}
+
+.widget-magazine-posts .small-post .small-post-content {
+	float: right;
+	width: 63%;
+}
+
+.widget-magazine-posts .small-post .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
+.widget-magazine-posts .small-post .entry-meta {
 	font-size: 14px;
 	font-size: 0.875rem;
 }
 
 /* Magazine Posts Grid */
-.magazine-grid {
+.widget-magazine-posts .magazine-grid {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1238,49 +1296,27 @@ textarea {
 	margin-right: -2em;
 }
 
-.magazine-grid .magazine-grid-post {
+.widget-magazine-posts .magazine-grid .post-column {
 	box-sizing: border-box;
 	padding-right: 2em;
 }
 
-.magazine-grid .magazine-grid-post .type-post {
-	margin: 0 0 2em;
-}
-
-/* Two Column Grid Layout */
-.magazine-two-columns-grid .magazine-grid-post {
+.widget-magazine-posts .magazine-grid-two-columns .post-column {
 	width: 50%;
 }
 
-.magazine-two-columns-grid .type-post .entry-title {
-	font-size: 26px;
-	font-size: 1.625rem;
-}
-
-/* Three Column Grid Layout */
-.magazine-three-columns-grid .magazine-grid-post {
+.widget-magazine-posts .magazine-grid-three-columns .post-column {
 	width: 33.3333333333333%;
 }
 
-.magazine-three-columns-grid .type-post .entry-title {
-	font-size: 20px;
-	font-size: 1.25rem;
-}
-
-/* Four Column Grid Layout */
-.magazine-four-columns-grid .magazine-grid-post {
-	width: 25%;
-}
-
-.magazine-four-columns-grid .type-post .entry-title {
-	font-size: 17px;
-	font-size: 1.0625rem;
+.widget-magazine-posts .magazine-grid .post-column .type-post {
+	margin: 0 0 2em;
 }
 
 /* Fix Render Bug for Safari */
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
 	@media {
-		.magazine-grid .magazine-grid-post {
+		.widget-magazine-posts .magazine-grid .post-column {
 			margin-right: -1px;
 		}
 	}
@@ -1594,7 +1630,7 @@ textarea {
 }
 
 /* Archive Posts Styling */
-.post-wrapper .has-post-thumbnail  .post-content {
+.post-wrapper .has-post-thumbnail .post-content {
 	margin: -60px 0.75em 0;
 	padding: 0.5em 1em 0;
 }
@@ -1647,6 +1683,21 @@ textarea {
 	font-size: 1.625rem;
 }
 
+.post-layout-two-columns .post-wrapper .type-post .entry-content {
+	font-size: 17px;
+	font-size: 1.0625rem;
+}
+
+.post-layout-two-columns .post-wrapper .type-post .entry-meta {
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+.post-layout-two-columns .post-wrapper .type-post .entry-categories .meta-category a {
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
 /* Three Column Layout */
 .post-layout-three-columns .post-wrapper .post-column {
 	width: 33.3333333333333%;
@@ -1655,16 +1706,6 @@ textarea {
 .post-layout-three-columns .post-wrapper .type-post .entry-title {
 	font-size: 20px;
 	font-size: 1.25rem;
-}
-
-/* Four Column Layout */
-.post-layout-four-columns .post-wrapper .post-column {
-	width: 25%;
-}
-
-.post-layout-four-columns .post-wrapper .type-post .entry-title {
-	font-size: 17px;
-	font-size: 1.0625rem;
 }
 
 /* Fix Render Bug for Safari */
@@ -2103,11 +2144,28 @@ object {
 
 	/* Post Columns */
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title {
+	.widget-magazine-posts .large-post .entry-title {
 		font-size: 24px;
 		font-size: 1.5rem;
 	}
 
+	.post-layout-two-columns .post-wrapper .type-post .entry-content,
+	.widget-magazine-posts .large-post .entry-content {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.post-layout-two-columns .post-wrapper .type-post .entry-meta,
+	.widget-magazine-posts .large-post .entry-meta {
+		font-size: 14px;
+		font-size: 0.875rem;
+	}
+
+	.post-layout-two-columns .post-wrapper .type-post .entry-categories .meta-category a,
+	.widget-magazine-posts .large-post .entry-categories .meta-category a {
+		font-size: 13px;
+		font-size: 0.8125rem;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2121,23 +2179,26 @@ object {
 	}
 
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title {
+	.widget-magazine-posts .large-post .entry-title {
 		font-size: 22px;
 		font-size: 1.375rem;
 	}
 
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
+	.widget-magazine-posts .medium-post .entry-title {
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
 
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 16px;
-		font-size: 1rem;
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
 
+	.widget-magazine-posts .small-post .entry-meta {
+		font-size: 13px;
+		font-size: 0.8125rem;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2174,21 +2235,23 @@ object {
 	}
 
 	/* Post Columns */
-	.post-layout-four-columns .post-wrapper .post-column,
-	.magazine-four-columns-grid .magazine-grid-post {
-		width: 50%;
-	}
-
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+	.widget-magazine-posts .large-post .entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
 
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title {
+	.widget-magazine-posts .medium-post .entry-title {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.widget-magazine-posts .small-post .wp-post-image {
+		padding-right: 1em;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
 		font-size: 16px;
 		font-size: 1rem;
 	}
@@ -2405,35 +2468,42 @@ object {
 
 	/* Post Columns */
 	.post-wrapper,
-	.magazine-grid {
+	.widget-magazine-posts .magazine-grid {
 		margin-right: -1.5em;
 	}
 
 	.post-wrapper .post-column,
-	.magazine-grid .magazine-grid-post {
+	.widget-magazine-posts .magazine-grid .post-column {
 		padding-right: 1.5em;
 	}
 
 	.post-wrapper .post-column .type-post,
-	.magazine-grid .magazine-grid-post .type-post {
+	.widget-magazine-posts .magazine-grid .post-column .type-post,
+	.widget-magazine-posts .small-post {
 		margin: 0 0 1.5em;
 	}
 
 	.post-layout-three-columns .post-wrapper .post-column,
-	.magazine-three-columns-grid .magazine-grid-post {
+	.widget-magazine-posts .magazine-grid-three-columns .post-column {
 		width: 50%;
 	}
 
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+	.widget-magazine-posts .large-post .entry-title,
+	.widget-magazine-posts .medium-post .entry-title {
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
 
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 15px;
+		font-size: 0.9375rem;
+	}
+
+	.widget-magazine-posts .small-post .entry-meta {
+		display: none;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2467,14 +2537,67 @@ object {
 
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
+	.widget-magazine-posts .large-post .entry-title,
+	.widget-magazine-posts .medium-post .entry-title {
 		font-size: 16px;
 		font-size: 1rem;
 	}
 
+}
+
+/*--------------------------------------------------------------
+## 17.9 - Mobile Medium ( < 480px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 35em) {
+
+	/* Post Columns */
+	.post-wrapper,
+	.widget-magazine-posts .magazine-grid {
+		display: block;
+		margin-right: 0;
+	}
+
+	.post-wrapper .post-column,
+	.widget-magazine-posts .magazine-grid .post-column {
+		display: block;
+		padding-right: 0;
+	}
+
+	.post-layout-two-columns .post-wrapper .post-column,
+	.post-layout-three-columns .post-wrapper .post-column,
+	.widget-magazine-posts .magazine-grid-two-columns .post-column,
+	.widget-magazine-posts .magazine-grid-three-columns .post-column {
+		width: 100%;
+	}
+
+	.page-title,
+	.entry-title,
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.widget-magazine-posts .large-post .entry-title,
+	.widget-magazine-posts .medium-post .entry-title {
+		font-size: 22px;
+		font-size: 1.375rem;
+	}
+
+	.entry-categories .meta-category a {
+		font-size: 13px;
+		font-size: 0.8125rem;
+	}
+
+	.entry-content {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
+	.widget-magazine-posts .small-post .entry-meta {
+		display: block;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2487,59 +2610,10 @@ object {
 		text-align: left;
 	}
 
-	.has-post-thumbnail .post-content {
-		margin: 0.5em 0 0;
-		padding: 0;
-	}
-
-	.entry-categories .meta-category a {
-		font-size: 13px;
-		font-size: 0.8125rem;
-	}
-
-	.page-title,
-	.entry-title {
-		font-size: 22px;
-		font-size: 1.375rem;
-	}
-
 	.alignright, .alignleft {
 		float: none;
 		margin: 1em 0;
 	}
-
-	/* Post Columns */
-	.post-wrapper,
-	.magazine-grid {
-		display: block;
-		margin-right: 0;
-	}
-
-	.post-wrapper .post-column,
-	.magazine-grid .magazine-grid-post {
-		display: block;
-		padding-right: 0;
-	}
-
-	.post-layout-two-columns .post-wrapper .post-column,
-	.post-layout-three-columns .post-wrapper .post-column,
-	.post-layout-four-columns .post-wrapper .post-column,
-	.magazine-two-columns-grid .magazine-grid-post,
-	.magazine-three-columns-grid .magazine-grid-post,
-	.magazine-four-columns-grid .magazine-grid-post {
-		width: 100%;
-	}
-
-	.post-layout-two-columns .post-wrapper .type-post .entry-title,
-	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 18px;
-		font-size: 1.125rem;
-	}
-
 }
 
 @media only screen and (max-width: 25em) {
@@ -2547,6 +2621,27 @@ object {
 		display: none;
 	}
 
+	.has-post-thumbnail .post-content,
+	.post-wrapper .has-post-thumbnail .post-content,
+	.widget-magazine-posts .has-post-thumbnail .post-content {
+		margin: 0.5em 0 0;
+		padding: 0;
+	}
+
+	.page-title,
+	.entry-title,
+	.post-layout-two-columns .post-wrapper .type-post .entry-title,
+	.post-layout-three-columns .post-wrapper .type-post .entry-title,
+	.widget-magazine-posts .large-post .entry-title,
+	.widget-magazine-posts .medium-post .entry-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 16px;
+		font-size: 1rem;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2559,21 +2654,23 @@ object {
 	}
 
 	.page-title,
-	.entry-title {
-		font-size: 20px;
-		font-size: 1.25rem;
-	}
-
+	.entry-title,
 	.post-layout-two-columns .post-wrapper .type-post .entry-title,
 	.post-layout-three-columns .post-wrapper .type-post .entry-title,
-	.post-layout-four-columns .post-wrapper .type-post .entry-title,
-	.magazine-two-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-three-columns-grid .magazine-grid-post .type-post .entry-title,
-	.magazine-four-columns-grid .magazine-grid-post .type-post .entry-title {
-		font-size: 16px;
-		font-size: 1rem;
+	.widget-magazine-posts .large-post .entry-title,
+	.widget-magazine-posts .medium-post .entry-title {
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
 
+	.widget-magazine-posts .small-post .entry-title {
+		font-size: 15px;
+		font-size: 0.9375rem;
+	}
+
+	.widget-magazine-posts .small-post .entry-meta {
+		display: none;
+	}
 }
 
 /*--------------------------------------------------------------

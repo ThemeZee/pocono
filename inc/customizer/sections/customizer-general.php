@@ -39,7 +39,6 @@ function pocono_customize_register_general_settings( $wp_customize ) {
 		'choices'  => array(
 			'two-columns' => esc_html__( 'Two Columns', 'pocono' ),
 			'three-columns' => esc_html__( 'Three Columns', 'pocono' ),
-			'four-columns' => esc_html__( 'Four Columns', 'pocono' ),
 			),
 		)
 	);

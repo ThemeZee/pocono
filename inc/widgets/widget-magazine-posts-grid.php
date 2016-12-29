@@ -21,7 +21,7 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		// Setup Widget.
 		parent::__construct(
 			'pocono-magazine-posts-grid', // ID.
-			sprintf( esc_html__( 'Magazine Posts: Grid (%s)', 'pocono' ), wp_get_theme()->Name ), // Name.
+			esc_html__( 'Magazine: Grid', 'pocono' ), // Name.
 			array(
 				'classname' => 'pocono_magazine_posts_grid',
 				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'pocono' ),
@@ -45,13 +45,9 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$defaults = array(
 			'title'				=> '',
 			'category'			=> 0,
-			'layout'			=> 'three-columns-grid',
-			'number'			=> 3,
-			'excerpt_length'	=> 0,
-			'meta_date'			=> true,
-			'meta_author'		=> true,
-			'meta_comments'		=> true,
-			'meta_category'		=> true,
+			'layout'			=> 'three-columns',
+			'number'			=> 6,
+			'excerpt'			=> false,
 		);
 
 		return $defaults;
@@ -91,8 +87,8 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		// Get Widget Settings.
 		$settings = wp_parse_args( $instance, $this->default_settings() );
 
-		// Set Excerpt Length.
-		$this->excerpt_length = (int) $settings['excerpt_length'];
+		// Set Widget class.
+		$class = ( 'three-columns' === $settings['layout'] ) ? 'magazine-grid-three-columns' : 'magazine-grid-two-columns';
 
 		// Output.
 		echo $args['before_widget'];
@@ -103,7 +99,7 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
 
-			<div class="widget-magazine-posts-content">
+			<div class="widget-magazine-posts-content <?php echo $class; ?> magazine-grid">
 
 				<?php $this->render( $settings ); ?>
 
@@ -146,61 +142,28 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$posts_query = new WP_Query( $query_arguments );
 		$i = 0;
 
+		// Set template.
+		$template = ( 'three-columns' === $settings['layout'] ) ? 'medium-post' : 'large-post';
+
 		// Check if there are posts.
 		if ( $posts_query->have_posts() ) :
 
-			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) ); ?>
+			// Display Posts.
+			while ( $posts_query->have_posts() ) :
 
-			<div class="magazine-grid magazine-<?php echo esc_attr( $settings['layout'] ); ?>">
+				$posts_query->the_post();
+
+				set_query_var( 'pocono_post_excerpt', (bool) $settings['excerpt'] );
+				?>
+
+				<div class="post-column">
+
+					<?php get_template_part( 'template-parts/widgets/magazine-content', $template ); ?>
+
+				</div>
 
 				<?php
-				// Display Posts.
-				while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
-
-					<div class="magazine-grid-post clearfix">
-
-						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-							<?php pocono_post_image(); ?>
-
-							<?php $this->entry_categories( $settings ); ?>
-
-							<div class="post-content clearfix">
-
-								<header class="entry-header">
-
-									<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-									<?php $this->entry_meta( $settings ); ?>
-
-								</header><!-- .entry-header -->
-
-								<?php if ( $settings['excerpt_length'] > 0 ) : ?>
-
-									<div class="entry-content entry-excerpt clearfix">
-
-										<?php the_excerpt(); ?>
-
-										<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Read more', 'pocono' ); ?></a>
-
-									</div><!-- .entry-content -->
-
-								<?php endif; ?>
-
-							</div>
-
-						</article>
-
-					</div>
-
-				<?php endwhile; ?>
-
-			</div>
-
-			<?php
-			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
+			endwhile;
 
 		endif;
 
@@ -208,75 +171,6 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		wp_reset_postdata();
 
 	} // render()
-
-
-	/**
-	 * Displays Entry Categories
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function entry_categories( $settings ) {
-
-		if ( true === $settings['meta_category'] ) : ?>
-
-			<div class="entry-categories clearfix">
-
-				<span class="meta-category">
-					<?php echo get_the_category_list( ' ' ); ?>
-				</span>
-
-			</div><!-- .entry-categories -->
-
-			<?php
-		endif;
-
-	} // entry_categories()
-
-	/**
-	 * Displays Entry Meta of Posts
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function entry_meta( $settings ) {
-
-		$postmeta = '';
-
-		if ( true === $settings['meta_date'] ) {
-
-			$postmeta .= pocono_meta_date();
-
-		}
-
-		if ( true === $settings['meta_author'] ) {
-
-			$postmeta .= pocono_meta_author();
-
-		}
-
-		if ( true === $settings['meta_comments'] ) {
-
-			$postmeta .= pocono_meta_comments();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
-
-	} // entry_meta()
-
-
-	/**
-	 * Returns the excerpt length in number of words
-	 *
-	 * @param int $length Length of excerpt in number of words.
-	 * @return integer $this->excerpt_length Number of Words
-	 */
-	function excerpt_length( $length ) {
-		return $this->excerpt_length;
-	}
 
 
 	/**
@@ -296,13 +190,12 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 			if ( $settings['category'] > 0 ) :
 
 				// Set Link URL and Title for Category.
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'pocono' ), get_cat_name( $settings['category'] ) );
-				$link_url = esc_url( get_category_link( $settings['category'] ) );
+				$link_title = sprintf( __( 'View all posts from category %s', 'pocono' ), get_cat_name( $settings['category'] ) );
+				$link_url = get_category_link( $settings['category'] );
 
 				// Display Widget Title with link to category archive.
 				echo '<div class="widget-header">';
-				echo '<h3 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h3>';
-				echo '<div class="category-description">' . category_description( $settings['category'] ) . '</div>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="' . esc_url( $link_url ) . '" title="' . esc_attr( $link_title ) . '">' . $widget_title . '</a></h3>';
 				echo '</div>';
 
 			else :
@@ -331,11 +224,7 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$instance['category'] = (int) $new_instance['category'];
 		$instance['layout'] = esc_attr( $new_instance['layout'] );
 		$instance['number'] = (int) $new_instance['number'];
-		$instance['excerpt_length'] = (int) $new_instance['excerpt_length'];
-		$instance['meta_date'] = ! empty( $new_instance['meta_date'] );
-		$instance['meta_author'] = ! empty( $new_instance['meta_author'] );
-		$instance['meta_comments'] = ! empty( $new_instance['meta_comments'] );
-		$instance['meta_category'] = ! empty( $new_instance['meta_category'] );
+		$instance['excerpt'] = ! empty( $new_instance['excerpt'] );
 
 		$this->delete_widget_cache();
 
@@ -378,9 +267,8 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'layout' ); ?>"><?php esc_html_e( 'Grid Layout:', 'pocono' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id( 'layout' ); ?>" name="<?php echo $this->get_field_name( 'layout' ); ?>">
-				<option <?php selected( $settings['layout'], 'two-columns-grid' ); ?> value="two-columns-grid" ><?php esc_html_e( 'Two Columns', 'pocono' ); ?></option>
-				<option <?php selected( $settings['layout'], 'three-columns-grid' ); ?> value="three-columns-grid" ><?php esc_html_e( 'Three Columns', 'pocono' ); ?></option>
-				<option <?php selected( $settings['layout'], 'four-columns-grid' ); ?> value="four-columns-grid" ><?php esc_html_e( 'Four Columns', 'pocono' ); ?></option>
+				<option <?php selected( $settings['layout'], 'two-columns' ); ?> value="two-columns" ><?php esc_html_e( 'Two Columns Grid', 'pocono' ); ?></option>
+				<option <?php selected( $settings['layout'], 'three-columns' ); ?> value="three-columns" ><?php esc_html_e( 'Three Columns Grid', 'pocono' ); ?></option>
 			</select>
 		</p>
 
@@ -391,36 +279,9 @@ class Pocono_Magazine_Posts_Grid_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'excerpt_length' ); ?>"><?php esc_html_e( 'Excerpt Length:', 'pocono' ); ?>
-				<input id="<?php echo $this->get_field_id( 'excerpt_length' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_length' ); ?>" type="text" value="<?php echo absint( $settings['excerpt_length'] ); ?>" size="6" />
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ); ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
-				<?php esc_html_e( 'Display post date', 'pocono' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ); ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
-				<?php esc_html_e( 'Display post author', 'pocono' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_comments' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_comments'] ); ?> id="<?php echo $this->get_field_id( 'meta_comments' ); ?>" name="<?php echo $this->get_field_name( 'meta_comments' ); ?>" />
-				<?php esc_html_e( 'Display post comments', 'pocono' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ); ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
-				<?php esc_html_e( 'Display post categories', 'pocono' ); ?>
+			<label for="<?php echo $this->get_field_id( 'excerpt' ); ?>">
+				<input class="checkbox" type="checkbox" <?php checked( $settings['excerpt'] ); ?> id="<?php echo $this->get_field_id( 'excerpt' ); ?>" name="<?php echo $this->get_field_name( 'excerpt' ); ?>" />
+				<?php esc_html_e( 'Display post excerpt', 'pocono' ); ?>
 			</label>
 		</p>
 
