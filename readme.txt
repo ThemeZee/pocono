@@ -26,6 +26,11 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 
 == Changelog ==
 
+= 1.0.7 =
+* added extra template files for Magazine Widgets
+* improved responsive layout and removed four column post layout
+* simplified Magazine Grid widget
+
 = 1.0.6 =
 * added main navigation and sidebar navigation menus
 * added new theme setting to display tagline

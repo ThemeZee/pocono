@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/pocono/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Pocono features a prominent post slideshow, grid post layout, navigation sidebar, and social icons menu. With its clean typography, elegant design, and attention to detail, Pocono helps you to create a stunning magazine-styled website.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pocono
@@ -654,8 +654,9 @@ textarea {
 --------------------------------------------------------------*/
 .site-header {
 	position: relative;
-	border-bottom: 1px solid #ddd;
 	background: #fff;
+	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid rgba(0,0,0,0.125);
 }
 
 .header-main {
@@ -694,6 +695,8 @@ textarea {
 .site-title a:link,
 .site-title a:visited {
 	color: #373737;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .site-title a:hover,
@@ -742,6 +745,7 @@ textarea {
 	top: 0;
 	left: 2.5em;
 	padding: 1.1em 0;
+	color: #373737;
 	background: none;
 }
 
@@ -755,7 +759,6 @@ textarea {
 .sidebar-navigation-toggle:after {
 	display: inline-block;
 	float: left;
-	color: #373737;
 	content: '\f419';
 	vertical-align: middle;
 	text-decoration: inherit;
@@ -766,7 +769,7 @@ textarea {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.sidebar-navigation-toggle:hover:after {
+.sidebar-navigation-toggle:hover {
 	color: #ff5555;
 }
 
@@ -810,6 +813,7 @@ textarea {
 .primary-navigation-wrap {
 	background: #fafafa;
 	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid rgba(0,0,0,0.125);
 }
 
 .main-navigation-menu {
@@ -954,6 +958,7 @@ textarea {
 	display: inline-block;
 	padding: 0.5em;
 	text-decoration: none;
+	color: #fff;
 }
 
 .social-icons-menu li a .screen-reader-text {
@@ -963,7 +968,6 @@ textarea {
 /* Add Genericons */
 .social-icons-menu li a:before {
 	display: inline-block;
-	color: #fff;
 	vertical-align: top;
 	text-decoration: inherit;
 	font-size: 16px;
@@ -1015,11 +1019,14 @@ textarea {
 
 .header-social-icons .social-icons-menu li a:before {
 	display: inline-block;
-	color: #373737;
 	font-size: 28px;
 }
 
-.header-social-icons .social-icons-menu li a:hover:before {
+.header-social-icons .social-icons-menu li a {
+	color: #373737;
+}
+
+.header-social-icons .social-icons-menu li a:hover {
 	color: #ff5555;
 }
 
@@ -2009,6 +2016,7 @@ textarea {
 --------------------------------------------------------------*/
 .footer-wrap {
 	border-top: 1px solid #ddd;
+	border-top: 1px solid rgba(0,0,0,0.125);
 	background: #fff;
 }
 
