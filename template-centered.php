@@ -1,19 +1,17 @@
 <?php
 /**
- * Template Name: Full-width Layout
+ * Template Name: Centered Layout
  * Template Post Type: post, page
  *
- * Description: A custom template for displaying a fullwidth layout with no sidebar.
+ * Description: A custom template for displaying a centered layout with no sidebar.
  *
  * @package Pocono
  */
 
 get_header(); ?>
 
-	<section id="primary" class="fullwidth-content-area content-area">
+	<section id="primary" class="centered-content-area content-area">
 		<main id="main" class="site-main" role="main">
-
-			<?php pocono_breadcrumbs(); ?>
 
 			<?php while ( have_posts() ) : the_post();
 

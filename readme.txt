@@ -26,6 +26,10 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 
 == Changelog ==
 
+= 1.0.8 =
+* added fullwidth page template for blog posts
+* added centered page template for posts and static pages
+
 = 1.0.7 =
 * added extra template files for Magazine Widgets
 * improved responsive layout and removed four column post layout
