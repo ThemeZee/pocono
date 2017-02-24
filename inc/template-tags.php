@@ -135,38 +135,11 @@ if ( ! function_exists( 'pocono_entry_meta' ) ) :
 	 */
 	function pocono_entry_meta() {
 
-		// Get theme options from database.
-		$theme_options = pocono_theme_options();
+		$postmeta = pocono_meta_date();
+		$postmeta .= pocono_meta_author();
+		$postmeta .= pocono_meta_comments();
 
-		$postmeta = '';
-
-		// Display date unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_date'] ) {
-
-			$postmeta .= pocono_meta_date();
-
-		}
-
-		// Display author unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_author'] ) {
-
-			$postmeta .= pocono_meta_author();
-
-		}
-
-		// Display comments unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_comments'] ) {
-
-			$postmeta .= pocono_meta_comments();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
-
+		echo '<div class="entry-meta">' . $postmeta . '</div>';
 	}
 endif;
 
@@ -230,23 +203,17 @@ if ( ! function_exists( 'pocono_entry_categories' ) ) :
 	 * Displays the category of posts
 	 */
 	function pocono_entry_categories() {
+		?>
 
-		// Get theme options from database.
-		$theme_options = pocono_theme_options();
+		<div class="entry-categories clearfix">
 
-		// Display categories unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_category'] ) : ?>
+			<span class="meta-category">
+				<?php echo get_the_category_list( ' ' ); ?>
+			</span>
 
-			<div class="entry-categories clearfix">
-
-				<span class="meta-category">
-					<?php echo get_the_category_list( ' ' ); ?>
-				</span>
-
-			</div><!-- .entry-categories -->
+		</div><!-- .entry-categories -->
 
 		<?php
-		endif;
 	}
 endif;
 
@@ -257,14 +224,11 @@ if ( ! function_exists( 'pocono_entry_tags' ) ) :
 	 */
 	function pocono_entry_tags() {
 
-		// Get theme options from database.
-		$theme_options = pocono_theme_options();
-
 		// Get tags.
 		$tag_list = get_the_tag_list( '', '' );
 
 		// Display tags.
-		if ( $tag_list && $theme_options['meta_tags'] ) : ?>
+		if ( $tag_list ) : ?>
 
 			<div class="entry-tags clearfix">
 				<span class="meta-tags">
@@ -284,34 +248,11 @@ if ( ! function_exists( 'pocono_magazine_widgets_entry_meta' ) ) :
 	 */
 	function pocono_magazine_widgets_entry_meta() {
 
-		// Get theme options from database.
-		$theme_options = pocono_theme_options();
+		$postmeta = pocono_meta_date();
+		$postmeta .= pocono_meta_author();
+		$postmeta .= pocono_meta_comments();
 
-		$postmeta = '';
-
-		// Display date or author as fallback on small Magazine Widget posts.
-		if ( true === $theme_options['meta_date'] ) {
-
-			$postmeta .= pocono_meta_date();
-
-		} elseif ( true === $theme_options['meta_author'] ) {
-
-			$postmeta .= pocono_meta_author();
-
-		}
-
-		// Display comments unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_comments'] ) {
-
-			$postmeta .= pocono_meta_comments();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
+		echo '<div class="entry-meta">' . $postmeta . '</div>';
 	}
 endif;
 
@@ -345,7 +286,7 @@ if ( ! function_exists( 'pocono_post_navigation' ) ) :
 		// Get theme options from database.
 		$theme_options = pocono_theme_options();
 
-		if ( true === $theme_options['post_navigation'] ) {
+		if ( true === $theme_options['post_navigation'] || is_customize_preview() ) {
 
 			the_post_navigation( array(
 				'prev_text' => '<span class="screen-reader-text">' . esc_html_x( 'Previous Post:', 'post navigation', 'pocono' ) . '</span>%title',

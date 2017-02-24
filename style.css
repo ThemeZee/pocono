@@ -1498,6 +1498,19 @@ textarea {
 	color: #ff5555;
 }
 
+/* Hide post meta if they are deactivated in settings */
+body.categories-hidden .entry-categories,
+body.date-hidden .entry-meta .meta-date,
+body.author-hidden .entry-meta .meta-author,
+body.comments-hidden .entry-meta .meta-comments {
+	 position: absolute;
+	 clip: rect(1px, 1px, 1px, 1px);
+}
+
+body.date-hidden.author-hidden.comments-hidden .type-post .entry-meta {
+	display: none;
+}
+
 /* Entry Tags & Tagcloud Widget */
 .entry-tags {
 	margin: 0 0 2em;
