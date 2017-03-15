@@ -242,21 +242,6 @@ if ( ! function_exists( 'pocono_entry_tags' ) ) :
 endif;
 
 
-if ( ! function_exists( 'pocono_magazine_widgets_entry_meta' ) ) :
-	/**
-	 * Displays the date, author and comments of a post
-	 */
-	function pocono_magazine_widgets_entry_meta() {
-
-		$postmeta = pocono_meta_date();
-		$postmeta .= pocono_meta_author();
-		$postmeta .= pocono_meta_comments();
-
-		echo '<div class="entry-meta">' . $postmeta . '</div>';
-	}
-endif;
-
-
 if ( ! function_exists( 'pocono_more_link' ) ) :
 	/**
 	 * Displays the more link on posts
