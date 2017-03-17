@@ -26,6 +26,12 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 
 == Changelog ==
 
+= 1.2 =
+* added template files for Magazine widgets to improve child theme compatibility
+* added transient caching for Magazine widgets to increase performance
+* added pluggable template functions for Magazine widgets
+* improved implementation of post meta settings for instant live preview in Customizer
+
 = 1.0.8 =
 * added fullwidth page template for blog posts
 * added centered page template for posts and static pages
