@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/pocono/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Pocono features a prominent post slideshow, grid post layout, navigation sidebar, and social icons menu. With its clean typography, elegant design, and attention to detail, Pocono helps you to create a stunning magazine-styled website.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pocono
@@ -1324,15 +1324,6 @@ textarea {
 	margin: 0 0 2em;
 }
 
-/* Fix Render Bug for Safari */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-	@media {
-		.widget-magazine-posts .magazine-grid .post-column {
-			margin-right: -1px;
-		}
-	}
-}
-
 /*--------------------------------------------------------------
 # 12.0 - Content Area
 --------------------------------------------------------------*/
@@ -1730,15 +1721,6 @@ body.date-hidden.author-hidden.comments-hidden .type-post .entry-meta {
 .post-layout-three-columns .post-wrapper .type-post .entry-title {
 	font-size: 20px;
 	font-size: 1.25rem;
-}
-
-/* Fix Render Bug for Safari */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-	@media {
-		.post-wrapper .post-column {
-			margin-right: -1px;
-		}
-	}
 }
 
 /* Theme Pagination */
@@ -2770,5 +2752,29 @@ object {
 		padding: 0;
 		max-width: 800px;
 		width: 100%;
+	}
+}
+
+/*--------------------------------------------------------------
+# 19.0 - CSS Hacks for Safari
+--------------------------------------------------------------*/
+
+/* Fix Flexbox issues for Safari 6.1-10.0 */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.post-wrapper .post-column,
+		.widget-magazine-posts .magazine-grid .post-column {
+			margin-right: -1px;
+		}
+	}
+}
+
+/* Fix Flexbox issues for Safari 10.1+ */
+@media not all and (min-resolution:.001dpcm) {
+	@media {
+		.post-wrapper .post-column,
+		.widget-magazine-posts .magazine-grid .post-column {
+			margin-right: -1px;
+		}
 	}
 }
