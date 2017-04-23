@@ -9,16 +9,7 @@
 
 <li id="slide-<?php the_ID(); ?>" class="zeeslide clearfix">
 
-	<?php // Display Post Thumbnail or default thumbnail.
-	if ( has_post_thumbnail() ) :
-
-		the_post_thumbnail( 'pocono-single-posts', array( 'class' => 'slide-image' ) );
-
-	else : ?>
-
-		<img src="<?php echo get_template_directory_uri(); ?>/images/default-slider-image.png" class="slide-image default-slide-image wp-post-image" alt="default-image" />
-
-	<?php endif;?>
+	<?php pocono_slider_image( 'pocono-single-posts', array( 'class' => 'slide-image' ) ); ?>
 
 	<?php pocono_entry_categories(); ?>
 
