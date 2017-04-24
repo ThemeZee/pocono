@@ -106,4 +106,5 @@ function pocono_flush_magazine_post_ids() {
 }
 add_action( 'save_post', 'pocono_flush_magazine_post_ids' );
 add_action( 'deleted_post', 'pocono_flush_magazine_post_ids' );
+add_action( 'customize_save_after', 'pocono_flush_magazine_post_ids' );
 add_action( 'switch_theme', 'pocono_flush_magazine_post_ids' );
