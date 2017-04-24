@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/pocono/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Pocono features a prominent post slideshow, grid post layout, navigation sidebar, and social icons menu. With its clean typography, elegant design, and attention to detail, Pocono helps you to create a stunning magazine-styled website.
-Version: 1.2.2
+Version: 1.2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pocono
@@ -501,7 +501,6 @@ input[type="submit"] {
 	font-weight: bold;
 	font-size: 14px;
 	font-size: 0.875rem;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -654,9 +653,9 @@ textarea {
 --------------------------------------------------------------*/
 .site-header {
 	position: relative;
-	background: #fff;
 	border-bottom: 1px solid #ddd;
 	border-bottom: 1px solid rgba(0,0,0,0.125);
+	background: #fff;
 }
 
 .header-main {
@@ -695,7 +694,6 @@ textarea {
 .site-title a:link,
 .site-title a:visited {
 	color: #373737;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -749,8 +747,8 @@ textarea {
 	top: 0;
 	left: 2.5em;
 	padding: 1.1em 0;
-	color: #373737;
 	background: none;
+	color: #373737;
 }
 
 .sidebar-navigation-toggle:hover,
@@ -815,9 +813,9 @@ textarea {
 ## 10.2 - Main Navigation Menu
 --------------------------------------------------------------*/
 .primary-navigation-wrap {
-	background: #fafafa;
 	border-bottom: 1px solid #ddd;
 	border-bottom: 1px solid rgba(0,0,0,0.125);
+	background: #fafafa;
 }
 
 .main-navigation-menu {
@@ -961,8 +959,8 @@ textarea {
 	position: relative;
 	display: inline-block;
 	padding: 0.5em;
-	text-decoration: none;
 	color: #fff;
+	text-decoration: none;
 }
 
 .social-icons-menu li a .screen-reader-text {
@@ -1074,7 +1072,6 @@ textarea {
 .widget-title a:link,
 .widget-title a:visited  {
 	color: #ff5555;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1122,7 +1119,6 @@ textarea {
 	padding: 0.6em 0.6em 0 0;
 	border: none;
 	cursor: pointer;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1272,8 +1268,8 @@ textarea {
 	display: block;
 	float: left;
 	box-sizing: border-box;
-	width: 100%;
 	margin: 0 0 2em;
+	width: 100%;
 }
 
 .widget-magazine-posts .small-post .wp-post-image {
@@ -1357,7 +1353,6 @@ textarea {
 .entry-title a:visited {
 	color: #373737;
 	text-decoration: none;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1395,7 +1390,6 @@ textarea {
 	font-weight: bold;
 	font-size: 14px;
 	font-size: 0.875rem;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1547,7 +1541,6 @@ body.date-hidden.author-hidden.comments-hidden .type-post .entry-meta {
 .entry-tags .meta-tags a:link,
 .entry-tags .meta-tags a:visited {
 	color: #fff;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1595,7 +1588,6 @@ body.date-hidden.author-hidden.comments-hidden .type-post .entry-meta {
 	font-weight: bold;
 	font-size: 14px;
 	font-size: 0.875rem;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1743,7 +1735,6 @@ body.date-hidden.author-hidden.comments-hidden .type-post .entry-meta {
 .pagination a:link,
 .pagination a:visited {
 	color: #fff;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1784,7 +1775,6 @@ body.date-hidden.author-hidden.comments-hidden .type-post .entry-meta {
 	font-weight: bold;
 	font-size: 14px;
 	font-size: 0.875rem;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1968,7 +1958,6 @@ body.date-hidden.author-hidden.comments-hidden .type-post .entry-meta {
 	font-weight: bold;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -2303,8 +2292,8 @@ object {
 
 	/* Main Navigation Menu */
 	.primary-navigation-wrap {
-		border: 1px solid #ddd;
 		margin: 0 0 2em;
+		border: 1px solid #ddd;
 	}
 
 	.primary-navigation-wrap .primary-navigation {
@@ -2556,7 +2545,6 @@ object {
 ## 17.9 - Mobile Medium ( < 480px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 35em) {
-
 	/* Post Columns */
 	.post-wrapper,
 	.widget-magazine-posts .magazine-grid {
