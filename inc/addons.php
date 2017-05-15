@@ -14,9 +14,17 @@ function pocono_theme_addons_setup() {
 	add_theme_support( 'pocono-pro' );
 
 	// Add theme support for ThemeZee Plugins.
-	add_theme_support( 'themezee-widget-bundle' );
 	add_theme_support( 'themezee-breadcrumbs' );
-	add_theme_support( 'themezee-related-posts' );
+
+	// Add theme support for Widget Bundle.
+	add_theme_support( 'themezee-widget-bundle', array(
+		'thumbnail_size' => array( 90, 70 ),
+	) );
+
+	// Add theme support for Related Posts.
+	add_theme_support( 'themezee-related-posts', array(
+		'thumbnail_size' => array( 420, 260 ),
+	) );
 
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
