@@ -26,6 +26,11 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 
 == Changelog ==
 
+= 1.3 =
+* added improved Magazine Widget Customizer Control
+* added default widget titles for Magazine widgets
+* ignore sticky posts in Magazine widgets
+
 = 1.2.3 =
 * added transient caching to post slider
 * added post hyperlinks to slider images in post slider
