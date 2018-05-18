@@ -26,6 +26,9 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 
 == Changelog ==
 
+= 1.4.1 =
+* improved accessibility of sidebar navigation. Thanks to dcavins for his contributions.
+
 = 1.4 =
 * added default theme fonts as local fonts
 * use local fonts instead of Google fonts for GDPR compliance

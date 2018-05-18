@@ -7,10 +7,13 @@
 
 ?>
 	<section class="sidebar-navigation-container">
+
 		<button id="sidebar-navigation-toggle" class="sidebar-navigation-toggle" type="button" aria-label="<?php esc_attr_e( 'Toggle sidebar navigation menu', 'pocono' ); ?>"></button>
+
 		<div id="sidebar-navigation" class="sidebar-navigation widget-area clearfix" role="complementary">
 
-		<?php // Check if there is a sidebar menu.
+		<?php
+		// Check if there is a sidebar menu.
 		if ( has_nav_menu( 'secondary' ) ) : ?>
 
 			<aside class="widget widget_nav_menu sidebar-menu-widget clearfix">
@@ -24,18 +27,18 @@
 						// Display Header Navigation.
 						wp_nav_menu( array(
 							'theme_location' => 'secondary',
-							'container' => false,
-							'menu_class' => 'sidebar-navigation-menu menu',
-							'echo' => true,
-							'fallback_cb' => '',
-							)
-						);
+							'container'      => false,
+							'menu_class'     => 'sidebar-navigation-menu menu',
+							'echo'           => true,
+							'fallback_cb'    => '',
+						) );
 					?>
 				</nav><!-- #sidebar-navigation -->
 
 			</aside>
 
-		<?php endif;
+		<?php
+		endif;
 
 		// Check if Sidebar has widgets.
 		if ( is_active_sidebar( 'navigation-menu' ) ) :
@@ -54,7 +57,7 @@
 				</ul>
 			</aside>
 
-	<?php endif; ?>
+        <?php endif; ?>
 
 		</div><!-- #sidebar-navigation -->
 	</section>
