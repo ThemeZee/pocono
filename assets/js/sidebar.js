@@ -26,6 +26,12 @@
 			menu.animate( { 'margin-left' : '0' }, 300 );
 			overlay.show();
 
+			// Set ARIA states for toggle button.
+			button.attr({
+				"aria-expanded": true,
+				"aria-pressed": true,
+			});
+
 		}
 
 		/* Hide menu and show full content area */
@@ -35,6 +41,12 @@
 				menu.hide();
 			});
 			overlay.hide();
+
+			// Set ARIA states for toggle button.
+			button.attr({
+				"aria-expanded": false,
+				"aria-pressed": false,
+			});
 
 		}
 
@@ -48,6 +60,14 @@
 
 		/* Only do something if menu exists */
 		if ( menu.length > 0 ) {
+			// Add ARIA attributes for the menu toggle and menu container.
+			button.attr({
+				"aria-controls": menu.attr( "id" ),
+				"aria-haspopup": true,
+				"aria-expanded": false,
+				"aria-pressed": false
+			});
+			menu.attr( "aria-labelledby", button.attr( "id" ) );
 
 			/* Add menu toggle effect */
 			button.on('click', function(){

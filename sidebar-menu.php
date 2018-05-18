@@ -6,7 +6,9 @@
  */
 
 ?>
-	<section id="sidebar-navigation" class="sidebar-navigation widget-area clearfix" role="complementary">
+	<section class="sidebar-navigation-container">
+		<button id="sidebar-navigation-toggle" class="sidebar-navigation-toggle" type="button" aria-label="<?php esc_attr_e( 'Toggle sidebar navigation menu', 'pocono' ); ?>"></button>
+		<div id="sidebar-navigation" class="sidebar-navigation widget-area clearfix" role="complementary">
 
 		<?php // Check if there is a sidebar menu.
 		if ( has_nav_menu( 'secondary' ) ) : ?>
@@ -54,4 +56,5 @@
 
 	<?php endif; ?>
 
-	</section><!-- #sidebar-navigation -->
+		</div><!-- #sidebar-navigation -->
+	</section>

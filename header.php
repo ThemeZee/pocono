@@ -29,7 +29,7 @@
 
 			<div class="header-main container clearfix">
 
-				<button id="sidebar-navigation-toggle" class="sidebar-navigation-toggle"></button>
+				<?php get_sidebar( 'menu' ); ?>
 
 				<div id="logo" class="site-branding clearfix">
 
