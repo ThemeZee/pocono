@@ -47,7 +47,8 @@ function pocono_theme_info_page() {
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/pocono/', 'pocono' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'pocono' ); ?></a>
 				<a href="http://preview.themezee.com/?demo=pocono&utm_source=theme-info&utm_campaign=pocono" target="_blank"><?php esc_html_e( 'Theme Demo', 'pocono' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/pocono-documentation/', 'pocono' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=pocono&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'pocono' ); ?></a>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/pocono/reviews/?filter=5', 'pocono' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'pocono' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/changelogs/?action=themezee-changelog&type=theme&slug=pocono', 'pocono' ) ); ?>" target="_blank"><?php esc_html_e( 'Theme Changelog', 'pocono' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/pocono/reviews/', 'pocono' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'pocono' ); ?></a>
 			</p>
 		</div>
 		<hr>
@@ -149,7 +150,7 @@ function pocono_theme_info_page() {
 			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'pocono' ),
 				$theme->display( 'Name' ),
 				'<a target="_blank" href="' . __( 'https://themezee.com/', 'pocono' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=pocono" title="ThemeZee">ThemeZee</a>',
-				'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/pocono/reviews/?filter=5', 'pocono' ) . '" title="' . esc_attr__( 'Review Pocono', 'pocono' ) . '">' . esc_html__( 'rate it', 'pocono' ) . '</a>'); ?>
+				'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/pocono/reviews/', 'pocono' ) . '" title="' . esc_attr__( 'Review Pocono', 'pocono' ) . '">' . esc_html__( 'rate it', 'pocono' ) . '</a>'); ?>
 			</p>
 
 		</div>
