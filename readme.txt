@@ -26,6 +26,9 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 
 == Changelog ==
 
+= 1.5.4 - 2019-11-12 =
+* added font display swap to default theme fonts
+
 = 1.5.3 - 2019-10-23 =
 * added improved Theme Info section to Customizer
 
