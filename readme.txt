@@ -171,21 +171,3 @@ Copyright: 2015 Christian Robertson
 6. Montserrat Font - https://www.google.com/fonts/specimen/Montserrat
 License: Distributed under the terms of the SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
 Copyright: 2012 Julieta Ulanovsky
-
-7. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
-
-Image 1: https://pixabay.com/en/couple-love-walk-romantic-park-1363959/
-License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-Copyright: 2016 Adina Voicu (https://pixabay.com/en/users/AdinaVoicu-485024/)
-
-Image 2: https://pixabay.com/en/blue-blueberry-delicious-fruit-1326154/
-License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-Copyright: 2016 Beth Thomas (https://pixabay.com/en/users/elizadean-2384498/)
-
-Image 3: https://pixabay.com/en/gokart-action-umpteen-motor-speed-1080492/
-License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-Copyright: 2015 Michal Jarmoluk (https://pixabay.com/en/users/jarmoluk-143740/)
-
-Image 4: https://pixabay.com/en/ladybug-harmonia-axyridis-1324398/
-License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-Copyright: 2015 Luise (https://pixabay.com/en/users/esiuL-2367988/)
