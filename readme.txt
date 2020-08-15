@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/pocono/
 Contributors: themezee
 Tags: two-columns, custom-background, custom-header, custom-menu, editor-style, rtl-language-support, grid-layout, blog, news, entertainment, featured-images, flexible-header, full-width-template, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, three-columns
 Requires at least: 4.7
-Tested up to: 5.4
+Tested up to: 5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ For more information about Pocono please go to https://themezee.com/themes/pocon
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.5.7 - 2020-08-15 =
+* fixed styling of sidebar navigation overlay with sticky header enabled
 
 = 1.5.6 - 2020-04-06 =
 * added new wp_body_open action hook
