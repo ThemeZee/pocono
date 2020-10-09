@@ -9,7 +9,7 @@
 
 <li id="slide-<?php the_ID(); ?>" class="zeeslide clearfix">
 
-	<?php pocono_slider_image( 'pocono-single-posts', array( 'class' => 'slide-image' ) ); ?>
+	<?php pocono_slider_image( 'pocono-single-posts', array( 'class' => 'slide-image', 'loading' => false ) ); ?>
 
 	<?php pocono_entry_categories(); ?>
 
