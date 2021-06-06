@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/pocono/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Pocono features a prominent post slideshow, grid post layout, navigation sidebar, and social icons menu. With its clean typography, elegant design, and attention to detail, Pocono helps you to create a stunning magazine-styled website.
-Version: 1.5.8
+Version: 1.5.9
 Requires at least: 5.2
 Tested up to: 5.5
 Requires PHP: 5.6
@@ -973,7 +973,8 @@ textarea {
 	text-decoration: none;
 }
 
-.social-icons-menu li a .screen-reader-text {
+.social-icons-menu li a .screen-reader-text,
+.social-icons-menu li a .icon {
 	display: none;
 }
 
